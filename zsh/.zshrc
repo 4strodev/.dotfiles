@@ -116,6 +116,9 @@ export GOPATH=/home/astro/golib
 export PATH=$PATH:$GOPATH/bin
 export GOPATH=$GOPATH:/home/astro/Workspace/go
 
-#fzf
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+#fzf for arch
+#source /usr/share/fzf/key-bindings.zsh
+#source /usr/share/fzf/completion.zsh
+
+#fzf for fedora
+source /usr/share/fzf/shell/key-bindings.zsh
