@@ -1,0 +1,30 @@
+{
+    "coc.preferences.formatOnSaveFiletypes": [
+        "json",
+        "markdown",
+        "python",
+        "javascript",
+        "typescript",
+        "xml",
+        "rust",
+        "c",
+        "cpp",
+        "h",
+        "hpp",
+        "vue"
+    ],
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "black",
+    "json.format.enable": true,
+    "xml.format.enabled": true,
+    "xml.format.joinContentLines": true,
+    "xml.format.splitAttributes": true,
+    "explorer.width": 30,
+    "explorer.icon.enableNerdfont": true,
+    "explorer.previewAction.onHover": false,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": true,
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true,
+    "javascript.format.semicolons": "insert",
+    "vetur.format.options.tabSize": 4
+}
