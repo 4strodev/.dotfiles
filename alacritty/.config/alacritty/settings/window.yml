@@ -1,0 +1,12 @@
+window:
+  dimensions:
+    columns: 0
+    lines: 0
+  padding:
+    x: 0
+    y: 0
+
+scrolling:
+  history: 10000
+
+  multiplier: 3

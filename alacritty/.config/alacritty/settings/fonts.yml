@@ -1,0 +1,25 @@
+font-family: &font-family
+  CaskaydiaCove Nerd Font
+
+font:
+  normal:
+    family: *font-family
+
+    style: Regular
+
+  bold:
+    family: *font-family
+    style: Bold
+
+    family: *font-family
+
+    style: Italic
+
+  bold_italic:
+    family: *font-family
+
+    style: Bold Italic
+
+  size: 11
+
+draw_bold_text_with_bright_colors: true

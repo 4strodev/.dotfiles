@@ -1,0 +1,35 @@
+cursor:
+  text: CellBackground
+  cursor: CellForeground
+
+  vi_mode_cursor:
+    text: CellBackground
+    cursor: CellForeground
+
+  search:
+    matches:
+      foreground: '#000000'
+      background: '#ffffff'
+    focused_match:
+      foreground: CellBackground
+      background: CellForeground
+
+    bar:
+      background: '#c5c8c6'
+      foreground: '#1d1f21'
+
+  selection:
+    text: CellBackground
+    background: CellForeground
+
+cursor:
+  style:
+    shape: Block
+
+    blinking: On
+
+  blink_interval: 750
+
+  unfocused_hollow: true
+
+  thickness: 0.15

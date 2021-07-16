@@ -1,0 +1,17 @@
+import:
+  - ~/.config/alacritty/settings/colorscheme.yml
+  - ~/.config/alacritty/settings/window.yml
+  - ~/.config/alacritty/settings/cursor.yml
+  - ~/.config/alacritty/settings/fonts.yml
+
+env:
+  TERM: xterm-256color
+
+colors:
+    dim_foreground: '#828482'
+    bright_foreground: '#eaeaea'
+
+background_opacity: 0.95
+
+save_to_clipboard: true
+live_config_reload: true
