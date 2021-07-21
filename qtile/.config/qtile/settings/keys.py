@@ -73,8 +73,9 @@ keys = [
 
     # Keybindings for applications
     Key([mod1], "space", lazy.spawn("rofi -show combi"), desc="Launch rofi"),
-    Key([mod], "e", lazy.spawn("nemo"), desc="launch nautilus"),
+    Key([mod], "e", lazy.spawn("nemo"), desc="launch file explorer"),
     Key([mod, mod1], "l", lazy.spawn("dm-tool lock"), "launch i3lock a screen saver"),
+    Key([mod, mod1], "s", lazy.spawn("flameshot launcher"), "run flameshot launcher"),
     Key([mod, "shift"], "s", lazy.spawn("flameshot gui"), desc="run flameshot gui"),
     Key(
         [mod],

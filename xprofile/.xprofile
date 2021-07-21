@@ -1,1 +1,3 @@
 udiskie -t &
+nitrogen --restore &
+redshift-gtk &

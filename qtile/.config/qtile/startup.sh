@@ -2,4 +2,4 @@
 picom -b &
 nm-applet &
 pa-applet &
-nitrogen --restore
+#nitrogen --restore &
