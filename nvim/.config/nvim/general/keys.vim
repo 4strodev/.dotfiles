@@ -29,7 +29,6 @@ nnoremap <C-\> :split<CR>:ter<CR>:resize 15<CR>
 " Move to the prevoius buffer
 nnoremap <tab> :bnext<CR>
 nnoremap <s-tab> :bprevious<CR>
-nnoremap <S-tab> :bprevious<CR>
 
 " Close the current buffer
 "create a new tab

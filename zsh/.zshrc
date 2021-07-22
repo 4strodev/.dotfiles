@@ -119,3 +119,5 @@ export GOPATH=$GOPATH:/home/astro/Workspace/go
 #fzf for arch
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
+
+alias luamake=/home/astro/lua-language-server/3rd/luamake/luamake

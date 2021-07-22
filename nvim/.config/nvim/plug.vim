@@ -17,6 +17,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'lilydjwg/colorizer'
 Plug 'leafgarland/typescript-vim'
+Plug 'sheerun/vim-polyglot'
 Plug 'uiiaoo/java-syntax.vim'
 
 "Git integration
@@ -27,7 +28,6 @@ Plug 'junegunn/gv.vim'
 
 "Functionality
 Plug 'preservim/tagbar'
-Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'KabbAmine/vCoolor.vim'
