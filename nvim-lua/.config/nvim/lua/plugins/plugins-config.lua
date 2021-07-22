@@ -1,4 +1,6 @@
 return (function()
-	require('plug-settings.lua.lsp.init')
-	require('plug-settings.lua.compe.init')
+	--require('plug-settings.lua.lsp.init')
+	require('plug-settings.lua.compe')
+	require('plug-settings.lua.lspinstall')
+	require('plug-settings.lua.lspconfig')
 end)()

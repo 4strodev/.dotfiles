@@ -12,6 +12,7 @@ require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 	use 'vim-airline/vim-airline'
 	use 'vim-airline/vim-airline-themes'
+
 	use 'norcalli/nvim-colorizer.lua'
 	use 'sheerun/vim-polyglot'
 	use 'LunarWatcher/auto-pairs'
@@ -20,4 +21,6 @@ require('packer').startup(function()
 	use 'Shatur/neovim-ayu'
 	use 'neovim/nvim-lspconfig'
 	use 'hrsh7th/nvim-compe'
+	use 'kabouzeid/nvim-lspinstall'
+	use {'crispgm/nvim-go', requires = {'nvim-lua/plenary.nvim', 'nvim-lua/popup.nvim'}}
 end)

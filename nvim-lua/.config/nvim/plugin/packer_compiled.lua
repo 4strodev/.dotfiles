@@ -97,13 +97,29 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
+  ["nvim-go"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-go"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
+  ["nvim-lspinstall"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+  },
+  ["popup.nvim"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
   ["vim-airline"] = {
     loaded = true,

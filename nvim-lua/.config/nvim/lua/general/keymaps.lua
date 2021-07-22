@@ -34,7 +34,7 @@ return (function ()
     keymap('n', '<leader>sp', ':vscp<cr>', nores)
 
     -- open explorer
-    keymap('n', '<leader>ee', ':Lexplore<cr>', nores)
+    keymap('n', '<leader>ef', ':Lexplore<cr>', nores)
 
     -- no highlight matched patterns
     keymap('n', '//', ':noh<cr>', nores)
