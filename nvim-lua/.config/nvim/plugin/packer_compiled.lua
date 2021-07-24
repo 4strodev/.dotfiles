@@ -69,13 +69,29 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/LuaSnip"
+  },
   ["auto-pairs"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+  },
   ["gruvbox.nvim"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/gruvbox.nvim"
+  },
+  ["lsp_signature.nvim"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/lualine.nvim"
   },
   ["lush.nvim"] = {
     loaded = true,
@@ -97,10 +113,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
-  ["nvim-go"] = {
-    loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-go"
-  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
@@ -108,6 +120,10 @@ _G.packer_plugins = {
   ["nvim-lspinstall"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -117,21 +133,25 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
-  ["popup.nvim"] = {
+  ["telescope-fzy-native.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/popup.nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
   },
-  ["vim-airline"] = {
+  ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/vim-airline"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
-  ["vim-airline-themes"] = {
+  ultisnips = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/vim-airline-themes"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/ultisnips"
   },
   ["vim-polyglot"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/vim-polyglot"
+  },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/vim-snippets"
   }
 }
 
