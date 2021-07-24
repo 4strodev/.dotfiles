@@ -43,6 +43,8 @@ require('packer').startup(function()
 	-- themes
 	use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 	use 'Shatur/neovim-ayu'
+	use 'navarasu/onedark.nvim'
+	use 'tanvirtin/monokai.nvim'
 
 	-- git
 	use {

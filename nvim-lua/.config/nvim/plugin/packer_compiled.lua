@@ -101,6 +101,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/lush.nvim"
   },
+  ["monokai.nvim"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/monokai.nvim"
+  },
   neoformat = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/neoformat"
@@ -132,6 +136,10 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
