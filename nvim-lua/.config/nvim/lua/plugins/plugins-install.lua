@@ -10,21 +10,15 @@ end
 
 require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
+
+	-- utilities
 	use {
 	  'hoob3rt/lualine.nvim',
 	  requires = {'kyazdani42/nvim-web-devicons', opt = true}
 	}
-
-	use 'norcalli/nvim-colorizer.lua'
-	use 'sheerun/vim-polyglot'
 	use 'LunarWatcher/auto-pairs'
-	use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
 	use {'preservim/nerdcommenter'}
-	use 'Shatur/neovim-ayu'
-	use 'neovim/nvim-lspconfig'
-	use 'hrsh7th/nvim-compe'
-	use 'kabouzeid/nvim-lspinstall'
-
+	use 'norcalli/nvim-colorizer.lua'
 	use {
 		'nvim-telescope/telescope.nvim', requires = {
 			'nvim-telescope/telescope-fzy-native.nvim',
@@ -32,20 +26,29 @@ require('packer').startup(function()
 			'nvim-lua/plenary.nvim'
 		}
 	}
-
 	use {'SirVer/ultisnips', requires = {'honza/vim-snippets'}}
 	use {
 		"ray-x/lsp_signature.nvim",
 	}
 	use {'L3MON4D3/LuaSnip'}
+	use 'sbdchd/neoformat'
+	use 'mattn/emmet-vim'
 
+	-- language support
+	use 'neovim/nvim-lspconfig'
+	use 'hrsh7th/nvim-compe'
+	use 'kabouzeid/nvim-lspinstall'
+	use 'sheerun/vim-polyglot'
+
+	-- themes
+	use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
+	use 'Shatur/neovim-ayu'
+
+	-- git
 	use {
 		'lewis6991/gitsigns.nvim',
 		requires = {
 			'nvim-lua/plenary.nvim'
 		}
 	}
-	use 'sbdchd/neoformat'
-
-	use 'mattn/emmet-vim'
 end)
