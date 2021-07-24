@@ -1,3 +1,7 @@
+local keymap = vim.api.nvim_set_keymap
+local nores = {noremap = true, silent = true}
+--local nore = {noremap = true, silent = false}
+
 require('telescope').setup{
   defaults = {
     vimgrep_arguments = {
@@ -9,8 +13,8 @@ require('telescope').setup{
       '--column',
       '--smart-case'
     },
-    prompt_prefix = "> ",
-    selection_caret = "> ",
+    prompt_prefix = " ~ ",
+    selection_caret = " ",
     entry_prefix = "  ",
     initial_mode = "insert",
     selection_strategy = "reset",
@@ -42,3 +46,10 @@ require('telescope').setup{
     buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
   }
 }
+
+keymap('n', '<leader>ff', '<cmd>lua require("telescope.builtin").find_files()<cr>', nores)
+keymap('n', '<leader>fl', '<cmd>lua require("telescope.builtin").live_grep()<cr>', nores)
+keymap('n', '<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<cr>', nores)
+keymap('n', '<leader>fh', '<cmd>lua require("telescope.builtin").help_tags()<cr>', nores)
+
+
