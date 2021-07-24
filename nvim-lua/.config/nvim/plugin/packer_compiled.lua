@@ -77,6 +77,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
+  ["emmet-vim"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/emmet-vim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"

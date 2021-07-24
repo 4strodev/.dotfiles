@@ -46,4 +46,6 @@ require('packer').startup(function()
 		}
 	}
 	use 'sbdchd/neoformat'
+
+	use 'mattn/emmet-vim'
 end)

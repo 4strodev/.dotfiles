@@ -1,4 +1,3 @@
-return (function()
 local nvim_lsp = require('lspconfig')
 
 -- Use an on_attach function to only map the following keys
@@ -45,4 +44,7 @@ for _, lsp in ipairs(servers) do
     }
   }
 end
-end)()
+
+
+-- emmet
+vim.g['user_emmet_leader_key'] = '<C-Z>'
