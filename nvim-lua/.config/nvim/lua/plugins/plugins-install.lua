@@ -25,7 +25,13 @@ require('packer').startup(function()
 	use 'hrsh7th/nvim-compe'
 	use 'kabouzeid/nvim-lspinstall'
 
-	use {'nvim-telescope/telescope.nvim', requires = {'nvim-telescope/telescope-fzy-native.nvim'}}
+	use {
+		'nvim-telescope/telescope.nvim', requires = {
+			'nvim-telescope/telescope-fzy-native.nvim',
+			'nvim-lua/popup.nvim',
+			'nvim-lua/plenary.nvim'
+		}
+	}
 
 	use {'SirVer/ultisnips', requires = {'honza/vim-snippets'}}
 	use {
