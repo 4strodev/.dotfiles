@@ -45,4 +45,5 @@ require('packer').startup(function()
 			'nvim-lua/plenary.nvim'
 		}
 	}
+	use 'sbdchd/neoformat'
 end)

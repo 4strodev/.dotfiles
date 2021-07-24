@@ -97,6 +97,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/lush.nvim"
   },
+  neoformat = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/neoformat"
+  },
   ["neovim-ayu"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/neovim-ayu"
