@@ -2,7 +2,6 @@ ConfigPath = vim.fn.stdpath('config')
 
 require('general.settings')
 require('general.keymaps')
-require('general.vimfiles')
 require('plugins.plugins-install')
 require('plugins.plugins-config')
 require('themes.ayu')
