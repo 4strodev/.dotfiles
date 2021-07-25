@@ -133,6 +133,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
   },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
@@ -144,6 +148,10 @@ _G.packer_plugins = {
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  },
+  playground = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,
@@ -164,10 +172,6 @@ _G.packer_plugins = {
   ultisnips = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/ultisnips"
-  },
-  ["vim-polyglot"] = {
-    loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/vim-polyglot"
   },
   ["vim-snippets"] = {
     loaded = true,

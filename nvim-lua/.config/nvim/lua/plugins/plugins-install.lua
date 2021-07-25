@@ -28,19 +28,25 @@ require("packer").startup(
                 "nvim-lua/plenary.nvim"
             }
         }
-        use {"SirVer/ultisnips", requires = {"honza/vim-snippets"}}
-        use {
-            "ray-x/lsp_signature.nvim"
-        }
-        use {"L3MON4D3/LuaSnip"}
         use "mhartington/formatter.nvim"
         use "mattn/emmet-vim"
 
+
         -- language support
+        use {"L3MON4D3/LuaSnip"}
+        use {
+            "ray-x/lsp_signature.nvim"
+        }
+        use {"SirVer/ultisnips", requires = {"honza/vim-snippets"}}
+        use {
+            "nvim-treesitter/nvim-treesitter",
+            run = ":TSUpdate"
+        }
+        use 'nvim-treesitter/playground'
         use "neovim/nvim-lspconfig"
         use "hrsh7th/nvim-compe"
         use "kabouzeid/nvim-lspinstall"
-        use "sheerun/vim-polyglot"
+        --use "sheerun/vim-polyglot"
 
         -- themes
         use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
