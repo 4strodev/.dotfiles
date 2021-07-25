@@ -81,6 +81,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/emmet-vim"
   },
+  ["formatter.nvim"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/formatter.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
@@ -104,10 +108,6 @@ _G.packer_plugins = {
   ["monokai.nvim"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/monokai.nvim"
-  },
-  neoformat = {
-    loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/neoformat"
   },
   ["neovim-ayu"] = {
     loaded = true,
