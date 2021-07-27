@@ -11,6 +11,16 @@ require('formatter').setup({
           }
         end
     },
+    json = {
+        -- prettier
+       function()
+          return {
+            exe = "prettier",
+            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), '--single-quote'},
+            stdin = true
+          }
+        end
+    },
     --rust = {
       ---- Rustfmt
       --function()
@@ -57,6 +67,6 @@ require('formatter').setup({
 vim.api.nvim_exec([[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.js,*.rs,*.lua FormatWrite
+  autocmd BufWritePost *.js,*.json,*.lua,*.go FormatWrite
 augroup END
 ]], true)

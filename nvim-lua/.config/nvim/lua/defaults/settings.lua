@@ -3,7 +3,7 @@ vim.o.encoding = "utf8"
 vim.o.mouse = "a"
 vim.o.clipboard = "unnamedplus"
 
-vim.o.ts = 4
+vim.o.sw = 4
 vim.o.expandtab = true
 vim.o.smartindent = true
 

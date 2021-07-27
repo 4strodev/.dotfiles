@@ -8,7 +8,7 @@ export ZSH="/home/astro/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agkozak"
+ZSH_THEME="fwalch"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -112,12 +112,12 @@ export NVM_DIR="$HOME/.nvm"
 #export GOROOT=/usr/lib/go
 #export PATH=$PATH:$GOROOT/bin
 
-export GOPATH=~/golib
+export GOPATH=/home/astro/golib
 export PATH=$PATH:$GOPATH/bin
-export GOPATH=$GOPATH:~/Workspace/go
+export GOPATH=$GOPATH:/home/astro/Workspace/go
 
 #fzf for arch
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
-alias luamake=~/lua-language-server/3rd/luamake/luamake
+alias luamake=/home/astro/lua-language-server/3rd/luamake/luamake

@@ -12,30 +12,30 @@ return (function()
     keymap("n", "<right>", "nop", nores)
 
     -- resize splits with arrow keys
-    keymap("n", "<up>", "resize +5<cr>", nores)
-    keymap("n", "<down>", "resize -5<cr>", nores)
-    keymap("n", "<left>", ":vertical resize -5<cr>", nores)
-    keymap("n", "<right>", ":vertical resize +5<cr>", nores)
+    keymap("n", "<up>", "<cmd>resize +5<cr>", nores)
+    keymap("n", "<down>", "<cmd>resize -5<cr>", nores)
+    keymap("n", "<left>", "<cmd>vertical resize -5<cr>", nores)
+    keymap("n", "<right>", "<cmd>vertical resize +5<cr>", nores)
 
     -- save and close file
-    keymap("n", "<leader>wf", ":w<cr>", nore)
-    keymap("n", "<leader>qf", ":bd<cr>", nore)
+    keymap("n", "<leader>wf", "<cmd>w<cr>", nore)
+    keymap("n", "<leader>qf", "<cmd>bd<cr>", nore)
 
     -- open terminal
-    keymap("v", "<leader>t", ":split<CR>:ter<CR>:resize 15<CR>", nore)
-    keymap("n", "<leader>t", ":split<CR>:ter<CR>:resize 15<CR>", nore)
+    keymap("v", "<leader>t", "<cmd>split<CR><cmd>ter<CR><cmd>resize 15<CR>", nore)
+    keymap("n", "<leader>t", "<cmd>split<CR><cmd>ter<CR><cmd>resize 15<CR>", nore)
 
     -- move between buffers
-    keymap("n", "<Tab>", ":bnext<cr>", nores)
-    keymap("n", "<M-Tab>", ":bprevious<cr>", nores)
+    keymap("n", "<Tab>", "<cmd>bnext<cr>", nores)
+    keymap("n", "<S-Tab>", "<cmd>bprevious<cr>", nores)
 
     -- splits
-    keymap("n", "<leader>vs", ":vscp<cr>", nores)
-    keymap("n", "<leader>sp", ":vscp<cr>", nores)
+    keymap("n", "<leader>vs", "<cmd>vscp<cr>", nores)
+    keymap("n", "<leader>sp", "<cmd>vscp<cr>", nores)
 
     -- open explorer
-    keymap("n", "<leader>ef", ":Lexplore<cr>", nores)
+    keymap("n", "<leader>ef", "<cmd>Lexplore<cr>", nores)
 
     -- no highlight matched patterns
-    keymap("n", "//", ":noh<cr>", nores)
+    keymap("n", "//", "<cmd>noh<cr>", nores)
 end)()

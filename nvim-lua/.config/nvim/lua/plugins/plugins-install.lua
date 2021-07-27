@@ -17,6 +17,8 @@ require("packer").startup(
             "hoob3rt/lualine.nvim",
             requires = {"kyazdani42/nvim-web-devicons", opt = true}
         }
+        -- utils
+        use {"akinsho/nvim-bufferline.lua", requires = "kyazdani42/nvim-web-devicons"}
         use "LunarWatcher/auto-pairs"
         use {"preservim/nerdcommenter"}
         use "norcalli/nvim-colorizer.lua"
@@ -30,8 +32,7 @@ require("packer").startup(
         }
         use "mhartington/formatter.nvim"
         use "mattn/emmet-vim"
-
-
+        use "lukas-reineke/indent-blankline.nvim"
         -- language support
         use {"L3MON4D3/LuaSnip"}
         use {
@@ -42,7 +43,7 @@ require("packer").startup(
             "nvim-treesitter/nvim-treesitter",
             run = ":TSUpdate"
         }
-        use 'nvim-treesitter/playground'
+        use "nvim-treesitter/playground"
         use "neovim/nvim-lspconfig"
         use "hrsh7th/nvim-compe"
         use "kabouzeid/nvim-lspinstall"
@@ -52,7 +53,7 @@ require("packer").startup(
         use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
         use "Shatur/neovim-ayu"
         use "navarasu/onedark.nvim"
-        use "tanvirtin/monokai.nvim"
+        use "shaunsingh/nord.nvim"
 
         -- git
         use {

@@ -4,7 +4,7 @@ require("defaults.settings")
 require("defaults.keymaps")
 require("plugins.plugins-install")
 require("plugins.plugins-config")
-require("themes.onedark")
+require("themes.ayu")
 
 vim.o.background = "dark"
 vim.o.termguicolors = true

@@ -93,6 +93,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/gruvbox.nvim"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+  },
   ["lsp_signature.nvim"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
@@ -105,10 +109,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/lush.nvim"
   },
-  ["monokai.nvim"] = {
-    loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/monokai.nvim"
-  },
   ["neovim-ayu"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/neovim-ayu"
@@ -116,6 +116,14 @@ _G.packer_plugins = {
   nerdcommenter = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/nerdcommenter"
+  },
+  ["nord.nvim"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nord.nvim"
+  },
+  ["nvim-bufferline.lua"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
