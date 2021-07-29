@@ -117,7 +117,7 @@ export PATH=$PATH:$GOPATH/bin
 export GOPATH=$GOPATH:~/Workspace/go
 
 #fzf for arch
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+#source /usr/share/fzf/key-bindings.zsh
+#source /usr/share/fzf/completion.zsh
 
 alias luamake=~/lua-language-server/3rd/luamake/luamake
