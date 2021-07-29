@@ -1,5 +1,5 @@
-vim.g['UltiSnipsExpandTrigger'] = '<tab>'
-vim.g['UltiSnipsJumpForwardTrigger'] = '<c-j>'
-vim.g['UltiSnipsJumpBackwardTrigger'] = '<c-h>'
+vim.g["UltiSnipsExpandTrigger"] = "<c-j>"
+vim.g["UltiSnipsJumpForwardTrigger"] = "<c-j>"
+vim.g["UltiSnipsJumpBackwardTrigger"] = "<c-k>"
 
-vim.g['UltiSnipsEditSplit'] = 'vertical'
+vim.g["UltiSnipsEditSplit"] = "vertical"
