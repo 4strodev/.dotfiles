@@ -5,6 +5,8 @@ require("plug-settings.lspconfig")
 require("plug-settings.gitsigns")
 require("plug-settings.ultisnips")
 require("plug-settings.telescope")
+require("plug-settings.colorizer")
+require("plug-settings.lspsignature")
 
 -- statusline and buffers
 require("plug-settings.lualine")

@@ -30,8 +30,8 @@ return (function()
     keymap("n", "<S-Tab>", "<cmd>bprevious<cr>", nores)
 
     -- splits
-    keymap("n", "<leader>vs", "<cmd>vscp<cr>", nores)
-    keymap("n", "<leader>sp", "<cmd>vscp<cr>", nores)
+    keymap("n", "<leader>vs", "<cmd>vsplit<cr>", nores)
+    keymap("n", "<leader>sp", "<cmd>split<cr>", nores)
 
     -- open explorer
     keymap("n", "<leader>ef", "<cmd>Lexplore<cr>", nores)
