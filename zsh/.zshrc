@@ -120,4 +120,8 @@ export GOPATH=$GOPATH:~/Workspace/go
 #source /usr/share/fzf/key-bindings.zsh
 #source /usr/share/fzf/completion.zsh
 
-alias luamake=~/lua-language-server/3rd/luamake/luamake
+#Deno Version Manager
+export DENO_INSTALL="/home/astro/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+export DVM_DIR="/home/astro/.dvm"
+export PATH="$DVM_DIR/bin:$PATH"

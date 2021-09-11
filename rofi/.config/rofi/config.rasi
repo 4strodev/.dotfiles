@@ -24,4 +24,4 @@ configuration {
         case-sensitive: false;
         hide-scrollbar: false;
 }
-@import "/usr/share/rofi/themes/Pop-Dark.rasi"
+@import "/usr/share/rofi/themes/Adapta-Nokto.rasi"
