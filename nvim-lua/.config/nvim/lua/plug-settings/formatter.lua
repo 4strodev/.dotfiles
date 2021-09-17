@@ -12,6 +12,16 @@ require("formatter").setup(
                     }
                 end
             },
+            typescript = {
+                -- prettier
+                function()
+                    return {
+                        exe = "prettier",
+                        args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), "--single-quote"},
+                        stdin = true
+                    }
+                end
+            },
             html = {
                 function()
                     return {
@@ -51,17 +61,17 @@ require("formatter").setup(
                     }
                 end
             },
-            --cpp = {
+            --cs = {
             ---- clang-format
             --function()
             --return {
             --exe = "clang-format",
-            --args = {},
+            --args = {"--style=WebKit"},
             --stdin = true,
-            --cwd = vim.fn.expand('%:p:h')  -- Run clang-format in cwd of the file.
+            --cwd = vim.fn.expand("%:p:h") -- Run clang-format in cwd of the file.
             --}
             --end
-            --}
+            --},
             go = {
                 function()
                     return {
@@ -79,7 +89,7 @@ vim.api.nvim_exec(
     [[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.js,*.json,*.lua,*.go,*.html,*.rs FormatWrite
+  autocmd BufWritePost *.js,*.ts,*.json,*.lua,*.go,*.html,*.rs FormatWrite
 augroup END
 ]],
     true

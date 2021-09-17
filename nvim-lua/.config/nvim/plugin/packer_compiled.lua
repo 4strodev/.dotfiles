@@ -184,6 +184,10 @@ _G.packer_plugins = {
   ["vim-snippets"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/vim-snippets"
+  },
+  ["zephyr-nvim"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/zephyr-nvim"
   }
 }
 

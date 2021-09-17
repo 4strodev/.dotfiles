@@ -54,13 +54,14 @@ require("packer").startup(
         use "Shatur/neovim-ayu"
         use "navarasu/onedark.nvim"
         use "shaunsingh/nord.nvim"
+        use "glepnir/zephyr-nvim"
 
         -- git
         use {
-            "lewis6991/gitsigns.nvim",
-            requires = {
-                "nvim-lua/plenary.nvim"
-            }
+        "lewis6991/gitsigns.nvim",
+        requires = {
+        "nvim-lua/plenary.nvim"
+        }
         }
     end
 )
