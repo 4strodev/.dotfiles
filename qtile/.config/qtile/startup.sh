@@ -1,5 +1,5 @@
 #!/bin/sh
-picom -b &
+compton -b &
 nm-applet &
 pa-applet &
 #nitrogen --restore &
