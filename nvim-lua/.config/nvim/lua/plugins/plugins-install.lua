@@ -17,7 +17,9 @@ require("packer").startup(
             "hoob3rt/lualine.nvim",
             requires = {"kyazdani42/nvim-web-devicons", opt = true}
         }
-        -- utils
+        use {
+            "DougBeney/pickachu"
+        }
         use {"akinsho/nvim-bufferline.lua", requires = "kyazdani42/nvim-web-devicons"}
         use "LunarWatcher/auto-pairs"
         use {"preservim/nerdcommenter"}
@@ -58,10 +60,10 @@ require("packer").startup(
 
         -- git
         use {
-        "lewis6991/gitsigns.nvim",
-        requires = {
-        "nvim-lua/plenary.nvim"
-        }
+            "lewis6991/gitsigns.nvim",
+            requires = {
+                "nvim-lua/plenary.nvim"
+            }
         }
     end
 )

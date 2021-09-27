@@ -157,6 +157,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
+  pickachu = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/pickachu"
+  },
   playground = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/playground"
