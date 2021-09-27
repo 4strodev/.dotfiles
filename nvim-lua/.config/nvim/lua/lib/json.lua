@@ -17,6 +17,11 @@ JSON.loadTheme = function()
     local fileContent = readFile("/home/astro/.themes.json")
     local themeSettings = vim.fn.json_decode(fileContent)
 
+    if themeSettings == vim.NIL then
+        print("No theme found. Loading default theme")
+        return "themes.zephyr"
+    end
+
     local theme = string.format("themes.%s", themeSettings.editor)
     return theme
 end
