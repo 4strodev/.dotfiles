@@ -5,12 +5,12 @@ require("plug-settings.lspconfig").setup()
 require("plug-settings.gitsigns").setup()
 require("plug-settings.ultisnips").setup()
 require("plug-settings.telescope").setup()
-require("plug-settings.colorizer")
-require("plug-settings.lspsignature")
+require("plug-settings.colorizer").setup()
+require("plug-settings.lspsignature").setup()
 
 -- statusline and buffers
-require("plug-settings.lualine")
+require("plug-settings.lualine").setup()
 require("plug-settings.bufferline").setup()
 
-require("plug-settings.formatter")
-require("plug-settings.treesitter")
+require("plug-settings.formatter").setup()
+require("plug-settings.treesitter").setup()
