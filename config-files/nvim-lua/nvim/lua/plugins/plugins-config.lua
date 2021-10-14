@@ -4,7 +4,7 @@ require("plug-settings.lspinstall").setup()
 require("plug-settings.lspconfig").setup()
 require("plug-settings.gitsigns").setup()
 require("plug-settings.ultisnips").setup()
-require("plug-settings.telescope")
+require("plug-settings.telescope").setup()
 require("plug-settings.colorizer")
 require("plug-settings.lspsignature")
 
