@@ -1,5 +1,3 @@
--- require('plug-settings.lua.lsp.init')
-require("plug-settings.compe").setup()
 require("plug-settings.lspinstall").setup()
 require("plug-settings.lspconfig").setup()
 require("plug-settings.gitsigns").setup()
@@ -14,3 +12,4 @@ require("plug-settings.bufferline").setup()
 
 require("plug-settings.formatter").setup()
 require("plug-settings.treesitter").setup()
+require("plug-settings.cmp").setup()

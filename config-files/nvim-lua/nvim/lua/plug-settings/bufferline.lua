@@ -1,6 +1,6 @@
-local m = {}
+local M = {}
 
-m.setup = function()
+M.setup = function()
     require("bufferline").setup {
         options = {
             numbers = "none",
@@ -68,4 +68,4 @@ m.setup = function()
     }
 end
 
-return m
+return M

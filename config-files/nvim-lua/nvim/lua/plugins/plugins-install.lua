@@ -40,16 +40,21 @@ require("packer").startup(
         use {
             "ray-x/lsp_signature.nvim"
         }
-        use {"SirVer/ultisnips", requires = {"honza/vim-snippets"}}
         use {
             "nvim-treesitter/nvim-treesitter",
             run = ":TSUpdate"
         }
-        use "nvim-treesitter/playground"
+        --use "nvim-treesitter/playground"
+        --use "hrsh7th/nvim-compe"
+
+        use "hrsh7th/cmp-nvim-lsp"
+        use "hrsh7th/cmp-buffer"
+        use "hrsh7th/nvim-cmp"
+        use "quangnguyen30192/cmp-nvim-ultisnips"
+        use {"SirVer/ultisnips", requires = {"honza/vim-snippets"}}
+
         use "neovim/nvim-lspconfig"
-        use "hrsh7th/nvim-compe"
         use "kabouzeid/nvim-lspinstall"
-        --use "sheerun/vim-polyglot"
 
         -- themes
         use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}

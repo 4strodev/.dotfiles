@@ -1,5 +1,5 @@
-local m = {}
-m.setup = function()
+local M = {}
+M.setup = function()
     require("gitsigns").setup {
         signs = {
             add = {hl = "GitSignsAdd", text = "│", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn"},
@@ -63,4 +63,4 @@ m.setup = function()
     }
 end
 
-return m
+return M

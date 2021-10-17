@@ -1,4 +1,4 @@
-local m = {}
+local M = {}
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -10,7 +10,7 @@ local function set_option(...)
     vim.api.nvim_set_option(...)
 end
 
-m.setup = function()
+M.setup = function()
     --[[local nvim_lsp = ]] require("lspconfig")
 
     --Enable completion triggered by <c-x><c-o>
@@ -42,4 +42,4 @@ m.setup = function()
     vim.g["user_emmet_leader_key"] = "<C-Z>"
 end
 
-return m
+return M
