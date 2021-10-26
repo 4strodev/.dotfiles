@@ -77,6 +77,18 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/auto-pairs"
   },
+  ["cmp-buffer"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+  },
+  ["cmp-nvim-ultisnips"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips"
+  },
   ["emmet-vim"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/emmet-vim"
@@ -125,13 +137,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua"
   },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+  },
   ["nvim-colorizer.lua"] = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
-  },
-  ["nvim-compe"] = {
-    loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -160,10 +172,6 @@ _G.packer_plugins = {
   pickachu = {
     loaded = true,
     path = "/home/astro/.local/share/nvim/site/pack/packer/start/pickachu"
-  },
-  playground = {
-    loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/playground"
   },
   ["plenary.nvim"] = {
     loaded = true,
