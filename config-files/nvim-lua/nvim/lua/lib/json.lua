@@ -1,7 +1,9 @@
+-- creating a table that stores these functions
 JSON = {}
 
 local open = io.open
 
+-- Convert file content to a string
 local function readFile(path)
     local file = open(path, "rb")
     if not file then
@@ -12,18 +14,12 @@ local function readFile(path)
     return content
 end
 
--- Read json file to get the editor theme
-JSON.loadTheme = function()
-    local fileContent = readFile("/home/astro/.themes.json")
-    local themeSettings = vim.fn.json_decode(fileContent)
+-- Read json string and parse to an object
+JSON.Parser = function(filePath)
+    local fileContent = readFile(filePath) -- File content in a string value
+    local contentParsed = vim.fn.json_decode(fileContent)
 
-    if themeSettings == vim.NIL then
-        print("No theme found. Loading default theme")
-        return "themes.zephyr"
-    end
-
-    local theme = string.format("themes.%s", themeSettings.editor)
-    return theme
+    return contentParsed
 end
 
 return JSON
