@@ -1,6 +1,6 @@
-local M = {}
+local cmp_module = {}
 
-M.setup = function()
+cmp_module.setup = function()
     local cmp = require "cmp"
 
     cmp.setup(
@@ -44,4 +44,4 @@ M.setup = function()
     --}
 end
 
-return M
+return cmp_module

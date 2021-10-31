@@ -1,7 +1,7 @@
 local onedark = {}
 
-onedark.SetUp = function()
+onedark.SetUp = function(variant)
     vim.g["onedark_style"] = variant
-    require("onedark").setup()
+    vim.cmd("colorscheme onedark")
 end
 return onedark

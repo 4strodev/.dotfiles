@@ -1,7 +1,11 @@
 local nord = {}
 
+local variantLoaders = {
+    [""] = "colorscheme nord"
+}
+
 nord.SetUp = function(_)
-    require("nord").set()
+    vim.cmd(variantLoaders[""])
 end
 
 return nord

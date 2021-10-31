@@ -2,7 +2,8 @@ local ayu = {}
 local variantLoaders = {
     ["light"] = "colorscheme ayu-light",
     ["mirage"] = "colorscheme ayu-mirage",
-    ["dark"] = "colorscheme ayu-dark"
+    ["dark"] = "colorscheme ayu-dark",
+    [""] = "colorscheme ayu-dark"
 }
 
 ayu.SetUp = function(variant)
