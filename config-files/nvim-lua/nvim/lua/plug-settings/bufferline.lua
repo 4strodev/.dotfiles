@@ -1,6 +1,6 @@
-local M = {}
+local bufferline = {}
 
-M.setup = function()
+bufferline.setup = function()
     require("bufferline").setup {
         options = {
             numbers = "none",
@@ -33,7 +33,7 @@ M.setup = function()
             max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
             tab_size = 18,
             diagnostics = "nvim_lsp",
-            diagnostics_indicator = function(count, level, diagnostics_dict, context)
+            diagnostics_indicator = function(count, _, _, _) -- (count, level, diagnostics_dict, context)
                 return "(" .. count .. ")"
             end,
             -- NOTE: this will be called a lot so don't do any heavy processing here
@@ -68,4 +68,4 @@ M.setup = function()
     }
 end
 
-return M
+return bufferline
