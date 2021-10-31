@@ -8,7 +8,7 @@ local variantLoaders = {
 
 ayu.SetUp = function(variant)
     vim.g.ayu_mirage = true
-    vim.cmd(variantLoaders[variant])
+    vim.cmd(variantLoaders[variant or "mirage"])
 end
 
 return ayu
