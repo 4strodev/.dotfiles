@@ -1,1 +1,1 @@
-[neovim](./config-files/nvim)
+[neovim](./config-files/nvim-lua/README.md)
