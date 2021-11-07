@@ -18,8 +18,7 @@ end
 
 -- custom functions
 function themeLoader:setDefaultTheme(initialMessage)
-    print(initialMessage)
-    print("Setting default theme")
+    error(initialMessage)
     vim.cmd("colorscheme default")
 end
 
