@@ -1,5 +1,5 @@
 import:
-  - ~/.config/alacritty/settings/colorscheme.yml
+  - ~/.config/alacritty/themes/dracula.yml
   - ~/.config/alacritty/settings/window.yml
   - ~/.config/alacritty/settings/cursor.yml
   - ~/.config/alacritty/settings/fonts.yml
