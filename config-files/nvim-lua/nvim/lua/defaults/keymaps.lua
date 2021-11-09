@@ -38,4 +38,7 @@ return (function()
 
     -- no highlight matched patterns
     keymap("n", "//", "<cmd>noh<cr>", nores)
+
+    -- restart neovim
+    keymap("n", "<F5>", "<cmd>luafile " .. ConfigPath .. "/init.lua<cr>", nores)
 end)()
