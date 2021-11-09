@@ -63,17 +63,6 @@ M.setup = function()
                         }
                     end
                 },
-                --cs = {
-                ---- clang-format
-                --function()
-                --return {
-                --exe = "clang-format",
-                --args = {"--style=WebKit"},
-                --stdin = true,
-                --cwd = vim.fn.expand("%:p:h") -- Run clang-format in cwd of the file.
-                --}
-                --end
-                --},
                 go = {
                     function()
                         return {
