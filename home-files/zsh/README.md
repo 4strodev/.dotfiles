@@ -16,4 +16,4 @@ To see more aviable plugins look at [this](https://github.com/ohmyzsh/ohmyzsh/wi
 ## Managing dependencies
 To install the dependencies automatically execute the dependencies.sh script.
 
-```./dependencies.sh```
+    ./dependencies.sh
