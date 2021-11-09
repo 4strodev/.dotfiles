@@ -1,1 +1,5 @@
-If you want icons in the group box go to [Ner Fonts][https://nerdfonts.com]
+# Qtile config
+
+If you want icons in the group box go to [Ner Fonts](https://nerdfonts.com)
+
+## ***TODO ALL***
