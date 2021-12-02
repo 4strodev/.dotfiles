@@ -1,13 +1,10 @@
-import:
-  - ~/.config/alacritty/themes/dracula.yml
-  - ~/.config/alacritty/settings/window.yml
-  - ~/.config/alacritty/settings/cursor.yml
-  - ~/.config/alacritty/settings/fonts.yml
-
+background_opacity: 0.95
 env:
   TERM: xterm-256color
-
-background_opacity: 0.95
-
-save_to_clipboard: true
+import:
+- /home/astro/.config/alacritty/themes/default.yaml
+- ~/.config/alacritty/settings/window.yml
+- ~/.config/alacritty/settings/cursor.yml
+- ~/.config/alacritty/settings/fonts.yml
 live_config_reload: true
+save_to_clipboard: true
