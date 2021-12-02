@@ -71,135 +71,168 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   LuaSnip = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/LuaSnip"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
   },
   ["auto-pairs"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/auto-pairs"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/auto-pairs",
+    url = "https://github.com/LunarWatcher/auto-pairs"
   },
   ["cmp-buffer"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/cmp-buffer"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/cmp-buffer",
+    url = "https://github.com/hrsh7th/cmp-buffer"
   },
   ["cmp-nvim-lsp"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
   },
   ["cmp-nvim-ultisnips"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/cmp-nvim-ultisnips",
+    url = "https://github.com/quangnguyen30192/cmp-nvim-ultisnips"
   },
   ["emmet-vim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/emmet-vim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/emmet-vim",
+    url = "https://github.com/mattn/emmet-vim"
   },
   ["formatter.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/formatter.nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/formatter.nvim",
+    url = "https://github.com/mhartington/formatter.nvim"
   },
   ["gitsigns.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["gruvbox.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/gruvbox.nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
+    url = "https://github.com/npxbr/gruvbox.nvim"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lsp_signature.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/lsp_signature.nvim",
+    url = "https://github.com/ray-x/lsp_signature.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/lualine.nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/hoob3rt/lualine.nvim"
   },
   ["lush.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/lush.nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/lush.nvim",
+    url = "https://github.com/rktjmp/lush.nvim"
   },
   ["neovim-ayu"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/neovim-ayu"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/neovim-ayu",
+    url = "https://github.com/Shatur/neovim-ayu"
   },
   nerdcommenter = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nerdcommenter"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nerdcommenter",
+    url = "https://github.com/preservim/nerdcommenter"
   },
   ["nord.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nord.nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nord.nvim",
+    url = "https://github.com/shaunsingh/nord.nvim"
   },
   ["nvim-bufferline.lua"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-bufferline.lua",
+    url = "https://github.com/akinsho/nvim-bufferline.lua"
   },
   ["nvim-cmp"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-cmp"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
+    url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-lspinstall"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-lspinstall"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-lspinstall",
+    url = "https://github.com/kabouzeid/nvim-lspinstall"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["onedark.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/onedark.nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/packer.nvim",
+    url = "https://github.com/wbthomason/packer.nvim"
   },
   pickachu = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/pickachu"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/pickachu",
+    url = "https://github.com/DougBeney/pickachu"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
   },
   ["popup.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/popup.nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/popup.nvim",
+    url = "https://github.com/nvim-lua/popup.nvim"
   },
   ["telescope-fzy-native.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/telescope-fzy-native.nvim",
+    url = "https://github.com/nvim-telescope/telescope-fzy-native.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ultisnips = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/ultisnips"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/ultisnips",
+    url = "https://github.com/SirVer/ultisnips"
   },
   ["vim-snippets"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/vim-snippets"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    url = "https://github.com/honza/vim-snippets"
   },
   ["zephyr-nvim"] = {
     loaded = true,
-    path = "/home/astro/.local/share/nvim/site/pack/packer/start/zephyr-nvim"
+    path = "/home/astro/.local/share/nvim/site/pack/packer/start/zephyr-nvim",
+    url = "https://github.com/glepnir/zephyr-nvim"
   }
 }
 
