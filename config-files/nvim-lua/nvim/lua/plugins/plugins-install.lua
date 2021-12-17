@@ -54,7 +54,7 @@ require("packer").startup(
         use {"SirVer/ultisnips", requires = {"honza/vim-snippets"}}
 
         use "neovim/nvim-lspconfig"
-        use "kabouzeid/nvim-lspinstall"
+        use 'williamboman/nvim-lsp-installer'
 
         -- themes
         use {"npxbr/gruvbox.nvim", requires = {"rktjmp/lush.nvim"}}
