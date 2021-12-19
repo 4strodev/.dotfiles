@@ -5,9 +5,8 @@ ConfigPath = vim.fn.stdpath("config")
 vim.o.termguicolors = true
 vim.o.background = "dark"
 
--- refactor `defaults` folder to `config`
-require("defaults.settings")
-require("defaults.keymaps")
+require("config.settings")
+require("config.keymaps")
 require("plugins.plugins-install")
 require("plugins.plugins-config")
 
