@@ -36,9 +36,6 @@ return (function()
     -- open explorer
     keymap("n", "<leader>ef", "<cmd>Lexplore<cr>", nores)
 
-    -- no highlight matched patterns
-    keymap("n", "//", "<cmd>noh<cr>", nores)
-
     -- restart neovim
     keymap("n", "<F5>", "<cmd>luafile " .. ConfigPath .. "/init.lua<cr>", nores)
 end)()
