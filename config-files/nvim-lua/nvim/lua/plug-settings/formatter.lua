@@ -9,7 +9,13 @@ M.setup = function()
                     function()
                         return {
                             exe = "prettier",
-                            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), "--single-quote"},
+                            args = {
+                                "--stdin-filepath",
+                                vim.api.nvim_buf_get_name(0),
+                                "--single-quote",
+                                "--tab-width",
+                                4
+                            },
                             stdin = true
                         }
                     end
@@ -19,16 +25,45 @@ M.setup = function()
                     function()
                         return {
                             exe = "prettier",
-                            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), "--single-quote"},
+                            args = {
+                                "--stdin-filepath",
+                                vim.api.nvim_buf_get_name(0),
+                                "--single-quote",
+                                "--tab-width",
+                                4
+                            },
                             stdin = true
                         }
                     end
                 },
                 html = {
+                    -- prettier
                     function()
                         return {
                             exe = "prettier",
-                            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), "--single-quote"},
+                            args = {
+                                "--stdin-filepath",
+                                vim.api.nvim_buf_get_name(0),
+                                "--single-quote",
+                                "--tab-width",
+                                4
+                            },
+                            stdin = true
+                        }
+                    end
+                },
+                vue = {
+                    -- prettier
+                    function()
+                        return {
+                            exe = "prettier",
+                            args = {
+                                "--stdin-filepath",
+                                vim.api.nvim_buf_get_name(0),
+                                "--single-quote",
+                                "--tab-width",
+                                4
+                            },
                             stdin = true
                         }
                     end
@@ -38,7 +73,13 @@ M.setup = function()
                     function()
                         return {
                             exe = "prettier",
-                            args = {"--stdin-filepath", vim.api.nvim_buf_get_name(0), "--single-quote"},
+                            args = {
+                                "--stdin-filepath",
+                                vim.api.nvim_buf_get_name(0),
+                                "--single-quote",
+                                "--tab-width",
+                                4
+                            },
                             stdin = true
                         }
                     end
@@ -76,15 +117,15 @@ M.setup = function()
     )
 
     --format on save
-    vim.api.nvim_exec(
+    --[[    vim.api.nvim_exec(
         [[
 augroup FormatAutogroup
   autocmd!
   autocmd BufWritePost *.js,*.ts,*.json,*.lua,*.go,*.html,*.rs FormatWrite
 augroup END
-]],
+,
         true
-    )
+    )]]
 end
 
 return M
