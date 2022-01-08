@@ -32,6 +32,9 @@ require("packer").startup(
                 "nvim-lua/plenary.nvim"
             }
         }
+        -- telescope-file-browser
+        use { "nvim-telescope/telescope-file-browser.nvim" }
+
         use "mhartington/formatter.nvim"
         use "mattn/emmet-vim"
         use "lukas-reineke/indent-blankline.nvim"

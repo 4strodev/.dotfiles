@@ -1,7 +1,5 @@
 local M = {}
 
-local nores = {noremap = true, silent = true}
-
 M.setup = function()
     require "nvim-treesitter.configs".setup {
         highlight = {
@@ -31,9 +29,6 @@ M.setup = function()
             }
         }
     }
-
-    -- keymaps
-    vim.api.nvim_set_keymap("n", "<BS>", "<cmd>TSPlaygroundToggle<cr>", nores)
 end
 
 return M
