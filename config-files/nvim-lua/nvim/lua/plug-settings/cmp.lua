@@ -22,9 +22,10 @@ cmp_module.setup = function()
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<C-e>"] = cmp.mapping.close(),
-                ["<C-l>"] = cmp.mapping.confirm({select = true})
+                ["<CR>"] = cmp.mapping.confirm({select = true})
             },
             sources = {
+                {name = "ultisnips"},
                 {name = "nvim_lsp"},
                 -- For vsnip user.
                 --{ name = 'vsnip' },
@@ -32,7 +33,6 @@ cmp_module.setup = function()
                 -- For luasnip user.
                 --{name = "luasnip"},
                 -- For ultisnips user.
-                {name = "ultisnips"},
                 {name = "buffer"}
             }
         }
