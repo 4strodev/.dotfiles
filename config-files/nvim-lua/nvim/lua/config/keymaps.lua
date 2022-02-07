@@ -38,4 +38,6 @@ return (function()
 
     -- restart neovim
     keymap("n", "<F5>", "<cmd>luafile " .. ConfigPath .. "/init.lua<cr>", nores)
+
+    keymap("n", "<leader>i", "<cmd>Format<cr>", nores)
 end)()
