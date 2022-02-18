@@ -1,7 +1,7 @@
 env:
   TERM: xterm-256color
 import:
-- /home/astro/.config/alacritty/themes/default.yaml
+- /home/astro/.config/alacritty/themes/onedark.yaml
 - ~/.config/alacritty/settings/window.yml
 - ~/.config/alacritty/settings/cursor.yml
 - ~/.config/alacritty/settings/fonts.yml
