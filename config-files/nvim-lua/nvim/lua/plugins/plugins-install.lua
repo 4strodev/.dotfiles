@@ -35,7 +35,6 @@ require("packer").startup(
         -- telescope-file-browser
         use { "nvim-telescope/telescope-file-browser.nvim" }
 
-        use "mhartington/formatter.nvim"
         use "mattn/emmet-vim"
         use "lukas-reineke/indent-blankline.nvim"
         -- language support

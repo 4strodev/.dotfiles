@@ -36,7 +36,7 @@ M.setup = function()
     set_keymap("n", "[d", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", opts)
     set_keymap("n", "]d", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", opts)
     set_keymap("n", "<leader>qq", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", opts)
-    set_keymap("n", "<leader>ff", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+    set_keymap("n", "<leader>fd", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
     -- emmet
     vim.g["user_emmet_leader_key"] = "<C-Z>"

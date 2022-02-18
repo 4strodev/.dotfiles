@@ -10,6 +10,5 @@ require("plug-settings.lspsignature").setup()
 require("plug-settings.lualine").setup()
 require("plug-settings.bufferline").setup()
 
-require("plug-settings.formatter").setup()
 require("plug-settings.treesitter").setup()
 require("plug-settings.cmp").setup()
