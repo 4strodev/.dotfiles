@@ -78,7 +78,6 @@ end
 telescope_module.load_extensions = function()
     -- seting up telescope extensions
     require("telescope").load_extension("fzy_native")
-    require("telescope").load_extension("file_browser")
 end
 
 telescope_module.load_keymaps = function()
@@ -94,7 +93,6 @@ telescope_module.load_keymaps = function()
 
     -- cutsom functions
     keymap("n", "<leader>ed", '<cmd>lua require("plug-settings.telescope").search_dotfiles()<cr>', nores)
-    keymap("n", "<leader>ef", '<cmd>lua require("telescope").extensions.file_browser.file_browser()<cr>', nores)
 end
 
 return telescope_module

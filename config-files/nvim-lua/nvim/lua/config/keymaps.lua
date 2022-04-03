@@ -34,10 +34,8 @@ return (function()
     keymap("n", "<leader>sp", "<cmd>split<cr>", nores)
 
     -- open explorer
-    --keymap("n", "<leader>ef", "<cmd>Lexplore<cr>", nores)
+    keymap("n", "<leader>ef", "<cmd>NvimTreeToggle<cr>", nores)
 
     -- restart neovim
     keymap("n", "<F5>", "<cmd>luafile " .. ConfigPath .. "/init.lua<cr>", nores)
-
-    keymap("n", "<leader>i", "<cmd>Format<cr>", nores)
 end)()

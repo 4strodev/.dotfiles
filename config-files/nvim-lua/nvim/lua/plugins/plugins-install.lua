@@ -10,6 +10,7 @@ end
 
 require("packer").startup(
     function()
+        use { 'gpanders/editorconfig.nvim' }
         use "wbthomason/packer.nvim"
 
         -- utilities
@@ -32,8 +33,13 @@ require("packer").startup(
                 "nvim-lua/plenary.nvim"
             }
         }
-        -- telescope-file-browser
-        use { "nvim-telescope/telescope-file-browser.nvim" }
+        use {
+            'kyazdani42/nvim-tree.lua',
+            requires = {
+              'kyazdani42/nvim-web-devicons', -- optional, for file icon
+            },
+            config = function() require'nvim-tree'.setup {} end
+        }
 
         use "mattn/emmet-vim"
         use "lukas-reineke/indent-blankline.nvim"
