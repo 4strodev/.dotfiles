@@ -121,4 +121,6 @@ export GOPATH=$GOPATH:/home/astro/Workspace/go
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-export CHROME_EXECUTABLE=/usr/bin/chromium
+export CHROME_EXECUTABLE=/usr/bin/brave
+
+alias get_idf='. $HOME/esp/esp-idf/export.sh'
