@@ -116,8 +116,8 @@ export PATH=$PATH:$GOPATH/bin
 export GOPATH=$GOPATH:/home/astro/Workspace/go
 
 #fzf for arch
-#source /usr/share/fzf/key-bindings.zsh
-#source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
