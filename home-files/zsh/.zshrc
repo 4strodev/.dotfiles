@@ -105,22 +105,24 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-
-#setting go paths
+# setting go paths
 export GOPATH=/home/astro/go
 export PATH=$PATH:$GOPATH/bin
-export GOPATH=$GOPATH:/home/astro/Workspace/go
+# export GOPATH=$GOPATH:/home/astro/Workspace/go
 
-#fzf for arch
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+# fzf for arch
+# source /usr/share/fzf/key-bindings.zsh
+# source /usr/share/fzf/completion.zsh
+
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
-export CHROME_EXECUTABLE=/usr/bin/brave
-
+# for idf esp32
 alias get_idf='. $HOME/esp/esp-idf/export.sh'
+
+export PATH=$PATH:$HOME/.local/bin
+
+export CONFIG_PATH=/home/astro/Workspace/silicon_greenhouse/config.json
+
+# Composer
+export PATH=$PATH:$HOME/.config/composer/vendor/bin
