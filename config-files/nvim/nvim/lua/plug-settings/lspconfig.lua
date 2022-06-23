@@ -6,6 +6,7 @@ vim.keymap.set('n', '<space>ee', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>qq', vim.diagnostic.setloclist, opts)
+vim.g["user_emmet_leader_key"] = "<C-Z>"
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -31,12 +32,23 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<space>ac', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
     vim.keymap.set('n', '<space>fd', vim.lsp.buf.formatting, bufopts)
-    vim.g["user_emmet_leader_key"] = "<C-Z>"
+
 end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer', 'tsserver', 'sumneko_lua', 'gopls', 'intelephense' }
+local servers = {
+    'pyright',
+    'rust_analyzer',
+    'tsserver',
+    'sumneko_lua',
+    'gopls',
+    'intelephense',
+    'tailwindcss',
+    'taplo',
+    'sourcekit',
+    'marksman'
+}
 
 M.setup = function()
     require("nvim-lsp-installer").setup {

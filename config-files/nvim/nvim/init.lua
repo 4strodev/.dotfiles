@@ -1,5 +1,7 @@
-local themeLoader = require("lib.themeLoader"):new()
 ConfigPath = vim.fn.stdpath("config")
+
+-- Python provider
+vim.g["python3_host_prog"] = '/home/astro/.neovim_venv/bin/python'
 
 -- Setting colors
 vim.o.termguicolors = true
@@ -10,8 +12,4 @@ require("config.keymaps")
 require("plugins.plugins-install")
 require("plugins.plugins-config")
 
-themeLoader.filePath = os.getenv("HOME") .. "/.themes.json"
-
-themeLoader:loadFile()
-
-themeLoader:secureSetFileThemes()
+vim.cmd("colorscheme " .. (os.getenv("EDITOR_THEME") or "zephyr"))

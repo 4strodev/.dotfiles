@@ -35,7 +35,6 @@ require("packer").startup(
             requires = {
               'kyazdani42/nvim-web-devicons', -- optional, for file icon
             },
-            config = function() require'nvim-tree'.setup {} end
         }
 
         use "mattn/emmet-vim"
@@ -49,8 +48,6 @@ require("packer").startup(
             "nvim-treesitter/nvim-treesitter",
             run = ":TSUpdate"
         }
-        --use "nvim-treesitter/playground"
-        --use "hrsh7th/nvim-compe"
 
         use "hrsh7th/cmp-nvim-lsp"
         use "hrsh7th/cmp-buffer"

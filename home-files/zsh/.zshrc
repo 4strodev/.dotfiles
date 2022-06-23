@@ -108,11 +108,6 @@ source $ZSH/oh-my-zsh.sh
 # setting go paths
 export GOPATH=/home/astro/go
 export PATH=$PATH:$GOPATH/bin
-# export GOPATH=$GOPATH:/home/astro/Workspace/go
-
-# fzf for arch
-# source /usr/share/fzf/key-bindings.zsh
-# source /usr/share/fzf/completion.zsh
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
@@ -122,7 +117,12 @@ alias get_idf='. $HOME/esp/esp-idf/export.sh'
 
 export PATH=$PATH:$HOME/.local/bin
 
-export CONFIG_PATH=/home/astro/Workspace/silicon_greenhouse/config.json
-
 # Composer
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
+
+# General configurations
+export EDITOR_THEME="zephyr"
+
+export EDITOR=nvim
+export VISUAL=code
+export PATH=~/bin:$PATH
