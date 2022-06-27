@@ -1,3 +1,4 @@
+local ConfigPath = vim.fn.stdpath("config")
 local keymap = vim.api.nvim_set_keymap
 local nores = {noremap = true, silent = true}
 local nore = {noremap = true, silent = false}

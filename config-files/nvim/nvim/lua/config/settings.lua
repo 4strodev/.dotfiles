@@ -1,3 +1,5 @@
+local ConfigPath = vim.fn.stdpath("config")
+
 -- Setting up the general settings
 vim.o.encoding = "utf8"
 vim.o.mouse = "a"

@@ -47,7 +47,8 @@ local servers = {
     'tailwindcss',
     'taplo',
     'sourcekit',
-    'marksman'
+    'marksman',
+    'dartls'
 }
 
 M.setup = function()

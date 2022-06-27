@@ -1,5 +1,3 @@
-ConfigPath = vim.fn.stdpath("config")
-
 -- Python provider
 vim.g["python3_host_prog"] = '/home/astro/.neovim_venv/bin/python'
 
