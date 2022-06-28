@@ -6,6 +6,7 @@ require("plug-settings.telescope").setup()
 require("plug-settings.colorizer").setup()
 require("plug-settings.lspsignature").setup()
 require("plug-settings.nvimtree").setup()
+require("plug-settings.color_picker").setup()
 
 -- statusline and buffers
 require("plug-settings.lualine").setup()
