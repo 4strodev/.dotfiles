@@ -35,34 +35,62 @@ local on_attach = function(client, bufnr)
 
 end
 
+local default_setup_args = {
+    on_attach = on_attach,
+    flags = {
+        -- This will be the default in neovim 0.7+
+        debounce_text_changes = 150,
+    },
+}
+
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
 local servers = {
-    'pyright',
-    'rust_analyzer',
-    'tsserver',
-    'sumneko_lua',
-    'gopls',
-    'intelephense',
-    'tailwindcss',
-    'taplo',
-    'sourcekit',
-    'marksman',
-    'dartls'
+    ['pyright'] = default_setup_args,
+    ['rust_analyzer'] = default_setup_args,
+    ['tsserver'] = default_setup_args,
+    ['sumneko_lua'] = {
+        on_attach = on_attach,
+        flags = {
+            -- This will be the default in neovim 0.7+
+            debounce_text_changes = 150,
+        },
+        settings = {
+            Lua = {
+                diagnostics = {
+                    globals = { 'vim' }
+                },
+                runtime = {
+                    version = "LuaJIT",
+                    path = vim.split(package.path, ";")
+                },
+                workspace = {
+                    library = {
+                        [vim.fn.expand("$VIMRUNTIME/lua")] = true,
+                        [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
+                    }
+                }
+            }
+        },
+    },
+    ['gopls'] = default_setup_args,
+    ['intelephense'] = default_setup_args,
+    ['tailwindcss'] = default_setup_args,
+    ['taplo'] = default_setup_args,
+    ['marksman'] = default_setup_args,
+    ['dartls'] = default_setup_args,
+    ['angularls'] = default_setup_args,
+    ['svelte'] = default_setup_args,
+    ['sqlls'] = default_setup_args
 }
 
 M.setup = function()
     require("nvim-lsp-installer").setup {
         automatic_installation = true
     }
-    for _, lsp in pairs(servers) do
-        require('lspconfig')[lsp].setup {
-            on_attach = on_attach,
-            flags = {
-                -- This will be the default in neovim 0.7+
-                debounce_text_changes = 150,
-            }
-        }
+
+    for lsp, setup_args in pairs(servers) do
+        require('lspconfig')[lsp].setup(setup_args)
     end
 end
 return M

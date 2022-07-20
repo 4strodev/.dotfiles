@@ -2,6 +2,7 @@
 local fn = vim.fn
 
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
+local packer_bootstrap = false
 
 if fn.empty(fn.glob(install_path)) > 0 then
     packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
@@ -12,16 +13,22 @@ end
 
 require("packer").startup(
     function(use)
-        use { 'gpanders/editorconfig.nvim' }
+        -- Packer plugin manager
         use "wbthomason/packer.nvim"
 
-        -- utilities
+        -- eidtorconfig support
+        use { 'gpanders/editorconfig.nvim' }
+
+        -- lualine and bufferline
         use {
             "hoob3rt/lualine.nvim",
             requires = { "kyazdani42/nvim-web-devicons", opt = true }
         }
         use { "akinsho/nvim-bufferline.lua", requires = "kyazdani42/nvim-web-devicons" }
+
+        -- autopairs
         use "LunarWatcher/auto-pairs"
+        -- commenter
         use { "preservim/nerdcommenter" }
         use { "ziontee113/color-picker.nvim" }
         use "norcalli/nvim-colorizer.lua"
@@ -43,7 +50,9 @@ require("packer").startup(
         use "mattn/emmet-vim"
         use "lukas-reineke/indent-blankline.nvim"
         -- language support
-        --use {"L3MON4D3/LuaSnip"}
+        use { "L3MON4D3/LuaSnip" }
+        use { "rafamadriz/friendly-snippets" }
+        use { 'saadparwaiz1/cmp_luasnip' }
         use {
             "ray-x/lsp_signature.nvim"
         }
@@ -55,15 +64,13 @@ require("packer").startup(
         use "hrsh7th/cmp-nvim-lsp"
         use "hrsh7th/cmp-buffer"
         use "hrsh7th/nvim-cmp"
-        use "quangnguyen30192/cmp-nvim-ultisnips"
-        use { "SirVer/ultisnips", requires = { "honza/vim-snippets" } }
 
         use {
             "neovim/nvim-lspconfig",
-            config = function()
-                require("nvim-lsp-installer").setup {}
-                local lspconfig = require("lspconfig")
-            end
+            --config = function()
+            --require("nvim-lsp-installer").setup {}
+            --local lspconfig = require("lspconfig")
+            --end
         }
         use 'williamboman/nvim-lsp-installer'
 
@@ -81,6 +88,13 @@ require("packer").startup(
                 "nvim-lua/plenary.nvim"
             }
         }
+
+        -- debugging
+        use 'mfussenegger/nvim-dap'
+        use { 'leoluz/nvim-dap-go' }
+        use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+        use 'theHamsta/nvim-dap-virtual-text'
+
         if packer_bootstrap then
             require('packer').sync()
         end

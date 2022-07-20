@@ -20,7 +20,7 @@ return (function()
 
     -- save and close file
     keymap("n", "<leader>wf", "<cmd>w<cr>", nore)
-    keymap("n", "<leader>qf", "<cmd>bd<cr>", nore)
+    keymap("n", "<leader>qf", "<cmd>bd!<cr>", nore)
 
     -- open terminal
     keymap("v", "<leader>t", "<cmd>split<CR><cmd>ter<CR><cmd>resize 15<CR>", nore)

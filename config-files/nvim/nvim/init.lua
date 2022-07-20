@@ -11,3 +11,6 @@ require("plugins.plugins-install")
 require("plugins.plugins-config")
 
 vim.cmd("colorscheme " .. (os.getenv("EDITOR_THEME") or "zephyr"))
+vim.api.nvim_create_user_command("RestartNeovim", function()
+   vim.cmd("luafile ~/.config/nvim/init.lua")
+end, {})
