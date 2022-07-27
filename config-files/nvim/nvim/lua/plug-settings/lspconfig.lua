@@ -76,7 +76,6 @@ local servers = {
     ['gopls'] = default_setup_args,
     ['intelephense'] = default_setup_args,
     ['tailwindcss'] = default_setup_args,
-    ['taplo'] = default_setup_args,
     ['marksman'] = default_setup_args,
     ['dartls'] = default_setup_args,
     ['angularls'] = default_setup_args,
@@ -86,7 +85,7 @@ local servers = {
 
 M.setup = function()
     require("nvim-lsp-installer").setup {
-        automatic_installation = true
+        automatic_installation = false
     }
 
     for lsp, setup_args in pairs(servers) do
