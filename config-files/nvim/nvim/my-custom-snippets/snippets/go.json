@@ -1,0 +1,10 @@
+{
+    "fiber handler": {
+        "prefix": "ctx",
+        "body": "func ${1:name}(c *fiber.Ctx) error {\n\t${2:content}\n}"
+    },
+    "test function": {
+        "prefix": "ftest",
+        "body": "func Test${1:name}(t *testing.T) {\n\t${2:content}\n}"
+    }
+}
