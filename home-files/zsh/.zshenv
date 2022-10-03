@@ -15,7 +15,7 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
 
 # General configurations
-export EDITOR_THEME="gruvbox"
+export EDITOR_THEME="ayu-mirage"
 
 # editor paths
 export EDITOR=nvim
