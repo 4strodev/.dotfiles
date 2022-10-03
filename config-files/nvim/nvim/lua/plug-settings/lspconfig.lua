@@ -55,6 +55,7 @@ local servers = {
             -- This will be the default in neovim 0.7+
             debounce_text_changes = 150,
         },
+        filetype = { "lua" },
         settings = {
             Lua = {
                 diagnostics = {
@@ -76,6 +77,7 @@ local servers = {
     ['gopls'] = default_setup_args,
     ['intelephense'] = default_setup_args,
     ['tailwindcss'] = default_setup_args,
+    ['cssls'] = default_setup_args,
     ['marksman'] = default_setup_args,
     ['dartls'] = default_setup_args,
     ['angularls'] = default_setup_args,
