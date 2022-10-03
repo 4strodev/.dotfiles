@@ -129,3 +129,7 @@ unset key
 # }}} End configuration added by Zim install
 
 autoload -U compinit; compinit
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
