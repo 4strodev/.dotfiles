@@ -1,5 +1,5 @@
-local M = {}
-M.setup = function()
+local gitsigns_module = {}
+gitsigns_module.setup = function()
     require("gitsigns").setup {
         signs = {
             add = {hl = "GitSignsAdd", text = "│", numhl = "GitSignsAddNr", linehl = "GitSignsAddLn"},
@@ -63,4 +63,4 @@ M.setup = function()
     }
 end
 
-return M
+return gitsigns_module

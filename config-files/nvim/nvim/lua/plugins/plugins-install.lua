@@ -7,8 +7,6 @@ local packer_bootstrap = false
 if fn.empty(fn.glob(install_path)) > 0 then
     packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
         install_path })
-    --execute("!git clone http://github.com/wbthomason/packer.nvim " .. install_path)
-    --execute "packadd packer.nvim"
 end
 
 require("packer").startup(
@@ -28,10 +26,17 @@ require("packer").startup(
 
         -- autopairs
         use "LunarWatcher/auto-pairs"
+
         -- commenter
         use { "preservim/nerdcommenter" }
+
+        -- color picker
         use { "ziontee113/color-picker.nvim" }
+
+        -- hex colorizer
         use "norcalli/nvim-colorizer.lua"
+
+        -- telescope 🔭
         use {
             "nvim-telescope/telescope.nvim",
             requires = {
@@ -40,38 +45,37 @@ require("packer").startup(
                 "nvim-lua/plenary.nvim"
             }
         }
+
+        -- file icons
+        use { 'kyazdani42/nvim-web-devicons' }
+
+        -- file explorer
         use {
             'kyazdani42/nvim-tree.lua',
-            requires = {
-                'kyazdani42/nvim-web-devicons', -- optional, for file icon
-            },
         }
 
+        -- emmet
         use "mattn/emmet-vim"
+
+        -- indent line
         use "lukas-reineke/indent-blankline.nvim"
-        -- language support
+
+        -- language snippets
         use { "L3MON4D3/LuaSnip" }
         use { "rafamadriz/friendly-snippets" }
         use { 'saadparwaiz1/cmp_luasnip' }
-        use {
-            "ray-x/lsp_signature.nvim"
-        }
-        use {
-            "nvim-treesitter/nvim-treesitter",
-            run = ":TSUpdate"
-        }
 
+        -- lsp signature
+        use { "ray-x/lsp_signature.nvim" }
+
+        -- treesiter
+        use { "nvim-treesitter/nvim-treesitter" }
+
+        -- lsp and completion
         use "hrsh7th/cmp-nvim-lsp"
         use "hrsh7th/cmp-buffer"
         use "hrsh7th/nvim-cmp"
-
-        use {
-            "neovim/nvim-lspconfig",
-            --config = function()
-            --require("nvim-lsp-installer").setup {}
-            --local lspconfig = require("lspconfig")
-            --end
-        }
+        use { "neovim/nvim-lspconfig" }
         use 'williamboman/nvim-lsp-installer'
 
         -- themes
@@ -84,9 +88,7 @@ require("packer").startup(
         -- git
         use {
             "lewis6991/gitsigns.nvim",
-            requires = {
-                "nvim-lua/plenary.nvim"
-            }
+            requires = { "nvim-lua/plenary.nvim" }
         }
 
         -- debugging
@@ -99,3 +101,4 @@ require("packer").startup(
             require('packer').sync()
         end
     end)
+
