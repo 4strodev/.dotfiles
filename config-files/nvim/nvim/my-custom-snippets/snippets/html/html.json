@@ -1,0 +1,11 @@
+{
+    "class attribute": {
+        "prefix": "cl",
+        "body": "class=\"${1:classes}\""
+    },
+    "index attribute": {
+        "prefix": "id",
+        "body": "id=\"${1:id}\""
+    }
+}
+
