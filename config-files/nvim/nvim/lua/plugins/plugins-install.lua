@@ -18,11 +18,8 @@ require("packer").startup(
         use { 'gpanders/editorconfig.nvim' }
 
         -- lualine and bufferline
-        use {
-            "hoob3rt/lualine.nvim",
-            requires = { "kyazdani42/nvim-web-devicons", opt = true }
-        }
-        use { "akinsho/nvim-bufferline.lua", requires = "kyazdani42/nvim-web-devicons" }
+        use { "hoob3rt/lualine.nvim" }
+        use { "akinsho/nvim-bufferline.lua" }
 
         -- autopairs
         use "LunarWatcher/auto-pairs"
@@ -101,4 +98,3 @@ require("packer").startup(
             require('packer').sync()
         end
     end)
-
