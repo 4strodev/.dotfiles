@@ -1,7 +1,11 @@
 {
     "fiber handler": {
-        "prefix": "ctx",
+        "prefix": "fiberctx",
         "body": "func ${1:name}(c *fiber.Ctx) error {\n\t${2:content}\n}"
+    },
+    "echo handler": {
+        "prefix": "echoctx",
+        "body": "func ${1:}(c echo.Context) error {\n\t${2:content}\n}"
     },
     "test function": {
         "prefix": "ftest",

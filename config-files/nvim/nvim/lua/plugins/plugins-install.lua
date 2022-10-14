@@ -81,6 +81,7 @@ require("packer").startup(
         use "navarasu/onedark.nvim"
         use "shaunsingh/nord.nvim"
         use "glepnir/zephyr-nvim"
+        use "EdenEast/nightfox.nvim"
 
         -- git
         use {
