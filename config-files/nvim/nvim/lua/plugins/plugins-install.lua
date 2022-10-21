@@ -62,9 +62,6 @@ require("packer").startup(
         use { "rafamadriz/friendly-snippets" }
         use { 'saadparwaiz1/cmp_luasnip' }
 
-        -- lsp signature
-        use { "ray-x/lsp_signature.nvim" }
-
         -- treesiter
         use { "nvim-treesitter/nvim-treesitter" }
 
@@ -74,6 +71,8 @@ require("packer").startup(
         use "hrsh7th/nvim-cmp"
         use { "neovim/nvim-lspconfig" }
         use 'williamboman/nvim-lsp-installer'
+        use 'mfussenegger/nvim-lint'
+        use { "ray-x/lsp_signature.nvim" }
 
         -- themes
         use { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }

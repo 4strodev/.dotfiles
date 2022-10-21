@@ -12,6 +12,7 @@ require("plug-settings.lspsignature").setup()
 require("plug-settings.nvimtree").setup()
 require("plug-settings.color_picker").setup()
 require("plug-settings.nvim-dap").setup()
+require("plug-settings.nvim-lint").setup()
 
 require("plug-settings.treesitter").setup()
 require("plug-settings.cmp").setup()
