@@ -24,3 +24,11 @@ export PATH=~/bin:$PATH
 
 # flutter env variables
 export CHROME_EXECUTABLE=/usr/bin/brave
+
+export WASMTIME_HOME="$HOME/.wasmtime"
+
+export PATH="$WASMTIME_HOME/bin:$PATH"
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
