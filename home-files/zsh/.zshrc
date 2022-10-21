@@ -133,3 +133,9 @@ autoload -U compinit; compinit
 export WASMTIME_HOME="$HOME/.wasmtime"
 
 export PATH="$WASMTIME_HOME/bin:$PATH"
+# pnpm
+export PNPM_HOME="/home/zertifier/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+
+alias git-alias='less $HOME/.zim/modules/git/init.zsh'
