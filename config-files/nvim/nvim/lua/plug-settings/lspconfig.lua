@@ -31,8 +31,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
     vim.keymap.set('n', '<space>ac', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-    vim.keymap.set('n', '<space>fd', vim.lsp.buf.formatting, bufopts)
-
+    vim.keymap.set('n', '<space>fd', function()vim.lsp.buf.format { async = true }end, bufopts)
 end
 
 local default_setup_args = {
@@ -82,7 +81,8 @@ local servers = {
     ['dartls'] = default_setup_args,
     ['angularls'] = default_setup_args,
     ['svelte'] = default_setup_args,
-    ['sqlls'] = default_setup_args
+    ['sqlls'] = default_setup_args,
+    ['emmet_ls'] = default_setup_args
 }
 
 M.setup = function()

@@ -1,3 +1,5 @@
+local string_utils = require("utils.strings")
+
 local bufferline = {}
 
 bufferline.setup = function()
@@ -26,15 +28,15 @@ bufferline.setup = function()
             --- bufferline so use this at your discretion knowing that it has
             --- some limitations that will *NOT* be fixed.
             name_formatter = function(buf) -- buf contains a "name", "path" and "bufnr"
-                -- remove extension from markdown files for example
-                if buf.name:match('%.md') then
-                    return vim.fn.fnamemodify(buf.name, ':t:r')
-                end
+                local path = buf.path
+                local splittedPath = string_utils.split(path, "/")
+
+                return splittedPath[#splittedPath - 1] .. "/" .. splittedPath[#splittedPath]
             end,
-            max_name_length = 18,
+            max_name_length = 28,
             max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
-            tab_size = 18,
-            diagnostics ="nvim_lsp",
+            tab_size = 28,
+            diagnostics = "nvim_lsp",
             diagnostics_update_in_insert = false,
             -- The diagnostics indicator can be set to nil to keep the buffer name highlight but delete the highlighting
             diagnostics_indicator = function(count, level, diagnostics_dict, context)
@@ -73,7 +75,7 @@ bufferline.setup = function()
             separator_style = "thin",
             enforce_regular_tabs = true,
             always_show_bufferline = true,
-            sort_by = 'directory'
+            sort_by = 'id'
         }
     }
 end

@@ -1,4 +1,4 @@
-local ConfigPath = vim.fn.stdpath("config")
+local constants = require("config.constants")
 local keymap = vim.api.nvim_set_keymap
 local nores = {noremap = true, silent = true}
 local nore = {noremap = true, silent = false}
@@ -34,9 +34,7 @@ return (function()
     keymap("n", "<leader>vs", "<cmd>vsplit<cr>", nores)
     keymap("n", "<leader>sp", "<cmd>split<cr>", nores)
 
-    -- open explorer
-    keymap("n", "<leader>ef", "<cmd>NvimTreeToggle<cr><cmd>NvimTreeResize 50<cr>", nores)
 
     -- restart neovim
-    keymap("n", "<F5>", "<cmd>luafile " .. ConfigPath .. "/init.lua<cr>", nores)
+    keymap("n", "<F5>", "<cmd>luafile " .. constants.CONFIG_PATH .. "/init.lua<cr>", nores)
 end)()

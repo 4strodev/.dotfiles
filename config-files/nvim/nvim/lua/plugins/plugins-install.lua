@@ -51,9 +51,6 @@ require("packer").startup(
             'kyazdani42/nvim-tree.lua',
         }
 
-        -- emmet
-        use "mattn/emmet-vim"
-
         -- indent line
         use "lukas-reineke/indent-blankline.nvim"
 
@@ -70,7 +67,8 @@ require("packer").startup(
         use "hrsh7th/cmp-buffer"
         use "hrsh7th/nvim-cmp"
         use { "neovim/nvim-lspconfig" }
-        use 'williamboman/nvim-lsp-installer'
+        --use 'williamboman/nvim-lsp-installer'
+        use { "williamboman/mason.nvim" }
         use 'mfussenegger/nvim-lint'
         use { "ray-x/lsp_signature.nvim" }
 

@@ -1,4 +1,4 @@
-local ConfigPath = vim.fn.stdpath("config")
+local configPath = vim.fn.stdpath("config")
 
 -- Setting up the general settings
 vim.o.encoding = "utf8"
@@ -17,7 +17,7 @@ vim.o.wrap = false
 
 vim.o.swapfile = false
 vim.o.backup = false
-vim.o.undodir = ConfigPath .. "/.undodir"
+vim.o.undodir = configPath .. "/.undodir"
 vim.o.undofile = true
 
 vim.o.ignorecase = true

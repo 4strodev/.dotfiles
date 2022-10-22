@@ -1,18 +1,21 @@
--- statusline and buffers
-require("plug-settings.lualine").setup()
-require("plug-settings.bufferline").setup()
+local plugin_list = {
+    "plug-settings.lualine",
+    "plug-settings.bufferline",
+    "plug-settings.lspconfig",
+    "plug-settings.gitsigns",
+    "plug-settings.luasnip",
+    "plug-settings.telescope",
+    "plug-settings.colorizer",
+    "plug-settings.lspsignature",
+    "plug-settings.nvimtree",
+    "plug-settings.color_picker",
+    "plug-settings.nvim-dap",
+    "plug-settings.nvim-lint",
+    "plug-settings.treesitter",
+    "plug-settings.cmp",
+    "plug-settings.mason",
+}
 
-require("plug-settings.lspconfig").setup()
-require("plug-settings.gitsigns").setup()
---require("plug-settings.ultisnips").setup()
-require("plug-settings.luasnip").setup()
-require("plug-settings.telescope").setup()
-require("plug-settings.colorizer").setup()
-require("plug-settings.lspsignature").setup()
-require("plug-settings.nvimtree").setup()
-require("plug-settings.color_picker").setup()
-require("plug-settings.nvim-dap").setup()
-require("plug-settings.nvim-lint").setup()
-
-require("plug-settings.treesitter").setup()
-require("plug-settings.cmp").setup()
+for _, plugin in pairs(plugin_list) do
+    require(plugin).setup()
+end

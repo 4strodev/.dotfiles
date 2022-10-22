@@ -1,7 +1,14 @@
-local M = {}
+local keymap = vim.api.nvim_set_keymap
+local nores = { noremap = true, silent = true }
 
-M.setup = function()
+local nvimtree_module = {}
+
+nvimtree_module.setup = function()
+
+    -- open explorer
+    keymap("n", "<leader>ef", "<cmd>NvimTreeToggle<cr><cmd>NvimTreeResize 50<cr>", nores)
+
     require("nvim-tree").setup()
 end
 
-return M
+return nvimtree_module

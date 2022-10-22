@@ -3,7 +3,9 @@ local nvim_lint_module = {}
 nvim_lint_module.setup = function()
     -- Set linters
     require('lint').linters_by_ft = {
-        typescript = { 'npx eslintt' },
+        typescript = {
+            'eslint',
+        },
     }
 
     -- Start linting
