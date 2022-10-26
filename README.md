@@ -3,14 +3,12 @@ Here you can clone and apply my dotfiles to your system.
 
 ### Quick access
 - [**.config files**](./config-files)
-    - [neovim](./config-files/nvim-lua/nvim/)
+    - [neovim](./config-files/nvim/nvim/)
     - [alacritty](./config-files/alacritty/alacritty)
-    - [qtile](./config-files/qtile/qtile)
     - [rofi](./config-files/rofi/rofi)
 - [**home directory files**](./config-files)
     - [tmux](./home-files/tmux/)
     - [zsh](./home-files/zsh)
-    - [xprofile](./home-files/xprofile)
 - [**NerdFonts**](#nerdfonts)
 
 ## NerdFonts
