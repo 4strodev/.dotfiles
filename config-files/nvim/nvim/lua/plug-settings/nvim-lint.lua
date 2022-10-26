@@ -4,7 +4,7 @@ nvim_lint_module.setup = function()
     -- Set linters
     require('lint').linters_by_ft = {
         typescript = {
-            'eslint',
+            'eslint'
         },
     }
 

@@ -131,3 +131,4 @@ unset key
 autoload -U compinit; compinit
 
 alias git-alias='less $HOME/.zim/modules/git/init.zsh'
+alias devim='nvim -u $HOME/.config/nvim/devinit.lua'
