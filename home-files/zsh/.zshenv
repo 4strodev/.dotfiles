@@ -15,7 +15,7 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
 
 # General configurations
-export EDITOR_THEME="nightfox"
+export EDITOR_THEME="tokyonight"
 
 # editor paths
 export EDITOR=nvim

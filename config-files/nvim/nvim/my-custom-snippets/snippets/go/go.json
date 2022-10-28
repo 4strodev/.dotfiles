@@ -10,5 +10,13 @@
     "test function": {
         "prefix": "ftest",
         "body": "func Test${1:name}(t *testing.T) {\n\t${2:content}\n}"
+    },
+    "cobra command": {
+        "prefix": "cobracmd",
+        "body": "var ${1:cmd} = &cobra.Command{\n\tUse:   \"${1:cmd}\",\n\tShort: \"${2:short}\",\n\tLong:  `${3:long}`,\n}"
+    },
+    "cobra run": {
+        "prefix": "cobrarun",
+        "body": "func ${1:run}(cmd *cobra.Command, args []string) {\n\t$2\n}"
     }
 }
