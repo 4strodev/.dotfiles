@@ -13,7 +13,6 @@ local plugin_list = {
     "plug-settings.nvim-lint",
     "plug-settings.treesitter",
     "plug-settings.cmp",
-    "plug-settings.mason",
 }
 
 for _, plugin in pairs(plugin_list) do

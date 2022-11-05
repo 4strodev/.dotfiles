@@ -67,8 +67,8 @@ require("packer").startup(
         use "hrsh7th/cmp-buffer"
         use "hrsh7th/nvim-cmp"
         use { "neovim/nvim-lspconfig" }
-        --use 'williamboman/nvim-lsp-installer'
         use { "williamboman/mason.nvim" }
+        use "williamboman/mason-lspconfig.nvim"
         use 'mfussenegger/nvim-lint'
         use { "ray-x/lsp_signature.nvim" }
 
