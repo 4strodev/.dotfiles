@@ -1,8 +1,7 @@
-local M = {}
+local luasnips_module = {}
 local ls = require 'luasnip'
-local types = require 'luasnip.util.types'
 
-M.setup = function()
+luasnips_module.setup = function()
     require("luasnip.loaders.from_vscode").lazy_load()
 
     vim.keymap.set({ "i", "s" }, "<c-l>", function()
@@ -19,4 +18,4 @@ M.setup = function()
     require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./my-custom-snippets" } })
 end
 
-return M
+return luasnips_module
