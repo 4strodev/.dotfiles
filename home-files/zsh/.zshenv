@@ -15,7 +15,7 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
 
 # General configurations
-export EDITOR_THEME="tokyonight"
+export EDITOR_THEME="duskfox"
 
 # editor paths
 export EDITOR=nvim
@@ -26,8 +26,8 @@ export PATH=~/bin:$PATH
 export CHROME_EXECUTABLE=/usr/bin/brave
 
 export WASMTIME_HOME="$HOME/.wasmtime"
-
 export PATH="$WASMTIME_HOME/bin:$PATH"
+
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"

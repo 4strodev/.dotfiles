@@ -69,7 +69,7 @@ require("packer").startup(
         use { "neovim/nvim-lspconfig" }
         use { "williamboman/mason.nvim" }
         use "williamboman/mason-lspconfig.nvim"
-        use 'mfussenegger/nvim-lint'
+        --use 'mfussenegger/nvim-lint'
         use { "ray-x/lsp_signature.nvim" }
 
         -- themes

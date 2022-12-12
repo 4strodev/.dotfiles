@@ -10,7 +10,7 @@ local plugin_list = {
     "plug-settings.nvimtree",
     "plug-settings.color_picker",
     "plug-settings.nvim-dap",
-    "plug-settings.nvim-lint",
+    --"plug-settings.nvim-lint",
     "plug-settings.treesitter",
     "plug-settings.cmp",
 }
