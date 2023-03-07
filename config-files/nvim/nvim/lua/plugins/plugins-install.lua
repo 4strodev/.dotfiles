@@ -22,13 +22,13 @@ require("packer").startup(
         use { "akinsho/nvim-bufferline.lua" }
 
         -- autopairs
-        use "LunarWatcher/auto-pairs"
+        use { "windwp/nvim-autopairs" }
 
         -- commenter
         use { "preservim/nerdcommenter" }
 
         -- color picker
-        use { "ziontee113/color-picker.nvim" }
+        --use { "ziontee113/color-picker.nvim" }
 
         -- hex colorizer
         use "norcalli/nvim-colorizer.lua"
@@ -69,7 +69,6 @@ require("packer").startup(
         use { "neovim/nvim-lspconfig" }
         use { "williamboman/mason.nvim" }
         use "williamboman/mason-lspconfig.nvim"
-        --use 'mfussenegger/nvim-lint'
         use { "ray-x/lsp_signature.nvim" }
 
         -- themes
@@ -79,7 +78,6 @@ require("packer").startup(
         use "shaunsingh/nord.nvim"
         use "glepnir/zephyr-nvim"
         use "EdenEast/nightfox.nvim"
-        use "folke/tokyonight.nvim"
 
         -- git
         use {

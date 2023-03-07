@@ -5,20 +5,25 @@ vim.o.encoding = "utf8"
 vim.o.mouse = "a"
 vim.o.clipboard = "unnamedplus"
 
+-- Tab settings
 vim.o.sw = 4
 vim.o.expandtab = true
 vim.o.smartindent = true
 
+-- Line numbers
 vim.o.number = true
 vim.o.rnu = true
 vim.o.nuw = 1
 
+-- No wrap text
 vim.o.wrap = false
 
+-- No swap file
 vim.o.swapfile = false
 vim.o.backup = false
 vim.o.undodir = configPath .. "/.undodir"
 vim.o.undofile = true
+
 
 vim.o.ignorecase = true
 vim.o.incsearch = true

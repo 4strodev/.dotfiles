@@ -48,33 +48,6 @@ vim.keymap.set('n', '<space>qq', vim.diagnostic.setloclist, opts)
                 on_attach = on_attach,
             }
         end,
-        ["sumneko_lua"] = function()
-            lspconfig["sumneko_lua"].setup({
-                on_attach = on_attach,
-                flags = {
-                    -- This will be the default in neovim 0.7+
-                    debounce_text_changes = 150,
-                },
-                filetype = { "lua" },
-                settings = {
-                    Lua = {
-                        diagnostics = {
-                            globals = { 'vim' }
-                        },
-                        runtime = {
-                            version = "LuaJIT",
-                            path = vim.split(package.path, ";")
-                        },
-                        workspace = {
-                            library = {
-                                [vim.fn.expand("$VIMRUNTIME/lua")] = true,
-                                [vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true
-                            }
-                        }
-                    }
-                }
-            })
-        end
     }
 end
 

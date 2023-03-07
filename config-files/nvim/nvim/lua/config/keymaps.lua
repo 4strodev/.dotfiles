@@ -34,7 +34,6 @@ return (function()
     keymap("n", "<leader>vs", "<cmd>vsplit<cr>", nores)
     keymap("n", "<leader>sp", "<cmd>split<cr>", nores)
 
-
     -- restart neovim
     keymap("n", "<F5>", "<cmd>luafile " .. constants.CONFIG_PATH .. "/init.lua<cr>", nores)
 end)()
