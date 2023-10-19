@@ -14,9 +14,6 @@ require("packer").startup(
         -- Packer plugin manager
         use "wbthomason/packer.nvim"
 
-        -- eidtorconfig support
-        use { 'gpanders/editorconfig.nvim' }
-
         -- lualine and bufferline
         use { "hoob3rt/lualine.nvim" }
         use { "akinsho/nvim-bufferline.lua" }
@@ -26,9 +23,6 @@ require("packer").startup(
 
         -- commenter
         use { "preservim/nerdcommenter" }
-
-        -- color picker
-        --use { "ziontee113/color-picker.nvim" }
 
         -- hex colorizer
         use "norcalli/nvim-colorizer.lua"
