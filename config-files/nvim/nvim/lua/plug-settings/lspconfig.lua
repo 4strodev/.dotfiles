@@ -5,7 +5,7 @@ local mason_lspconfig = require('mason-lspconfig')
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local on_attach = function(client, bufnr)
+local on_attach = function(_, bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -33,20 +33,34 @@ function lspconfig_module.setup()
     mason.setup()
     mason_lspconfig.setup()
 
--- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
-local opts = { noremap = true, silent = true }
-vim.keymap.set('n', '<space>ee', vim.diagnostic.open_float, opts)
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<space>qq', vim.diagnostic.setloclist, opts)
+    -- Mappings.
+    -- See `:help vim.diagnostic.*` for documentation on any of the below functions
+    local opts = { noremap = true, silent = true }
+    vim.keymap.set('n', '<space>ee', vim.diagnostic.open_float, opts)
+    vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+    vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+    vim.keymap.set('n', '<space>qq', vim.diagnostic.setloclist, opts)
 
 
     mason_lspconfig.setup_handlers {
         function(server_name)
-            lspconfig[server_name].setup {
-                on_attach = on_attach,
-            }
+            if server_name == 'lua_ls' then
+                lspconfig[server_name].setup {
+                    on_attach = on_attach,
+                    settings = {
+                        Lua = {
+                            diagnostics = {
+                                -- Get the language server to recognize the `vim` global
+                                globals = { 'vim' },
+                            },
+                        },
+                    }
+                }
+            else
+                lspconfig[server_name].setup {
+                    on_attach = on_attach,
+                }
+            end
         end,
     }
 end
