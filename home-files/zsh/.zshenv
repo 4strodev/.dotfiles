@@ -15,7 +15,7 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
 
 # General configurations
-export EDITOR_THEME="duskfox"
+export EDITOR_THEME="zephyr"
 
 # editor paths
 export EDITOR=nvim
@@ -31,4 +31,7 @@ export PATH="$WASMTIME_HOME/bin:$PATH"
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+
+# jetbrains
+export JETBRAINS_SCRIPTS_FOLDER="$HOME/.local/share/JetBrains/Toolbox/scripts"
+export PATH="$JETBRAINS_SCRIPTS_FOLDER:$PATH"
