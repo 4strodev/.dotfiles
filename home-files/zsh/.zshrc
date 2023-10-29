@@ -136,7 +136,6 @@ alias cleanvim='nvim -u NORC'
 
 # opam configuration
 [[ ! -r /home/astro/.opam/opam-init/init.zsh ]] || source /home/astro/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-=======
 
 # Load Angular CLI autocompletion.
 source <(ng completion script)
