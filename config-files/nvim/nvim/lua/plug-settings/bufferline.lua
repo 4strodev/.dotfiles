@@ -1,5 +1,3 @@
-local string_utils = require("utils.strings")
-
 local bufferline = {}
 
 bufferline.setup = function()
@@ -27,12 +25,6 @@ bufferline.setup = function()
             --- Please note some names can/will break the
             --- bufferline so use this at your discretion knowing that it has
             --- some limitations that will *NOT* be fixed.
-            name_formatter = function(buf) -- buf contains a "name", "path" and "bufnr"
-                local path = buf.path
-                local splittedPath = string_utils.split(path, "/")
-
-                return splittedPath[#splittedPath - 1] .. "/" .. splittedPath[#splittedPath]
-            end,
             max_name_length = 28,
             max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
             tab_size = 28,
