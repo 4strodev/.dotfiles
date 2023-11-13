@@ -81,7 +81,6 @@ require("packer").startup(
 
         -- debugging
         use 'mfussenegger/nvim-dap'
-        use { 'leoluz/nvim-dap-go' }
         use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
         use 'theHamsta/nvim-dap-virtual-text'
 
