@@ -128,14 +128,9 @@ for key ('j') bindkey -M vicmd ${key} history-substring-search-down
 unset key
 # }}} End configuration added by Zim install
 
-autoload -U compinit; compinit
-
 alias git-alias='less $HOME/.zim/modules/git/init.zsh'
 alias devim='nvim -u $HOME/.config/nvim/devinit.lua'
 alias cleanvim='nvim -u NORC'
 
 # opam configuration
 [[ ! -r /home/astro/.opam/opam-init/init.zsh ]] || source /home/astro/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
