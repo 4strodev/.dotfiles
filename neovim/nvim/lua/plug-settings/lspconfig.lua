@@ -1,7 +1,7 @@
 local lspconfig_module = {}
 local lspconfig = require('lspconfig')
 local mason = require('mason')
-local mason_dap = require('mason-nvim-dap')
+--local mason_dap = require('mason-nvim-dap')
 local mason_lspconfig = require('mason-lspconfig')
 
 -- Use an on_attach function to only map the following keys
@@ -32,7 +32,7 @@ end
 
 function lspconfig_module.setup()
     mason.setup()
-    mason_dap.setup()
+    --mason_dap.setup()
     mason_lspconfig.setup()
 
     -- Mappings.
