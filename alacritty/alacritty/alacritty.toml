@@ -1,0 +1,15 @@
+import = [
+    "/home/astro/.config/alacritty/themes/spaceduck.toml",
+    "/home/astro/.config/alacritty/settings/window.toml",
+    "/home/astro/.config/alacritty/settings/cursor.toml",
+    "/home/astro/.config/alacritty/settings/fonts.toml",
+    "/home/astro/.config/alacritty/settings/colors.toml",
+]
+live_config_reload = true
+
+[selection]
+save_to_clipboard = true
+
+[env]
+TERM = "xterm-256color"
+WINIT_X11_SCALE_FACTOR = "1.0"

@@ -1,0 +1,8 @@
+[cursor]
+blink_interval = 750
+thickness = 0.15
+unfocused_hollow = true
+
+[cursor.style]
+blinking = "On"
+shape = "Block"
