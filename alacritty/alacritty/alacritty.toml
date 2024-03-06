@@ -1,9 +1,9 @@
 import = [
-    "/home/astro/.config/alacritty/themes/spaceduck.toml",
-    "/home/astro/.config/alacritty/settings/window.toml",
-    "/home/astro/.config/alacritty/settings/cursor.toml",
-    "/home/astro/.config/alacritty/settings/fonts.toml",
-    "/home/astro/.config/alacritty/settings/colors.toml",
+    "~/.config/alacritty/themes/spaceduck.toml",
+    "~/.config/alacritty/settings/window.toml",
+    "~/.config/alacritty/settings/cursor.toml",
+    "~/.config/alacritty/settings/fonts.toml",
+    "~/.config/alacritty/settings/colors.toml",
 ]
 live_config_reload = true
 
