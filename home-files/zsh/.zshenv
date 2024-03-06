@@ -24,6 +24,7 @@ export PATH=~/bin:$PATH
 
 # flutter env variables
 export CHROME_EXECUTABLE=/usr/bin/brave
+export PATH="$PATH:/home/astro/.flutter_install/flutter/bin"
 
 export WASMTIME_HOME="$HOME/.wasmtime"
 export PATH="$WASMTIME_HOME/bin:$PATH"
@@ -35,3 +36,7 @@ export PATH="$PNPM_HOME:$PATH"
 # jetbrains
 export JETBRAINS_SCRIPTS_FOLDER="$HOME/.local/share/JetBrains/Toolbox/scripts"
 export PATH="$JETBRAINS_SCRIPTS_FOLDER:$PATH"
+
+# fly.io
+export FLYCTL_INSTALL="/home/astro/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
