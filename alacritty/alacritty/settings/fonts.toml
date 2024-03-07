@@ -5,17 +5,17 @@ draw_bold_text_with_bright_colors = true
 size = 12
 
 [font.bold]
-family = "ComicShannsMono Nerd Font"
+family = "CaskaydiaCove Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "ComicShannsMono Nerd Font"
+family = "CaskayDiacove Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "ComicShannsMono Nerd Font"
+family = "CaskayDiacove Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "ComicShannsMono Nerd Font"
+family = "CaskayDiacove Nerd Font"
 style = "Regular"
