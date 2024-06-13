@@ -40,3 +40,13 @@ export PATH="$JETBRAINS_SCRIPTS_FOLDER:$PATH"
 # fly.io
 export FLYCTL_INSTALL="/home/astro/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+
+# emacs
+export PATH="$HOME/.config/emacs/bin:$PATH"
+
+# dotnet
+export PATH="$HOME/.dotnet/tools:$PATH"
+
+# ruby
+export GEM_HOME="$(gem env user_gemhome)"
+export PATH="$PATH:$GEM_HOME/bin"

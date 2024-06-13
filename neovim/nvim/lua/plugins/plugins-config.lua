@@ -9,7 +9,7 @@ local plugin_list = {
     "plug-settings.lspsignature",
     "plug-settings.nvimtree",
     "plug-settings.autopairs",
-    "plug-settings.nvim-dap",
+    --"plug-settings.nvim-dap",
     "plug-settings.treesitter",
     "plug-settings.cmp",
 }

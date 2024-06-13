@@ -1,9 +1,10 @@
 import = [
-    "~/.config/alacritty/themes/spaceduck.toml",
+    "~/.config/alacritty/themes/default.toml",
     "~/.config/alacritty/settings/window.toml",
     "~/.config/alacritty/settings/cursor.toml",
     "~/.config/alacritty/settings/fonts.toml",
     "~/.config/alacritty/settings/colors.toml",
+    "~/.config/alacritty/settings/shell.toml",
 ]
 live_config_reload = true
 

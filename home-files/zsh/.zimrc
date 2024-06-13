@@ -30,7 +30,8 @@ zmodule git-info
 # A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
 #zmodule asciiship
 zmodule prompt-pwd
-zmodule gitster
+#zmodule gitster
+zmodule 4strodev/4stroprompt
 
 #
 # Completion
