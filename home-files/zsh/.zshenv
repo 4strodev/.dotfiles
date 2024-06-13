@@ -43,3 +43,13 @@ export PATH="$FLYCTL_INSTALL/bin:$PATH"
 export PARTY_VIDEO="https://www.youtube.com/shorts/SXHMnicI6Pg"
 
 export PATH="$HOME/.dotnet/tools:$PATH"
+
+# emacs
+export PATH="$HOME/.config/emacs/bin:$PATH"
+
+# dotnet
+export PATH="$HOME/.dotnet/tools:$PATH"
+
+# ruby
+export GEM_HOME="$(gem env user_gemhome)"
+export PATH="$PATH:$GEM_HOME/bin"

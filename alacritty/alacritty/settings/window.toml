@@ -6,8 +6,8 @@ multiplier = 3
 opacity = 0.95
 
 [window.dimensions]
-columns = 0
-lines = 0
+columns = 120
+lines = 40
 
 [window.padding]
 x = 0
