@@ -40,3 +40,6 @@ export PATH="$JETBRAINS_SCRIPTS_FOLDER:$PATH"
 # fly.io
 export FLYCTL_INSTALL="/home/astro/.fly"
 export PATH="$FLYCTL_INSTALL/bin:$PATH"
+export PARTY_VIDEO="https://www.youtube.com/shorts/SXHMnicI6Pg"
+
+export PATH="$HOME/.dotnet/tools:$PATH"
