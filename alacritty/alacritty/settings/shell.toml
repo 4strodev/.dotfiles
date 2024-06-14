@@ -1,2 +1,2 @@
 [shell]
-#program = "/home/zertifier/.config/alacritty/startup-script.sh"
+program = "/usr/local/share/scripts/alacritty/startup-script.sh"
