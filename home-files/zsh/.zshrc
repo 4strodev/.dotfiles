@@ -136,3 +136,6 @@ alias cleanvim='nvim -u NORC'
 [[ ! -r /home/astro/.opam/opam-init/init.zsh ]] || source /home/astro/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
 source <(fzf --zsh)
+
+# asdf version manager
+. /opt/asdf-vm/asdf.sh

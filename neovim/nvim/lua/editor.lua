@@ -27,7 +27,8 @@ function editor_module:commonConfigs()
     -- Python provider
     vim.g["python3_host_prog"] = '/home/astro/.neovim_venv/bin/python'
 
-    -- Setting editor colorscheme
+    -- Setting editor colorscheme this is based on an environment vairable
+    -- or by a default one
     self:setColorscheme(os.getenv("EDITOR_THEME"))
     vim.api.nvim_create_user_command("RestartNeovim", function()
         vim.cmd("luafile ~/.config/nvim/init.lua")
