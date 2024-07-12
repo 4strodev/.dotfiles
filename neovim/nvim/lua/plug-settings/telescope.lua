@@ -82,14 +82,7 @@ end
 
 telescope_module.load_keymaps = function()
     -- basic keymaps
-    keymap("n", "<leader>ff", '<cmd>lua require("telescope.builtin").find_files()<cr>', nores)
-    keymap("n", "<leader>fl", '<cmd>lua require("telescope.builtin").live_grep()<cr>', nores)
-    keymap("n", "<leader>fb", '<cmd>lua require("telescope.builtin").buffers()<cr>', nores)
-    keymap("n", "<leader>fh", '<cmd>lua require("telescope.builtin").help_tags()<cr>', nores)
-
-    -- git
-    keymap("n", "<leader>fgf", '<cmd>lua require("telescope.builtin").git_files()<cr>', nores)
-    keymap("n", "<leader>fgb", '<cmd>lua require("telescope.builtin").git_branches()<cr>', nores)
+    keymap("n", "<leader>ft", '<cmd>Telescope<cr>', nores)
 
     -- cutsom functions
     keymap("n", "<leader>ed", '<cmd>lua require("plug-settings.telescope").search_dotfiles()<cr>', nores)
