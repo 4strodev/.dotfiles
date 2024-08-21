@@ -143,3 +143,20 @@ source <(fzf --zsh)
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+# Start the GPG agent if it's not already running
+if ! gpgconf --list-dirs agent-socket > /dev/null 2>&1; then
+    eval $(gpg-agent --daemon --write-env-file "$HOME/.gpg-agent-info")
+fi
+
+# Load the GPG agent environment variables if they exist
+if [ -f "$HOME/.gpg-agent-info" ]; then
+    source "$HOME/.gpg-agent-info"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+    export SSH_AGENT_PID
+fi
+
+# Ensure GPG TTY is set correctly
+export GPG_TTY=$(tty)
