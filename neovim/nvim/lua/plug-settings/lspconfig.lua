@@ -30,6 +30,10 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', '<space>fd', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
+local function is_deno_project()
+    return vim.loop.fs_stat(vim.fn.getcwd() .. '/deno.json') ~= nil
+end
+
 function lspconfig_module.setup()
     mason.setup()
     --mason_dap.setup()
@@ -58,11 +62,20 @@ function lspconfig_module.setup()
                         },
                     }
                 }
-            else
-                lspconfig[server_name].setup {
-                    on_attach = on_attach,
-                }
+                return
+            elseif server_name == 'ts_ls' then
+                if is_deno_project() then
+                    return
+                end
+            elseif server_name == 'denols' then
+                if not is_deno_project() then
+                    return
+                end
             end
+
+            lspconfig[server_name].setup {
+                on_attach = on_attach,
+            }
         end,
     }
 end
