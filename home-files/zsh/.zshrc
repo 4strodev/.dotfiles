@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/astro/.zsh/completions:"* ]]; then export FPATH="/home/astro/.zsh/completions:$FPATH"; fi
 # Start configuration added by Zim install {{{
 #
 # User configuration sourced by interactive shells
@@ -160,3 +162,4 @@ fi
 
 # Ensure GPG TTY is set correctly
 export GPG_TTY=$(tty)
+. "/home/astro/.deno/env"
