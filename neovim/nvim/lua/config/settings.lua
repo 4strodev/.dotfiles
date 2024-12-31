@@ -21,6 +21,8 @@ vim.o.wrap = false
 -- No swap file
 vim.o.swapfile = false
 vim.o.backup = false
+
+-- Persistent undo
 vim.o.undodir = configPath .. "/.undodir"
 vim.o.undofile = true
 
