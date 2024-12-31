@@ -1,5 +1,9 @@
-local contants_module = {}
+---@class ConfigVariables
+---@field CONFIG_PATH string
 
-contants_module.CONFIG_PATH = vim.fn.stdpath("config")
+---@type ConfigVariables
+local contants_module = {
+    CONFIG_PATH = vim.fn.stdpath('config')
+}
 
 return contants_module

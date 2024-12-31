@@ -8,7 +8,11 @@ nvimtree_module.setup = function()
     -- open explorer
     keymap("n", "<leader>ef", "<cmd>NvimTreeToggle<cr><cmd>NvimTreeResize 50<cr>", nores)
 
-    require("nvim-tree").setup()
+    require("nvim-tree").setup({
+        view = {
+            side = "right"
+        }
+    })
 end
 
 return nvimtree_module

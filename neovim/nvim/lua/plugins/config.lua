@@ -1,3 +1,18 @@
+local constants = require "config.constants"
+
+vim.uv.fs_scandir(constants.CONFIG_PATH, function(err, entries)
+    if err ~= nil then
+        print(err)
+        return
+    end
+
+    while true do
+        local name, type = vim.uv.fs_scandir_next(entries)
+        if not name then break end
+        print(name, type)
+    end
+end)
+
 local plugin_list = {
     "plug-settings.lualine",
     "plug-settings.bufferline",
@@ -9,7 +24,7 @@ local plugin_list = {
     "plug-settings.lspsignature",
     "plug-settings.nvimtree",
     "plug-settings.autopairs",
-    --"plug-settings.nvim-dap",
+    --"lua.plug-settings.nvim-dap",
     "plug-settings.treesitter",
     "plug-settings.cmp",
 }

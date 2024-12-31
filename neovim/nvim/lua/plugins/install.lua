@@ -1,9 +1,9 @@
---local execute = vim.api.nvim_command
 local fn = vim.fn
 
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 local packer_bootstrap = false
 
+-- Installing packer if it is not installed
 if fn.empty(fn.glob(install_path)) > 0 then
     packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
         install_path })

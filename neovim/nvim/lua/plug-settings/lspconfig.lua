@@ -78,6 +78,8 @@ function lspconfig_module.setup()
             }
         end,
     }
+
+    lspconfig.gleam.setup({})
 end
 
 return lspconfig_module

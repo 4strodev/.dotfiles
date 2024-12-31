@@ -23,8 +23,8 @@ return (function()
     keymap("n", "<leader>qf", "<cmd>bd!<cr>", nore)
 
     -- open terminal
-    keymap("v", "<leader>t", "<cmd>split<CR><cmd>ter<CR><cmd>resize 15<CR>", nore)
-    keymap("n", "<leader>t", "<cmd>split<CR><cmd>ter<CR><cmd>resize 15<CR>", nore)
+    keymap("v", "<leader>tt", "<cmd>split<CR><cmd>ter<CR><cmd>resize 15<CR>", nore)
+    keymap("n", "<leader>tt", "<cmd>split<CR><cmd>ter<CR><cmd>resize 15<CR>", nore)
 
     -- move between buffers
     keymap("n", "<Tab>", "<cmd>bnext<cr>", nores)
@@ -35,5 +35,5 @@ return (function()
     keymap("n", "<leader>sp", "<cmd>split<cr>", nores)
 
     -- restart neovim
-    keymap("n", "<F5>", "<cmd>luafile " .. constants.CONFIG_PATH .. "/init.lua<cr>", nores)
+    keymap("n", "<F5>", "<cmd>RestartNeovim<cr>", nores)
 end)()
