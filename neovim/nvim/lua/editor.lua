@@ -27,7 +27,8 @@ end
 
 function editor_module:commonConfigs()
     -- Python provider
-    vim.g["python3_host_prog"] = '/home/astro/.neovim_venv/bin/python'
+    local homeDir = os.getenv("HOME")
+    vim.g["python3_host_prog"] = homeDir .. '/.neovim_venv/bin/python'
 
     -- Setting editor colorscheme this is based on an environment vairable
     -- or by a default one
