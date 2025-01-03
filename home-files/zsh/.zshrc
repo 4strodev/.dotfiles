@@ -162,4 +162,3 @@ fi
 
 # Ensure GPG TTY is set correctly
 export GPG_TTY=$(tty)
-. "/home/astro/.deno/env"
