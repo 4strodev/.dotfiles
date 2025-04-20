@@ -53,3 +53,5 @@ export PATH="$HOME/.dotnet/tools:$PATH"
 # ruby
 export GEM_HOME="$(gem env user_gemhome)"
 export PATH="$PATH:$GEM_HOME/bin"
+
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
