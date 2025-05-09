@@ -66,12 +66,9 @@ require("packer").startup(
         use { "ray-x/lsp_signature.nvim" }
 
         -- themes
-        use { "npxbr/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
+        use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
         use "Shatur/neovim-ayu"
-        use "navarasu/onedark.nvim"
-        use "shaunsingh/nord.nvim"
         use "glepnir/zephyr-nvim"
-        use "EdenEast/nightfox.nvim"
 
         -- git
         use {

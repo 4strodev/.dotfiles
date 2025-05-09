@@ -58,6 +58,11 @@ telescope_module.setup = function()
                 override_generic_sorter = false,
                 override_file_sorter = true
             }
+        },
+        pickers = {
+            colorscheme = {
+                enable_preview = true
+            }
         }
     }
 

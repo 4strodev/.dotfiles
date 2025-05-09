@@ -37,7 +37,12 @@ end
 function lspconfig_module.setup()
     mason.setup()
     --mason_dap.setup()
-    mason_lspconfig.setup()
+    mason_lspconfig.setup({
+	    exclude = {
+		    "lua_ls",
+		    "deno_ls",
+	    }
+    })
 
     -- Mappings.
     -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -47,37 +52,49 @@ function lspconfig_module.setup()
     vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
     vim.keymap.set('n', '<space>qq', vim.diagnostic.setloclist, opts)
 
+    lspconfig.lua_ls.setup({
+	    on_attach = on_attach,
+	    settings = {
+		    Lua = {
+			    diagnostics = {
+				    -- Get the language server to recognize the `vim` global
+				    globals = { 'vim' },
+			    },
+		    },
+	    }
+    })
 
-    mason_lspconfig.setup_handlers {
-        function(server_name)
-            if server_name == 'lua_ls' then
-                lspconfig[server_name].setup {
-                    on_attach = on_attach,
-                    settings = {
-                        Lua = {
-                            diagnostics = {
-                                -- Get the language server to recognize the `vim` global
-                                globals = { 'vim' },
-                            },
-                        },
-                    }
-                }
-                return
-            elseif server_name == 'ts_ls' then
-                if is_deno_project() then
-                    return
-                end
-            elseif server_name == 'denols' then
-                if not is_deno_project() then
-                    return
-                end
-            end
 
-            lspconfig[server_name].setup {
-                on_attach = on_attach,
-            }
-        end,
-    }
+ --   mason_lspconfig.setup_handlers {
+ --       function(server_name)
+ --           if server_name == 'lua_ls' then
+ --               lspconfig[server_name].setup {
+ --                   on_attach = on_attach,
+ --                   settings = {
+ --                       Lua = {
+ --                           diagnostics = {
+ --                               -- Get the language server to recognize the `vim` global
+ --                               globals = { 'vim' },
+ --                           },
+ --                       },
+ --                   }
+ --               }
+ --               return
+ --           elseif server_name == 'ts_ls' then
+ --               if is_deno_project() then
+ --                   return
+ --               end
+ --           elseif server_name == 'denols' then
+ --               if not is_deno_project() then
+ --                   return
+ --               end
+ --           end
+
+ --           lspconfig[server_name].setup {
+ --               on_attach = on_attach,
+ --           }
+ --       end,
+ --   }
 
     lspconfig.gleam.setup({})
 end
