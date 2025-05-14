@@ -30,18 +30,23 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', '<space>fd', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
-local function is_deno_project()
-    return vim.loop.fs_stat(vim.fn.getcwd() .. '/deno.json') ~= nil
-end
-
 function lspconfig_module.setup()
     mason.setup()
     --mason_dap.setup()
     mason_lspconfig.setup({
-	    exclude = {
-		    "lua_ls",
-		    "deno_ls",
-	    }
+        ensure_installed = { "lua_ls", "ts_server" },
+        automatic_enable = {
+            exclude = {
+                "lua_ls",
+            }
+        }
+    })
+
+    vim.api.nvim_create_autocmd('LspAttach', {
+        group = vim.api.nvim_create_augroup('LspKeymaps', { clear = true }),
+        callback = function(event)
+            on_attach(nil, event.buf)
+        end
     })
 
     -- Mappings.
@@ -53,57 +58,18 @@ function lspconfig_module.setup()
     vim.keymap.set('n', '<space>qq', vim.diagnostic.setloclist, opts)
 
     lspconfig.lua_ls.setup({
-	    on_attach = on_attach,
-	    settings = {
-		    Lua = {
-			    diagnostics = {
-				    -- Get the language server to recognize the `vim` global
-				    globals = { 'vim' },
-			    },
-		    },
-	    }
+        on_attach = on_attach,
+        settings = {
+            Lua = {
+                diagnostics = {
+                    -- Get the language server to recognize the `vim` global
+                    globals = { 'vim' },
+                },
+            },
+        }
     })
-
-
- --   mason_lspconfig.setup_handlers {
- --       function(server_name)
- --           if server_name == 'lua_ls' then
- --               lspconfig[server_name].setup {
- --                   on_attach = on_attach,
- --                   settings = {
- --                       Lua = {
- --                           diagnostics = {
- --                               -- Get the language server to recognize the `vim` global
- --                               globals = { 'vim' },
- --                           },
- --                       },
- --                   }
- --               }
- --               return
- --           elseif server_name == 'ts_ls' then
- --               if is_deno_project() then
- --                   return
- --               end
- --           elseif server_name == 'denols' then
- --               if not is_deno_project() then
- --                   return
- --               end
- --           end
-
- --           lspconfig[server_name].setup {
- --               on_attach = on_attach,
- --           }
- --       end,
- --   }
 
     lspconfig.gleam.setup({})
 end
 
 return lspconfig_module
---local default_lsp_config = {
---on_attach = on_attach,
---flags = {
----- This will be the default in neovim 0.7+
---debounce_text_changes = 150,
---},
---}
