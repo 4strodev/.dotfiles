@@ -34,7 +34,7 @@ function lspconfig_module.setup()
     mason.setup()
     --mason_dap.setup()
     mason_lspconfig.setup({
-        ensure_installed = { "lua_ls", "ts_server" },
+        ensure_installed = { "lua_ls", "ts_ls" },
         automatic_enable = {
             exclude = {
                 "lua_ls",
