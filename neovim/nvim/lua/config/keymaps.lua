@@ -30,10 +30,6 @@ return (function()
     keymap("n", "<Tab>", "<cmd>bnext<cr>", nores)
     keymap("n", "<S-Tab>", "<cmd>bprevious<cr>", nores)
 
-    -- splits
-    keymap("n", "<leader>vs", "<cmd>vsplit<cr>", nores)
-    keymap("n", "<leader>sp", "<cmd>split<cr>", nores)
-
     -- restart neovim
     keymap("n", "<F5>", "<cmd>RestartNeovim<cr>", nores)
 end)()
