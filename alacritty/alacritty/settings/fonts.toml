@@ -2,20 +2,20 @@
 draw_bold_text_with_bright_colors = true
 
 [font]
-size = 12
+size = 11
 
 [font.bold]
-family = "CaskaydiaCove Nerd Font"
+family = "0xProto Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "CaskayDiacove Nerd Font"
+family = "0xProto Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "CaskayDiacove Nerd Font"
+family = "0xProto Nerd Font"
 style = "Italic"
 
 [font.normal]
-family = "CaskayDiacove Nerd Font"
+family = "0xProto Nerd Font"
 style = "Regular"
