@@ -27,6 +27,7 @@ local plugin_list = {
     --"lua.plug-settings.nvim-dap",
     "plug-settings.treesitter",
     "plug-settings.cmp",
+    "plug-settings.marks",
 }
 
 for _, plugin in pairs(plugin_list) do

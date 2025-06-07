@@ -81,6 +81,9 @@ require("packer").startup(
         use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
         use 'theHamsta/nvim-dap-virtual-text'
 
+        -- marks
+        use "chentoast/marks.nvim"
+
         if packer_bootstrap then
             require('packer').sync()
         end
