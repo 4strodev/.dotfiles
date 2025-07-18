@@ -29,6 +29,8 @@ M.setup = function()
             }
         }
     }
+
+    require("nvim-treesitter.install").prefer_git = true
 end
 
 return M
