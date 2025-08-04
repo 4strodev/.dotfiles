@@ -1,5 +1,5 @@
 ---@class ConfigVariables
----@field CONFIG_PATH string
+---@field CONFIG_PATH string config file directory
 
 ---@type ConfigVariables
 local contants_module = {

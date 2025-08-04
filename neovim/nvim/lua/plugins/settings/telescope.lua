@@ -93,4 +93,4 @@ telescope_module.load_keymaps = function()
     keymap("n", "<leader>ed", '<cmd>lua require("plug-settings.telescope").search_dotfiles()<cr>', nores)
 end
 
-return telescope_module
+telescope_module.setup()

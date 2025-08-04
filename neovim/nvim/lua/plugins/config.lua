@@ -1,36 +1,15 @@
 local constants = require "config.constants"
 
-vim.uv.fs_scandir(constants.CONFIG_PATH, function(err, entries)
-    if err ~= nil then
-        print(err)
-        return
+local settings_path = constants.CONFIG_PATH .. "/lua/plugins/settings"
+local settings_files = vim.fn.globpath(settings_path, "*.lua", false, true)
+
+
+for _, file in ipairs(settings_files) do
+    local module_name = file:match(".*/(.*)%.lua$")
+    if module_name and not module_name:match("^%.") then
+        local ok, err = pcall(require, "plugins.settings." .. module_name)
+        if not ok then
+            vim.notify("Error loading plugin settings: " .. module_name .. "\n" .. err, vim.log.levels.ERROR)
+        end
     end
-
-    while true do
-        local name, type = vim.uv.fs_scandir_next(entries)
-        if not name then break end
-        print(name, type)
-    end
-end)
-
-local plugin_list = {
-    "plug-settings.lualine",
-    "plug-settings.bufferline",
-    "plug-settings.lspconfig",
-    "plug-settings.gitsigns",
-    "plug-settings.luasnip",
-    "plug-settings.telescope",
-    "plug-settings.colorizer",
-    "plug-settings.lspsignature",
-    "plug-settings.nvimtree",
-    "plug-settings.autopairs",
-    --"lua.plug-settings.nvim-dap",
-    "plug-settings.actions-preview",
-    "plug-settings.treesitter",
-    "plug-settings.cmp",
-    "plug-settings.marks",
-}
-
-for _, plugin in pairs(plugin_list) do
-    require(plugin).setup()
 end
