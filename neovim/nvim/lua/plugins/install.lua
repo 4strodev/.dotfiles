@@ -64,6 +64,9 @@ require("packer").startup(
         use { "williamboman/mason.nvim" }
         use "williamboman/mason-lspconfig.nvim"
         use { "ray-x/lsp_signature.nvim" }
+        use {
+            "aznhe21/actions-preview.nvim",
+        }
 
         -- themes
         use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }

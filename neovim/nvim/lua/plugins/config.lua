@@ -25,6 +25,7 @@ local plugin_list = {
     "plug-settings.nvimtree",
     "plug-settings.autopairs",
     --"lua.plug-settings.nvim-dap",
+    "plug-settings.actions-preview",
     "plug-settings.treesitter",
     "plug-settings.cmp",
     "plug-settings.marks",
