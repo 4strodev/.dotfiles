@@ -42,3 +42,16 @@ vim.o.foldmethod = 'indent'
 vim.o.foldlevel = 99
 vim.o.foldnestmax = 4
 vim.o.foldtext = ''
+
+vim.o.spell = true
+vim.o.spelllang = "en_us"
+-- Create autocmd to disable spellcheck for terminal buffers
+vim.api.nvim_create_autocmd("TermOpen", {
+    callback = function()
+        vim.opt_local.spell = false
+    end,
+})
+
+-- Allow per local project config file
+vim.o.exrc = true   -- Enable local config files
+vim.o.secure = true -- Restrict what they can do (recommended)

@@ -38,6 +38,7 @@ function lspconfig_module.setup()
         automatic_enable = {
             exclude = {
                 "lua_ls",
+                "ts_ls"
             }
         }
     })
@@ -61,15 +62,31 @@ function lspconfig_module.setup()
         on_attach = on_attach,
         settings = {
             Lua = {
+                runtime = {
+                    -- Tell the language server which Lua version you're using
+                    version = 'LuaJIT',
+                    -- Setup your runtime path so lua_ls knows where to find lua files
+                    path = vim.split(package.path, ';'),
+                },
                 diagnostics = {
-                    -- Get the language server to recognize the `vim` global
                     globals = { 'vim' },
                 },
+                workspace = {
+                    -- Make the server aware of runtime files and your config
+                    library = {
+                        -- This adds neovim runtime files to the workspace library
+                        [vim.fn.expand('$VIMRUNTIME/lua')] = true,
+                        -- Also add your config lua files
+                        [vim.fn.stdpath('config') .. '/lua'] = true,
+                    },
+                    checkThirdParty = false, -- optional: disables third-party checks popup
+                },
+                telemetry = {
+                    enable = false,
+                },
             },
-        }
+        },
     })
-
-    lspconfig.gleam.setup({})
 end
 
 return lspconfig_module
