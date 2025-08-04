@@ -13,4 +13,5 @@ import = [
     "~/.config/alacritty/settings/cursor.toml",
     "~/.config/alacritty/settings/fonts.toml",
     "~/.config/alacritty/settings/colors.toml",
+    "~/.config/alacritty/themes/default.toml"
 ]

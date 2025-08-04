@@ -64,6 +64,9 @@ require("packer").startup(
         use { "williamboman/mason.nvim" }
         use "williamboman/mason-lspconfig.nvim"
         use { "ray-x/lsp_signature.nvim" }
+        use {
+            "aznhe21/actions-preview.nvim",
+        }
 
         -- themes
         use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
@@ -82,6 +85,9 @@ require("packer").startup(
         use 'theHamsta/nvim-dap-virtual-text'
         use 'leoluz/nvim-dap-go'
 
+
+        -- marks
+        use "chentoast/marks.nvim"
 
         if packer_bootstrap then
             require('packer').sync()
