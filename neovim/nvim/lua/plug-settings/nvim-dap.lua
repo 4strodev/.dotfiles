@@ -1,6 +1,12 @@
-local M = {}
+local nvim_dap_module = {}
 
-M.setup = function()
+local dap, dapui, dap_virtual_text = require("dap"), require("dapui"), require('nvim-dap-virtual-text')
+
+local function setup_adapters()
+    require('dap-go').setup()
+end
+
+nvim_dap_module.setup = function()
     vim.keymap.set("n", "<F5>", ":lua require 'dap'.continue()<CR>")
     vim.keymap.set("n", "<F3>", ":lua require 'dap'.step_over()<CR>")
     vim.keymap.set("n", "<F2>", ":lua require 'dap'.step_into()<CR>")
@@ -12,9 +18,8 @@ M.setup = function()
     vim.keymap.set("n", "<leader>dr", ":lua require 'dap'.repl.open()<CR>")
     vim.keymap.set("n", "<leader>du", ":lua require 'dapui'.toggle()<CR>")
 
-    require('dapui').setup()
-    require('nvim-dap-virtual-text').setup()
-    local dap, dapui = require("dap"), require("dapui")
+    dapui.setup()
+    dap_virtual_text.setup()
 
     dap.listeners.after.event_initialized["dapui_config"] = function()
         dapui.open()
@@ -25,6 +30,9 @@ M.setup = function()
     dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close()
     end
+
+    setup_adapters()
 end
 
-return M
+
+nvim_dap_module.setup()

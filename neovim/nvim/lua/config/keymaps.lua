@@ -29,7 +29,4 @@ return (function()
     -- move between buffers
     keymap("n", "<Tab>", "<cmd>bnext<cr>", nores)
     keymap("n", "<S-Tab>", "<cmd>bprevious<cr>", nores)
-
-    -- restart neovim
-    keymap("n", "<F5>", "<cmd>RestartNeovim<cr>", nores)
 end)()

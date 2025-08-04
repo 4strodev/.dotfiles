@@ -77,9 +77,11 @@ require("packer").startup(
         }
 
         -- debugging
-        use 'mfussenegger/nvim-dap'
-        use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+        use { 'mfussenegger/nvim-dap' }
+        use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
         use 'theHamsta/nvim-dap-virtual-text'
+        use 'leoluz/nvim-dap-go'
+
 
         if packer_bootstrap then
             require('packer').sync()
