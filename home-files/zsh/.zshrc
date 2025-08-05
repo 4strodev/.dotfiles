@@ -131,6 +131,7 @@ unset key
 alias git-alias='less $HOME/.zim/modules/git/init.zsh'
 alias devim='nvim -u $HOME/.config/nvim/devinit.lua'
 alias cleanvim='nvim -u NORC'
+alias zellij-tmp='zellij -s temp-$$; zellij delete-session temp-$$'
 
 # opam configuration
 [[ ! -r /home/astro/.opam/opam-init/init.zsh ]] || source /home/astro/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

@@ -6,7 +6,7 @@ keymap("n", "<leader>ef", "<cmd>NvimTreeToggle<cr><cmd>NvimTreeResize 50<cr>", n
 
 require("nvim-tree").setup({
     view = {
-        width = 30,
+        width = 50,
         side = "right"
     },
     renderer = {
