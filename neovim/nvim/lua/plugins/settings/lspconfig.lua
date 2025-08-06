@@ -35,8 +35,7 @@ mason_lspconfig.setup({
     ensure_installed = { "lua_ls", "ts_ls" },
     automatic_enable = {
         exclude = {
-            "lua_ls",
-            "ts_ls"
+            "lua_ls"
         }
     }
 })
