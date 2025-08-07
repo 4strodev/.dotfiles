@@ -15,7 +15,7 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/.config/composer/vendor/bin
 
 # General configurations
-export EDITOR_THEME="zephyr"
+export EDITOR_THEME="vscode"
 
 # editor paths
 export EDITOR=nvim

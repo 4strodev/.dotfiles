@@ -3,6 +3,7 @@ local editor_module = {}
 -- Sets colorscheme. If colorscheme is not found then
 -- is fallback to the default one
 function editor_module:setColorscheme(colorscheme)
+
     -- get available colorschemes
     local colorschemes = vim.fn.getcompletion("", "color")
     local exists = false

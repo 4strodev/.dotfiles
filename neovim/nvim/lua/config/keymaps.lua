@@ -1,6 +1,6 @@
 local keymap = vim.api.nvim_set_keymap
-local nores = {noremap = true, silent = true}
-local nore = {noremap = true, silent = false}
+local nores = { noremap = true, silent = true }
+local nore = { noremap = true, silent = false }
 
 return (function()
     vim.g.mapleader = " "
@@ -28,4 +28,10 @@ return (function()
     -- move between buffers
     keymap("n", "<Tab>", "<cmd>bnext<cr>", nores)
     keymap("n", "<S-Tab>", "<cmd>bprevious<cr>", nores)
+
+    -- horizontal scroll
+    keymap("v", "<M-h>", "3zh", nores)
+    keymap("v", "<M-l>", "3zl", nores)
+    keymap("n", "<M-h>", "3zh", nores)
+    keymap("n", "<M-l>", "3zl", nores)
 end)()
