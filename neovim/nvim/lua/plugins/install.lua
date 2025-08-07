@@ -11,6 +11,8 @@ end
 
 require("packer").startup(
     function(use)
+        -- notifications
+        use 'rcarriga/nvim-notify'
         -- Packer plugin manager
         use "wbthomason/packer.nvim"
 
