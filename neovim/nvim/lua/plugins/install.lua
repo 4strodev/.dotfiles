@@ -73,9 +73,8 @@ require("packer").startup(
         }
 
         -- themes
-        use { "ellisonleao/gruvbox.nvim", requires = { "rktjmp/lush.nvim" } }
-        use "Shatur/neovim-ayu"
         use "glepnir/zephyr-nvim"
+        use 'Mofiqul/vscode.nvim'
 
         -- git
         use {

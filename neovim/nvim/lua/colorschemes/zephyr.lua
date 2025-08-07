@@ -4,7 +4,7 @@ local variantLoaders = {
     [""] = "colorscheme zephyr"
 }
 
-zephyr.SetUp = function(variant)
+zephyr.setup = function(variant)
     vim.cmd(variantLoaders[variant])
 end
 

@@ -16,13 +16,20 @@ function editor_module:setColorscheme(colorscheme)
         end
     end
 
-    -- set fallback color to prvent errors
+    -- set fallback color to prevent errors
     if not exists then
-        print("Colorscheme set to default colorscheme: " .. defaultColorscheme)
+        vim.notify("Colorscheme set to default colorscheme: " .. defaultColorscheme, vim.log.levels.WARN)
         colorscheme = defaultColorscheme
     end
 
-    vim.cmd("colorscheme " .. colorscheme)
+    -- if colorscheme has a dedicated module use it
+    local ok, module = pcall(require, "colorscheme." .. colorscheme)
+    if ok then
+        module.setup()
+    else
+        -- if not just load the colorscheme
+        vim.cmd("colorscheme " .. colorscheme)
+    end
 end
 
 function editor_module:commonConfigs()
