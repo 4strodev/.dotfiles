@@ -30,6 +30,11 @@ return (function()
     keymap("n", "<S-Tab>", "<cmd>bprevious<cr>", nores)
 
     -- horizontal scroll
+    keymap("n", "<M-ScrollWheelUp>", "3zl", nores)
+    keymap("v", "<M-ScrollWheelUp>", "3zl", nores)
+    keymap("n", "<M-ScrollWheelDown>", "3zh", nores)
+    keymap("v", "<M-ScrollWheelDown>", "3zh", nores)
+
     keymap("v", "<M-h>", "3zh", nores)
     keymap("v", "<M-l>", "3zl", nores)
     keymap("n", "<M-h>", "3zh", nores)
