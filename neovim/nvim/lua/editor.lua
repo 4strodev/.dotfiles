@@ -7,7 +7,7 @@ function editor_module:setColorscheme(colorscheme)
     -- get available colorschemes
     local colorschemes = vim.fn.getcompletion("", "color")
     local exists = false
-    local defaultColorscheme = "desert"
+    local defaultColorscheme = "retrobox"
 
     -- checking if the provided colorscheme exists
     for _, value in ipairs(colorschemes) do
