@@ -92,6 +92,9 @@ require("packer").startup(
         -- marks
         use "chentoast/marks.nvim"
 
+        --terminal
+        use "4strodev/termtracker.nvim"
+
         if packer_bootstrap then
             require('packer').sync()
         end
