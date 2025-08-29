@@ -31,7 +31,7 @@ vim.o.ignorecase = true
 vim.o.incsearch = true
 
 vim.o.cursorline = true
-vim.o.colorcolumn = "120"
+vim.o.colorcolumn = "100"
 vim.cmd("highlight ColoColumn ctermbg=0 guibg=lightgrey")
 
 vim.o.splitbelow = true
