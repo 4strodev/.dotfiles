@@ -1,13 +1,14 @@
-local lspconfig = require('lspconfig')
 local mason = require('mason')
 --local mason_dap = require('mason-nvim-dap')
 local mason_lspconfig = require('mason-lspconfig')
+local util = require("lspconfig.util");
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(_, bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+
 
     -- Mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -35,7 +36,8 @@ mason_lspconfig.setup({
     ensure_installed = { "lua_ls", "ts_ls" },
     automatic_enable = {
         exclude = {
-            "lua_ls"
+            "lua_ls",
+            "ts_ls"
         }
     }
 })
@@ -55,7 +57,30 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>qq', vim.diagnostic.setloclist, opts)
 
-lspconfig.lua_ls.setup({
+vim.lsp.config('ts_ls', {
+    on_attach = function(client, bufnr)
+        local root_dir = client.config.root_dir
+
+        -- helper: check if a file exists
+        local function exists(path)
+            return util.path.exists(util.path.join(root_dir, path))
+        end
+
+        -- disable ts_ls formatting if Prettier is present
+        if exists("node_modules/.bin/prettier")
+            or exists("prettier.config.js")
+            or exists(".prettierrc")
+            or exists(".prettierrc.js")
+            or exists(".prettierrc.json")
+            or exists(".prettierrc.yaml")
+            or exists(".prettierrc.yml") then
+            client.server_capabilities.documentFormattingProvider = false
+        end
+        on_attach(client, bufnr)
+    end,
+})
+
+vim.lsp.config('lua_ls', {
     on_attach = on_attach,
     settings = {
         Lua = {

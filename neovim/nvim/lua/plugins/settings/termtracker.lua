@@ -1,2 +1,2 @@
 local termtracker = require('termtracker')
-termtracker.setup({size = '15'})
+termtracker.setup({size = '25'})

@@ -23,6 +23,13 @@
             {
                 "language": "html",
                 "path": "./snippets/html/html.json"
+            },
+            {
+                "language": [
+                    "javascript",
+                    "typescript"
+                ],
+                "path": "./snippets/javascript/jsdoc.json"
             }
         ]
     }

@@ -11,8 +11,6 @@ end
 
 require("packer").startup(
     function(use)
-        -- notifications
-        use 'rcarriga/nvim-notify'
         -- Packer plugin manager
         use "wbthomason/packer.nvim"
 
@@ -51,7 +49,11 @@ require("packer").startup(
         use "lukas-reineke/indent-blankline.nvim"
 
         -- language snippets
-        use { "L3MON4D3/LuaSnip" }
+        use {
+            "L3MON4D3/LuaSnip",
+            tag = "v2.*",
+            run = "make install_jsregexp",
+        }
         use { "rafamadriz/friendly-snippets" }
         use { 'saadparwaiz1/cmp_luasnip' }
 
