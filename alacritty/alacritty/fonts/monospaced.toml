@@ -1,0 +1,21 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[font]
+size = 12
+
+[font.bold]
+family = "Noto Sans Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "Noto Sans Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "Noto Sans Mono"
+style = "Italic"
+
+[font.normal]
+family = "Noto Sans Mono"
+style = "Regular"
