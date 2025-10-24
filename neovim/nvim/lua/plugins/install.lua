@@ -1,103 +1,111 @@
-local fn = vim.fn
-
-local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
-local packer_bootstrap = false
-
--- Installing packer if it is not installed
-if fn.empty(fn.glob(install_path)) > 0 then
-    packer_bootstrap = fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim',
-        install_path })
+-- Checking if lazyvim is installed
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+    local lazyrepo = "https://github.com/folke/lazy.nvim.git"
+    local out = vim.fn.system({ "git", "clone", "--filter=blob:none", "--branch=stable", lazyrepo, lazypath })
+    if vim.v.shell_error ~= 0 then
+        vim.api.nvim_echo({
+            { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
+            { out,                            "WarningMsg" },
+            { "\nPress any key to exit..." },
+        }, true, {})
+        vim.fn.getchar()
+        os.exit(1)
+    end
 end
+vim.opt.rtp:prepend(lazypath)
 
-require("packer").startup(
-    function(use)
-        -- Packer plugin manager
-        use "wbthomason/packer.nvim"
 
+require("lazy").setup({
+    spec = {
         -- lualine and bufferline
-        use { "hoob3rt/lualine.nvim" }
-        use { "akinsho/nvim-bufferline.lua" }
+        { "hoob3rt/lualine.nvim" },
+        { "akinsho/nvim-bufferline.lua" },
 
         -- autopairs
-        use { "windwp/nvim-autopairs" }
+        { "windwp/nvim-autopairs" },
 
         -- commenter
-        use { "preservim/nerdcommenter" }
+        { "preservim/nerdcommenter" },
 
         -- hex colorizer
-        use "norcalli/nvim-colorizer.lua"
+        { "norcalli/nvim-colorizer.lua" },
 
         -- telescope 🔭
-        use {
+        {
             "nvim-telescope/telescope.nvim",
-            requires = {
+            dependencies = {
                 "nvim-telescope/telescope-fzy-native.nvim",
                 "nvim-lua/popup.nvim",
                 "nvim-lua/plenary.nvim"
             }
-        }
+        },
 
         -- file icons
-        use { 'kyazdani42/nvim-web-devicons' }
+        { 'kyazdani42/nvim-web-devicons' },
 
         -- file explorer
-        use {
+        {
             'kyazdani42/nvim-tree.lua',
-        }
+        },
 
         -- indent line
-        use "lukas-reineke/indent-blankline.nvim"
+        { "lukas-reineke/indent-blankline.nvim" },
 
         -- language snippets
-        use {
+        {
             "L3MON4D3/LuaSnip",
-            tag = "v2.*",
-            run = "make install_jsregexp",
-        }
-        use { "rafamadriz/friendly-snippets" }
-        use { 'saadparwaiz1/cmp_luasnip' }
+            version = "v2.*",
+            build = "make install_jsregexp",
+        },
+        { "rafamadriz/friendly-snippets" },
+        { 'saadparwaiz1/cmp_luasnip' },
 
         -- treesiter
-        use { "nvim-treesitter/nvim-treesitter" }
+        { "nvim-treesitter/nvim-treesitter" },
 
         -- lsp and completion
-        use 'hrsh7th/cmp-nvim-lsp'
-        use 'hrsh7th/cmp-buffer'
-        use 'hrsh7th/cmp-path'
-        use 'hrsh7th/cmp-cmdline'
-        use 'hrsh7th/nvim-cmp'
-        use { "neovim/nvim-lspconfig" }
-        use { "williamboman/mason.nvim" }
-        use "williamboman/mason-lspconfig.nvim"
-        use { "ray-x/lsp_signature.nvim" }
-        use {
+        { 'hrsh7th/cmp-nvim-lsp' },
+        { 'hrsh7th/cmp-buffer' },
+        { 'hrsh7th/cmp-path' },
+        { 'hrsh7th/cmp-cmdline' },
+        { 'hrsh7th/nvim-cmp' },
+        { "neovim/nvim-lspconfig" },
+        { "williamboman/mason.nvim" },
+        { "williamboman/mason-lspconfig.nvim" },
+        { "ray-x/lsp_signature.nvim" },
+        {
             "aznhe21/actions-preview.nvim",
-        }
+        },
 
         -- themes
-        use "glepnir/zephyr-nvim"
-        use 'Mofiqul/vscode.nvim'
+        { "glepnir/zephyr-nvim" },
+        { 'Mofiqul/vscode.nvim' },
 
         -- git
-        use {
+        {
             "lewis6991/gitsigns.nvim",
-            requires = { "nvim-lua/plenary.nvim" }
-        }
+            dependencies = { "nvim-lua/plenary.nvim" }
+        },
 
         -- debugging
-        use { 'mfussenegger/nvim-dap' }
-        use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } }
-        use 'theHamsta/nvim-dap-virtual-text'
-        use 'leoluz/nvim-dap-go'
+        { 'mfussenegger/nvim-dap' },
+        { "rcarriga/nvim-dap-ui",           dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
+        { 'theHamsta/nvim-dap-virtual-text' },
+        { 'leoluz/nvim-dap-go' },
 
 
         -- marks
-        use "chentoast/marks.nvim"
+        { "chentoast/marks.nvim" },
 
         --terminal
-        use "4strodev/termtracker.nvim"
-
-        if packer_bootstrap then
-            require('packer').sync()
-        end
-    end)
+        { "4strodev/termtracker.nvim" },
+    },
+    defaults = {
+        lazy = false,
+        version = false,
+    },
+    checker = {
+        enabled = true,
+    },
+})
