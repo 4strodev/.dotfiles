@@ -30,18 +30,6 @@ local on_attach = function(_, bufnr)
     vim.keymap.set('n', '<space>fd', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
-mason.setup()
---mason_dap.setup()
-mason_lspconfig.setup({
-    ensure_installed = { "lua_ls", "ts_ls" },
-    automatic_enable = {
-        exclude = {
-            "lua_ls",
-            "ts_ls"
-        }
-    }
-})
-
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('LspKeymaps', { clear = true }),
     callback = function(event)
@@ -108,4 +96,9 @@ vim.lsp.config('lua_ls', {
             },
         },
     },
+})
+
+mason.setup()
+mason_lspconfig.setup({
+    ensure_installed = { "lua_ls", "ts_ls" },
 })

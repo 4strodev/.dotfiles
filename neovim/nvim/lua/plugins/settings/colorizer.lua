@@ -1,1 +1,6 @@
-require "colorizer".setup()
+require "colorizer".setup {
+    'css',
+    html = {
+        mode = 'foreground'
+    }
+}
