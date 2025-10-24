@@ -11,7 +11,6 @@ export EDITOR=nvim
 export VISUAL=code
 export PATH=~/bin:$PATH
 
-<<<<<<< HEAD
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
