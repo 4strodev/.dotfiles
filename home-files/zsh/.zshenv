@@ -1,7 +1,6 @@
-. "$HOME/.cargo/env"
-
 # setting go paths
 export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOPATH/bin
 
 # python commands
@@ -12,6 +11,7 @@ export EDITOR=nvim
 export VISUAL=code
 export PATH=~/bin:$PATH
 
+<<<<<<< HEAD
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
@@ -24,6 +24,7 @@ export PATH="$JETBRAINS_SCRIPTS_FOLDER:$PATH"
 export PATH="$HOME/.dotnet/tools:$PATH"
 
 # asdf
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
 alias git-alias='less $HOME/.zim/modules/git/init.zsh'
