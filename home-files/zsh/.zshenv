@@ -4,30 +4,13 @@
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
-# volta
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-
 # python commands
 export PATH=$PATH:$HOME/.local/bin
-
-# Composer
-export PATH=$PATH:$HOME/.config/composer/vendor/bin
-
-# General configurations
-export EDITOR_THEME="vscode"
 
 # editor paths
 export EDITOR=nvim
 export VISUAL=code
 export PATH=~/bin:$PATH
-
-# flutter env variables
-export CHROME_EXECUTABLE=/usr/bin/brave
-export PATH="$PATH:/home/astro/.flutter_install/flutter/bin"
-
-export WASMTIME_HOME="$HOME/.wasmtime"
-export PATH="$WASMTIME_HOME/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
@@ -37,22 +20,40 @@ export PATH="$PNPM_HOME:$PATH"
 export JETBRAINS_SCRIPTS_FOLDER="$HOME/.local/share/JetBrains/Toolbox/scripts"
 export PATH="$JETBRAINS_SCRIPTS_FOLDER:$PATH"
 
-# fly.io
-export FLYCTL_INSTALL="/home/astro/.fly"
-export PATH="$FLYCTL_INSTALL/bin:$PATH"
-export PARTY_VIDEO="https://www.youtube.com/shorts/SXHMnicI6Pg"
-
-export PATH="$HOME/.dotnet/tools:$PATH"
-
-# emacs
-export PATH="$HOME/.config/emacs/bin:$PATH"
-
 # dotnet
 export PATH="$HOME/.dotnet/tools:$PATH"
 
-# ruby
-export GEM_HOME="$(gem env user_gemhome)"
-export PATH="$PATH:$GEM_HOME/bin"
-
 # asdf
 export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+
+alias git-alias='less $HOME/.zim/modules/git/init.zsh'
+alias devim='nvim -u $HOME/.config/nvim/devinit.lua'
+alias cleanvim='nvim -u NORC'
+
+source <(fzf --zsh)
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+# Start the GPG agent if it's not already running
+if ! gpgconf --list-dirs agent-socket > /dev/null 2>&1; then
+    eval $(gpg-agent --daemon --write-env-file "$HOME/.gpg-agent-info")
+fi
+
+# Load the GPG agent environment variables if they exist
+if [ -f "$HOME/.gpg-agent-info" ]; then
+    source "$HOME/.gpg-agent-info"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+    export SSH_AGENT_PID
+fi
+
+# Ensure GPG TTY is set correctly
+export GPG_TTY=$(tty)
+
+# Loading extra env vars
+if [ -f "$HOME/.zshcustom" ]; then
+    source "$HOME/.zshcustom"
+fi
