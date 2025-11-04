@@ -1,0 +1,11 @@
+{
+    "test function": {
+        "prefix": "it",
+        "body": [
+            "it(\"${1:test description}\", () => {",
+            "   ${2:test content}",
+            "})"
+        ],
+        "description": "A test function"
+    }
+}
