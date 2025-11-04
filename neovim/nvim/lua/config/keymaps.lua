@@ -22,8 +22,8 @@ return (function()
     keymap("n", "<leader>qf", "<cmd>bd!<cr>", nore)
 
     -- open terminal
-    keymap("v", "<leader>tt", "<cmd>TermToggle<cr>", nore)
-    keymap("n", "<leader>tt", "<cmd>TermToggle<cr>", nore)
+    keymap("v", "<leader>j", "<cmd>TermToggle<cr>", nore)
+    keymap("n", "<leader>j", "<cmd>TermToggle<cr>", nore)
 
     -- move between buffers
     keymap("n", "<Tab>", "<cmd>bnext<cr>", nores)

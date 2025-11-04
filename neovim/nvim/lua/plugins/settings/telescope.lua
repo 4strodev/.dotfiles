@@ -87,7 +87,9 @@ end
 
 telescope_module.load_keymaps = function()
     -- basic keymaps
-    keymap("n", "<leader>ft", '<cmd>Telescope<cr>', nores)
+    keymap("n", "<leader>tt", '<cmd>Telescope<cr>', nores)
+    keymap("n", "<leader>tp", '<cmd>Telescope find_files<cr>', nores)
+    keymap("n", "<leader>tf", '<cmd>Telescope live_grep<cr>', nores)
 
     -- cutsom functions
     keymap("n", "<leader>ed", '<cmd>lua require("plugins.settings.telescope").search_dotfiles()<cr>', nores)
