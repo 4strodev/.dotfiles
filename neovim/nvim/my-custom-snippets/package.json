@@ -30,6 +30,13 @@
                     "typescript"
                 ],
                 "path": "./snippets/javascript/jsdoc.json"
+            },
+            {
+                "language": [
+                    "javascript",
+                    "typescript"
+                ],
+                "path": "./snippets/javascript/jest.json"
             }
         ]
     }
