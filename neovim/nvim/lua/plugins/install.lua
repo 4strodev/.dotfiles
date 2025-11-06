@@ -62,7 +62,7 @@ require("lazy").setup({
         { 'saadparwaiz1/cmp_luasnip' },
 
         -- treesiter
-        { "nvim-treesitter/nvim-treesitter" },
+        { "nvim-treesitter/nvim-treesitter",  branch = "master", lazy = false, build = ":TSUpdate" },
 
         -- lsp and completion
         { 'hrsh7th/cmp-nvim-lsp' },
