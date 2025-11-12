@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+ALACRITTY_DIR="$HOME/.config/alacritty"
+
+ln --force "$ALACRITTY_DIR/fonts/$1" "$ALACRITTY_DIR/settings/fonts.toml"
+touch "$ALACRITTY_DIR/settings/fonts.toml"

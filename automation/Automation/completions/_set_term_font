@@ -1,0 +1,5 @@
+#compdef set_term_font
+
+_set_term_font() {
+    _arguments '1:font_file:_files -W ~/.config/alacritty/fonts' \
+}

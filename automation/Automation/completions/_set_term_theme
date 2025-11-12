@@ -1,0 +1,5 @@
+#compdef set_term_theme
+
+_set_term_theme() {
+    _arguments '1:theme_file:_files -W ~/.config/alacritty/themes' \
+}
