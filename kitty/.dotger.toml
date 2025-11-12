@@ -1,3 +1,0 @@
-[destination]
-path = "{{ getenv \"HOME\" }}/.config/"
-mkdir = true
