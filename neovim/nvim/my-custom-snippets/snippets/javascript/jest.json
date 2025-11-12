@@ -1,11 +1,29 @@
 {
     "test function": {
+        "prefix": "test",
+        "body": [
+            "test(\"${1:test description}\", () => {",
+            "   ${2:test content}",
+            "})"
+        ],
+        "description": "A test function"
+    },
+    "it test function": {
         "prefix": "it",
         "body": [
             "it(\"${1:test description}\", () => {",
             "   ${2:test content}",
             "})"
         ],
-        "description": "A test function"
+        "description": "A test it function"
+    },
+    "test scaffold": {
+        "prefix": "desc",
+        "body": [
+            "describe(\"${1:test suite description}\", () => {",
+            "   ${2:test suite content}",
+            "})"
+        ],
+        "description": "A test suite function"
     }
 }
