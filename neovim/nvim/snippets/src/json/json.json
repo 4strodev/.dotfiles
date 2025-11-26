@@ -1,0 +1,6 @@
+{
+    "schema": {
+        "prefix": "schema",
+        "body": "\"\\$schema\": \"${1:https://www.schemastore.org}/$2\""
+    }
+}

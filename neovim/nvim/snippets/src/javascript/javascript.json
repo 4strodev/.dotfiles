@@ -1,0 +1,9 @@
+{
+    "JSON.stringify": {
+        "prefix": "json",
+        "body": [
+            "JSON.stringify(${1:Content})$0"
+        ],
+        "description": "`JSON.stringify` function."
+    }
+}

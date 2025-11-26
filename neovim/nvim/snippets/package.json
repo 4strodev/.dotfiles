@@ -7,6 +7,12 @@
         "snippets": [
             {
                 "language": [
+                    "json"
+                ],
+                "path": "./src/json/json.json"
+            },
+            {
+                "language": [
                     "plaintext",
                     "markdown",
                     "tex",
@@ -14,29 +20,36 @@
                     "global",
                     "all"
                 ],
-                "path": "./snippets/scripting/scripting.json"
+                "path": "./src/scripting/scripting.json"
             },
             {
                 "language": "go",
-                "path": "./snippets/go/go.json"
+                "path": "./src/go/go.json"
             },
             {
                 "language": "html",
-                "path": "./snippets/html/html.json"
+                "path": "./src/html/html.json"
             },
             {
                 "language": [
                     "javascript",
                     "typescript"
                 ],
-                "path": "./snippets/javascript/jsdoc.json"
+                "path": "./src/javascript/jsdoc.json"
             },
             {
                 "language": [
                     "javascript",
                     "typescript"
                 ],
-                "path": "./snippets/javascript/jest.json"
+                "path": "./src/javascript/jest.json"
+            },
+            {
+                "language": [
+                    "javascript",
+                    "typescript"
+                ],
+                "path": "./src/javascript/javascript.json"
             }
         ]
     }
