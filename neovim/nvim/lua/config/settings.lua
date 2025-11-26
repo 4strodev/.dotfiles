@@ -55,3 +55,5 @@ vim.api.nvim_create_autocmd("TermOpen", {
 -- Allow per local project config file
 vim.o.exrc = true   -- Enable local config files
 vim.o.secure = true -- Restrict what they can do (recommended)
+
+vim.o.winborder = 'single'
