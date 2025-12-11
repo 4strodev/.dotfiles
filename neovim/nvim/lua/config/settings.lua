@@ -57,3 +57,6 @@ vim.o.exrc = true   -- Enable local config files
 vim.o.secure = true -- Restrict what they can do (recommended)
 
 vim.o.winborder = 'single'
+
+vim.opt.list = true
+vim.opt.listchars = 'space:·,trail:·,nbsp:·,extends:⟩,precedes:⟨'   
