@@ -37,11 +37,12 @@ vim.cmd("highlight ColoColumn ctermbg=0 guibg=lightgrey")
 vim.o.splitbelow = true
 vim.o.splitright = true
 
-vim.o.foldcolumn = '1'
-vim.o.foldmethod = 'indent'
-vim.o.foldlevel = 99
-vim.o.foldnestmax = 4
-vim.o.foldtext = ''
+vim.opt.foldcolumn = '1'
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+vim.opt.foldlevel = 99
+vim.opt.foldtext = ''
+vim.opt.foldenable = true
 
 vim.o.spell = true
 vim.o.spelllang = "en_us"

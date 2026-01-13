@@ -1,9 +1,10 @@
 local telescope_module = {}
 local keymap = vim.api.nvim_set_keymap
-local nores = {noremap = true, silent = true}
+local nores = { noremap = true, silent = true }
 --local nore = {noremap = true, silent = false}
 
 local actions = require("telescope.actions")
+local lga_actions = require("telescope-live-grep-args.actions")
 
 telescope_module.setup = function()
     require("telescope").setup {
@@ -37,11 +38,11 @@ telescope_module.setup = function()
             generic_sorter = require "telescope.sorters".get_generic_fuzzy_sorter,
             winblend = 0,
             border = {},
-            borderchars = {"─", "│", "─", "│", "╭", "╮", "╯", "╰"},
+            borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
             color_devicons = true,
             use_less = true,
             path_display = {},
-            set_env = {["COLORTERM"] = "truecolor"}, -- default = nil,
+            set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
             file_previewer = require "telescope.previewers".vim_buffer_cat.new,
             grep_previewer = require "telescope.previewers".vim_buffer_vimgrep.new,
             qflist_previewer = require "telescope.previewers".vim_buffer_qflist.new,
@@ -57,6 +58,22 @@ telescope_module.setup = function()
             fzy_native = {
                 override_generic_sorter = false,
                 override_file_sorter = true
+            },
+            live_grep_args = {
+                auto_quoting = true, -- enable/disable auto-quoting
+                -- define mappings, e.g.
+                mappings = { -- extend mappings
+                    i = {
+                        ["<C-k>"] = lga_actions.quote_prompt(),
+                        ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+                        -- freeze the current list and start a fuzzy search in the frozen list
+                        ["<C-space>"] = lga_actions.to_fuzzy_refine,
+                    },
+                },
+                -- ... also accepts theme settings, for example:
+                -- theme = "dropdown", -- use dropdown theme
+                -- theme = { }, -- use own theme spec
+                -- layout_config = { mirror=true }, -- mirror preview pane
             }
         },
         pickers = {
@@ -83,6 +100,7 @@ end
 telescope_module.load_extensions = function()
     -- seting up telescope extensions
     require("telescope").load_extension("fzy_native")
+    require("telescope").load_extension("live_grep_args")
 end
 
 telescope_module.load_keymaps = function()
@@ -90,6 +108,8 @@ telescope_module.load_keymaps = function()
     keymap("n", "<leader>tt", '<cmd>Telescope<cr>', nores)
     keymap("n", "<leader>tp", '<cmd>Telescope find_files<cr>', nores)
     keymap("n", "<leader>tf", '<cmd>Telescope live_grep<cr>', nores)
+    keymap("n", "<leader>tr", '<cmd>Telescope resume<cr>', nores)
+    keymap("n", "<leader>tF", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", nores)
 
     -- cutsom functions
     keymap("n", "<leader>ed", '<cmd>lua require("plugins.settings.telescope").search_dotfiles()<cr>', nores)
