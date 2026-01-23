@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+set -e
+
+snippets_dir=$HOME/.local/share/snippets
+
+selected_file=$(ls "$snippets_dir" | fzf \
+  --preview "cat $snippets_dir/{}" \
+  --preview-window=up:70%)
+
+wl-copy $(cat $snippets_dir/$selected_file)
