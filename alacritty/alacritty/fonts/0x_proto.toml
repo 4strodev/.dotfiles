@@ -1,0 +1,21 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[font]
+size = 11
+
+[font.bold]
+family = "0xProto Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "0xProto Nerd Font Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "0xProto Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "0xProto Nerd Font Mono"
+style = "Regular"
