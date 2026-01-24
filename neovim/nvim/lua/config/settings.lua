@@ -66,5 +66,5 @@ vim.opt.listchars = {
   nbsp = "·",
   tab = "→ ",
   extends = "⟩",
-  precedes = "⟨",
+  precedes = "⟨"
 }
