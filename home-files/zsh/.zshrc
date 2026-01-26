@@ -1,7 +1,4 @@
 # Loading extra env vars
-if [ -f "$HOME/.zshcustom" ]; then
-    source "$HOME/.zshcustom"
-fi
 
 # Start configuration added by Zim install {{{
 #
@@ -159,3 +156,7 @@ fi
 
 # Ensure GPG TTY is set correctly
 export GPG_TTY=$(tty)
+
+if [ -f "$HOME/.zshcustom" ]; then
+    source "$HOME/.zshcustom"
+fi
