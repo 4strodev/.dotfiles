@@ -67,5 +67,4 @@ vim.opt.listchars = {
   tab = "→ ",
   extends = "⟩",
   precedes = "⟨",
-  eol = "¶"
 }
