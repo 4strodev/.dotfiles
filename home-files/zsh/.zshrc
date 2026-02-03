@@ -1,4 +1,6 @@
-# Loading extra env vars
+if [ -f "$HOME/.zshcustom" ]; then
+    source "$HOME/.zshcustom"
+fi
 
 # Start configuration added by Zim install {{{
 #
@@ -157,6 +159,8 @@ fi
 # Ensure GPG TTY is set correctly
 export GPG_TTY=$(tty)
 
-if [ -f "$HOME/.zshcustom" ]; then
-    source "$HOME/.zshcustom"
+# Adding completions for AWS
+if [ -f '/usr/local/bin/aws_completer' ]; then
+    autoload bashcompinit && bashcompinit
+    complete -C '/usr/local/bin/aws_completer' aws
 fi
