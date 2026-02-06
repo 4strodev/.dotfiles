@@ -46,7 +46,6 @@ function editor_module:commonConfigs()
 
     -- Setting colors
     vim.o.termguicolors = true
-    vim.o.background = "dark"
 
     -- executing other configuration files
     require("config.settings")

@@ -80,13 +80,13 @@ require("lazy").setup({
         { "williamboman/mason.nvim" },
         { "williamboman/mason-lspconfig.nvim" },
         { "ray-x/lsp_signature.nvim" },
-        {
-            "aznhe21/actions-preview.nvim",
-        },
+        { "aznhe21/actions-preview.nvim" },
+        { "iamkarasik/sonarqube.nvim" },
 
         -- themes
         { "glepnir/zephyr-nvim" },
         { 'Mofiqul/vscode.nvim' },
+        { "f-person/auto-dark-mode.nvim", opts = {} },
 
         -- git
         {
