@@ -50,6 +50,7 @@ function editor_module:commonConfigs()
     -- executing other configuration files
     require("config.settings")
     require("config.keymaps")
+    require("config.macros")
 end
 
 return editor_module
