@@ -1,10 +1,10 @@
 local editor = require("editor")
 
 local function main()
-	editor:commonConfigs()
+	editor:common_configs()
 	require("plugins.install")
 
-	editor:setColorscheme(os.getenv("EDITOR_THEME"))
+	editor:set_colorscheme(os.getenv("EDITOR_THEME"))
 	require("plugins.config")
 end
 

@@ -2,8 +2,7 @@ local editor_module = {}
 
 -- Sets colorscheme. If colorscheme is not found then
 -- is fallback to the default one
-function editor_module:setColorscheme(colorscheme)
-
+function editor_module:set_colorscheme(colorscheme)
     -- get available colorschemes
     local colorschemes = vim.fn.getcompletion("", "color")
     local exists = false
@@ -33,24 +32,28 @@ function editor_module:setColorscheme(colorscheme)
     end
 end
 
-function editor_module:commonConfigs()
+function editor_module:common_configs()
     -- Python provider
     local homeDir = os.getenv("HOME")
     vim.g["python3_host_prog"] = homeDir .. '/.neovim_venv/bin/python'
 
-    -- Setting editor colorscheme this is based on an environment vairable
-    -- or by a default one
     vim.api.nvim_create_user_command("RestartNeovim", function()
         vim.cmd("luafile ~/.config/nvim/init.lua")
     end, {})
 
+    vim.g.loaded_netrw = 1
+    vim.g.loaded_netrwPlugin = 1
+
     -- Setting colors
-    vim.o.termguicolors = true
+    vim.opt.termguicolors = true
 
     -- executing other configuration files
     require("config.settings")
     require("config.keymaps")
     require("config.macros")
+end
+
+function editor_module:reload_colorscheme()
 end
 
 return editor_module

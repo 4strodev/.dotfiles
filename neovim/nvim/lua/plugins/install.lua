@@ -68,7 +68,7 @@ require("lazy").setup({
         { 'saadparwaiz1/cmp_luasnip' },
 
         -- treesiter
-        { "nvim-treesitter/nvim-treesitter",     branch = "master",    lazy = false, build = ":TSUpdate" },
+        { "nvim-treesitter/nvim-treesitter",  branch = "master", lazy = false, build = ":TSUpdate" },
 
         -- lsp and completion
         { 'hrsh7th/cmp-nvim-lsp' },
@@ -84,11 +84,14 @@ require("lazy").setup({
         { "iamkarasik/sonarqube.nvim" },
 
         -- themes
-        { "glepnir/zephyr-nvim" },
-        { 'Mofiqul/vscode.nvim' },
-        { "f-person/auto-dark-mode.nvim",        opts = {} },
-        { 'projekt0n/github-nvim-theme',         name = 'github-theme' },
-        { "Shatur/neovim-ayu" },
+        {
+            'folke/tokyonight.nvim',
+            lazy = false,
+            priority = 1000,
+            opts = {},
+        },
+        { "miikanissi/modus-themes.nvim", priority = 1000, lazy = false },
+        { "f-person/auto-dark-mode.nvim",   opts = {} },
 
         -- git
         {

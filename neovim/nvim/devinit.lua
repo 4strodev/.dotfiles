@@ -1,7 +1,7 @@
 local editor = require("editor")
 
 local function main()
-    editor:commonConfigs()
+    editor:common_configs()
 end
 
 main()
