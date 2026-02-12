@@ -164,3 +164,5 @@ if [ -f '/usr/local/bin/aws_completer' ]; then
     autoload bashcompinit && bashcompinit
     complete -C '/usr/local/bin/aws_completer' aws
 fi
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=blue"
