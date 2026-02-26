@@ -129,5 +129,5 @@ require("sonarqube").setup({
 
 mason.setup()
 mason_lspconfig.setup({
-    ensure_installed = { "lua_ls", "ts_ls" },
+    ensure_installed = { "clangd", "lua_ls", "ts_ls" },
 })
