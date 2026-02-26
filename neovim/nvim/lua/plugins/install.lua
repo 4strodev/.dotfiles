@@ -82,16 +82,25 @@ require("lazy").setup({
         { "ray-x/lsp_signature.nvim" },
         { "aznhe21/actions-preview.nvim" },
         { "iamkarasik/sonarqube.nvim" },
+        {
+            "allaman/emoji.nvim",
+            version = "1.0.0", -- optionally pin to a tag
+            dependencies = {
+                -- util for handling paths
+                "nvim-lua/plenary.nvim",
+                -- optional for nvim-cmp integration
+                "hrsh7th/nvim-cmp",
+                -- optional for telescope integration
+                "nvim-telescope/telescope.nvim",
+                -- optional for fzf-lua integration via vim.ui.select
+                "ibhagwan/fzf-lua",
+            },
+        },
 
         -- themes
-        {
-            'folke/tokyonight.nvim',
-            lazy = false,
-            priority = 1000,
-            opts = {},
-        },
+        { "Mofiqul/vscode.nvim" },
         { "miikanissi/modus-themes.nvim", priority = 1000, lazy = false },
-        { "f-person/auto-dark-mode.nvim",   opts = {} },
+        { "f-person/auto-dark-mode.nvim", opts = {} },
 
         -- git
         {
