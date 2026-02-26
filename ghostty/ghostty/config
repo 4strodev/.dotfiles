@@ -1,0 +1,14 @@
+font-family = 0xProto Nerd Font Mono
+font-family = "Noto Color Emoji"
+font-family-italic = 0xProto Nerd Font Mono
+font-family-bold = 0xProto Nerd Font Mono
+font-family-bold-italic = 0xProto Nerd Font Mono
+font-size = 11
+theme = "light:GitLab Light,dark:GitLab Dark"
+
+shell-integration-features = no-cursor,ssh-env
+cursor-style = block
+
+working-directory = home
+window-inherit-working-directory = false
+gtk-single-instance = false

@@ -1,0 +1,3 @@
+[destination]
+path = "/home/{{ getenv \"USER\" }}/.config/"
+mkdir = true
