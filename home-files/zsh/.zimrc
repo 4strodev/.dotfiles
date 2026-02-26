@@ -34,6 +34,7 @@ zmodule git-info
 zmodule prompt-pwd
 #zmodule gitster
 zmodule 4strodev/4stroprompt
+zmodule jirutka/zsh-shift-select
 
 #
 # Completion

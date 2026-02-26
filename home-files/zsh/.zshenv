@@ -8,7 +8,7 @@ export PATH=$PATH:$HOME/.local/bin
 
 # editor paths
 export EDITOR=nvim
-export VISUAL=code
+export VISUAL="code --wait"
 export PATH=~/bin:$PATH
 
 # pnpm
