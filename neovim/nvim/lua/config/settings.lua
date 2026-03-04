@@ -46,16 +46,13 @@ vim.opt.foldenable = true
 
 vim.o.spell = true
 vim.o.spelllang = "en_us"
+
 -- Create autocmd to disable spellcheck for terminal buffers
 vim.api.nvim_create_autocmd("TermOpen", {
     callback = function()
         vim.opt_local.spell = false
     end,
 })
-
--- Allow per local project config file
-vim.o.exrc = true   -- Enable local config files
-vim.o.secure = true -- Restrict what they can do (recommended)
 
 vim.o.winborder = 'single'
 
@@ -68,3 +65,9 @@ vim.opt.listchars = {
   extends = "⟩",
   precedes = "⟨"
 }
+
+vim.filetype.add({
+  pattern = {
+    ['%.gitlab%-ci%.ya?ml'] = 'yaml.gitlab',
+  },
+})
