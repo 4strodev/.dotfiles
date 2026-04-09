@@ -54,6 +54,10 @@ require("lazy").setup({
         {
             'kyazdani42/nvim-tree.lua',
         },
+        -- outline structure
+        {
+            "hedyhli/outline.nvim",
+        },
 
         -- indent line
         { "lukas-reineke/indent-blankline.nvim" },
@@ -75,6 +79,7 @@ require("lazy").setup({
         { 'hrsh7th/cmp-buffer' },
         { 'hrsh7th/cmp-path' },
         { 'hrsh7th/cmp-cmdline' },
+        { 'max397574/cmp-greek' },
         { 'hrsh7th/nvim-cmp' },
         { "neovim/nvim-lspconfig" },
         { "williamboman/mason.nvim" },
@@ -120,6 +125,16 @@ require("lazy").setup({
 
         --terminal
         { "4strodev/termtracker.nvim" },
+        {
+            'MeanderingProgrammer/render-markdown.nvim',
+            after = { 'nvim-treesitter' },
+            requires = { 'nvim-mini/mini.nvim', opt = true }, -- if you use the mini.nvim suite
+            -- requires = { 'nvim-mini/mini.icons', opt = true },        -- if you use standalone mini plugins
+            -- requires = { 'nvim-tree/nvim-web-devicons', opt = true }, -- if you prefer nvim-web-devicons
+            config = function()
+                require('render-markdown').setup({})
+            end,
+        }
     },
     defaults = {
         lazy = false,
