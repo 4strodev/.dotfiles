@@ -10,6 +10,6 @@ require("nvim-tree").setup({
         side = "right"
     },
     renderer = {
-        group_empty = true,
+        group_empty = false,
     }
 })
