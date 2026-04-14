@@ -289,7 +289,7 @@ theme "default"
 // The name of the default layout to load on startup
 // Default: "default"
 // 
-default_layout "claude"
+default_layout "compact"
  
 // The folder in which Zellij will look for layouts
 // (Requires restart)
