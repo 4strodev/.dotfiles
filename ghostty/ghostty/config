@@ -20,4 +20,4 @@ gtk-single-instance = false
 confirm-close-surface = false
 
 # terminal behavior
-mouse-scroll-multiplier = discrete:0.8
+mouse-scroll-multiplier = discrete:0.9
