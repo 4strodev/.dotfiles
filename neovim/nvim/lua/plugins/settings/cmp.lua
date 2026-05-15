@@ -27,8 +27,6 @@ cmp.setup({
         { name = "emoji" },
         { name = "path" },
         { name = "greek"}
-    }, {
-        { name = 'buffer' },
     })
 })
 

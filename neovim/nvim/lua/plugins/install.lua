@@ -48,7 +48,7 @@ require("lazy").setup({
         },
 
         -- file icons
-        { 'kyazdani42/nvim-web-devicons' },
+        { 'nvim-tree/nvim-web-devicons' },
 
         -- file explorer
         {
@@ -84,8 +84,16 @@ require("lazy").setup({
         { "neovim/nvim-lspconfig" },
         { "williamboman/mason.nvim" },
         { "williamboman/mason-lspconfig.nvim" },
-        { "ray-x/lsp_signature.nvim" },
-        { "aznhe21/actions-preview.nvim" },
+        {
+            'nvimdev/lspsaga.nvim',
+            config = function()
+                require('plugins.settings.lspsaga')
+            end,
+            dependencies = {
+                'nvim-treesitter/nvim-treesitter', -- optional
+                'nvim-tree/nvim-web-devicons', -- optional
+            }
+        },
         { "iamkarasik/sonarqube.nvim" },
         {
             "allaman/emoji.nvim",

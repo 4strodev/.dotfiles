@@ -3,9 +3,7 @@ local mason = require('mason')
 local mason_lspconfig = require('mason-lspconfig')
 local util = require("lspconfig.util");
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
-local on_attach = function(_, bufnr)
+local setup_keymaps = function(_, bufnr)
     -- Enable completion triggered by <c-x><c-o>
     vim.api.nvim_set_option_value('omnifunc', 'v:lua.vim.lsp.omnifunc', { buf = bufnr })
 
@@ -14,8 +12,7 @@ local on_attach = function(_, bufnr)
     -- See `:help vim.lsp.*` for documentation on any of the below functions
     local bufopts = { noremap = true, silent = true, buffer = bufnr }
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    vim.keymap.set('n', 'gd', "<CMD>Lspsaga goto_definition<CR>", bufopts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
     vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
@@ -25,15 +22,46 @@ local on_attach = function(_, bufnr)
     end, bufopts)
     vim.keymap.set('n', '<space>D', vim.lsp.buf.type_definition, bufopts)
     vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
-    --vim.keymap.set('n', '<space>ac', vim.lsp.buf.code_action, bufopts)
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
+    vim.keymap.set('n', 'gr', "<CMD>Lspsaga finder<CR>", bufopts)
     vim.keymap.set('n', '<space>fd', function() vim.lsp.buf.format { async = true } end, bufopts)
+end
+
+local setup_highlight = function(client, bufnr)
+    if client.server_capabilities.documentHighlightProvider then
+        local group = vim.api.nvim_create_augroup("LspDocumentHighlight", { clear = true })
+
+        vim.api.nvim_create_autocmd("CursorHold", {
+            group = group,
+            buffer = bufnr,
+            callback = vim.lsp.buf.document_highlight,
+        })
+
+        vim.api.nvim_create_autocmd("CursorHoldI", {
+            group = group,
+            buffer = bufnr,
+            callback = vim.lsp.buf.document_highlight,
+        })
+
+        vim.api.nvim_create_autocmd("CursorMoved", {
+            group = group,
+            buffer = bufnr,
+            callback = vim.lsp.buf.clear_references,
+        })
+    end
+end
+
+-- Use an on_attach function to only map the following keys
+-- after the language server attaches to the current buffer
+local on_attach = function(client, bufnr)
+    setup_keymaps(client, bufnr)
+    setup_highlight(client, bufnr)
 end
 
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('LspKeymaps', { clear = true }),
     callback = function(event)
-        on_attach(nil, event.buf)
+        local client = vim.lsp.get_client_by_id(event.data.client_id)
+        on_attach(client, event.buf)
     end
 })
 

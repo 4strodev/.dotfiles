@@ -127,7 +127,8 @@ telescope_module.load_keymaps = function()
     -- basic keymaps
     keymap("n", "<leader>tt", '<cmd>Telescope<cr>', nores)
     keymap("n", "<leader>tp", '<cmd>Telescope find_files<cr>', nores)
-    keymap("n", "<leader>tr", '<cmd>Telescope resume<cr>', nores)
+    keymap("n", "<leader>tr", '<cmd>Telescope lsp_references<cr>', nores)
+    keymap("n", "<leader>tR", '<cmd>Telescope resume<cr>', nores)
     keymap("n", "<leader>tf", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", nores)
     keymap("n", "<leader>tq", "<cmd>Telescope quickfix<cr>", nores)
 
