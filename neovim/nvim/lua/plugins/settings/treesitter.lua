@@ -1,7 +1,3 @@
-require('nvim-treesitter').setup {
-    install_dir = vim.fn.stdpath('data') .. '/site'
-}
-
 local function start_ts_if_available(bufnr)
     local fileType = vim.bo[bufnr].filetype
     local language = vim.treesitter.language.get_lang(fileType)
