@@ -1,0 +1,31 @@
+#!/usr/bin/env sh
+set -e
+
+locations_file="$HOME/.local/share/quickjump/locations.json"
+terminal="${TERMINAL:-ghostty}"
+
+if [ ! -f "$locations_file" ]; then
+  echo "Locations file not found: $locations_file" >&2
+  exit 1
+fi
+
+selected=$(jq -r '.[] | [.path, (.command // "")] | @tsv' "$locations_file" \
+  | fzf --with-nth=1 --delimiter='\t')
+
+[ -z "$selected" ] && exit 0
+
+path=$(printf '%s' "$selected" | cut -f1)
+command=$(printf '%s' "$selected" | cut -f2-)
+
+echo $path
+
+if [ -n "$command" ]; then
+  setsid -f sh -c "$command \"\$1\"" _ "$path" </dev/null >/dev/null 2>&1
+elif [ -d "$path" ]; then
+  setsid -f "$terminal" --working-directory="$path" </dev/null >/dev/null 2>&1
+elif [ -f "$path" ]; then
+  setsid -f xdg-open "$path" </dev/null >/dev/null 2>&1
+else
+  echo "Path not found: $path" >&2
+  exit 1
+fi
