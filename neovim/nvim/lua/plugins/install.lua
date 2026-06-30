@@ -23,7 +23,7 @@ require("lazy").setup({
         { "akinsho/nvim-bufferline.lua" },
 
         -- autopairs
-        { "windwp/nvim-autopairs" },
+        { "windwp/nvim-autopairs",       event = "InsertEnter" },
 
         -- commenter
         { "preservim/nerdcommenter" },
@@ -103,7 +103,7 @@ require("lazy").setup({
                 require('plugins.settings.lspsaga')
             end,
             dependencies = {
-                'nvim-tree/nvim-web-devicons',     -- optional
+                'nvim-tree/nvim-web-devicons', -- optional
             }
         },
         { "iamkarasik/sonarqube.nvim" },
