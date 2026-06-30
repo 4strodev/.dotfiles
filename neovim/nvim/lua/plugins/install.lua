@@ -29,7 +29,7 @@ require("lazy").setup({
         { "preservim/nerdcommenter" },
 
         -- hex colorizer
-        { "norcalli/nvim-colorizer.lua" },
+        { "catgoose/nvim-colorizer.lua", event = "BufReadPre", opts = {} },
 
         -- telescope 🔭
         {
