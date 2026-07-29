@@ -13,8 +13,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
         os.exit(1)
     end
 end
-vim.opt.rtp:prepend(lazypath)
 
+vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
     spec = {
@@ -95,7 +95,7 @@ require("lazy").setup({
         { 'max397574/cmp-greek' },
         { 'hrsh7th/nvim-cmp' },
         { "neovim/nvim-lspconfig" },
-        { "ray-x/lsp_signature.nvim",     event = "InsertEnter" },
+        { "ray-x/lsp_signature.nvim",         event = "InsertEnter" },
         { "williamboman/mason.nvim" },
         { "williamboman/mason-lspconfig.nvim" },
         {

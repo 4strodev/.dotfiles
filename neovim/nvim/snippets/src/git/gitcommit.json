@@ -1,0 +1,7 @@
+{
+    "conventional commit": {
+        "prefix": "commit",
+        "body": "${1:type}(${2:scope}): ${3:description} [TS-${4:NNNN}]",
+        "description": "Conventional commit message"
+    }
+}

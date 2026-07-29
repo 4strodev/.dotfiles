@@ -28,6 +28,10 @@
                 "path": "./src/go/go.json"
             },
             {
+                "language": "gitcommit",
+                "path": "./src/git/gitcommit.json"
+            },
+            {
                 "language": "html",
                 "path": "./src/html/html.json"
             },
