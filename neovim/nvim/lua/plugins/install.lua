@@ -95,6 +95,7 @@ require("lazy").setup({
         { 'max397574/cmp-greek' },
         { 'hrsh7th/nvim-cmp' },
         { "neovim/nvim-lspconfig" },
+        { "ray-x/lsp_signature.nvim",     event = "InsertEnter" },
         { "williamboman/mason.nvim" },
         { "williamboman/mason-lspconfig.nvim" },
         {

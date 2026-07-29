@@ -14,7 +14,7 @@ local setup_keymaps = function(_, bufnr)
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, bufopts)
     vim.keymap.set('n', 'gd', "<CMD>Lspsaga goto_definition<CR>", bufopts)
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
-    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+    vim.keymap.set({ 'n', 'i' }, '<C-k>', require('lsp_signature').toggle_float_win, bufopts)
     vim.keymap.set('n', '<space>wa', vim.lsp.buf.add_workspace_folder, bufopts)
     vim.keymap.set('n', '<space>wr', vim.lsp.buf.remove_workspace_folder, bufopts)
     vim.keymap.set('n', '<space>wl', function()
@@ -63,6 +63,18 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         on_attach(client, event.buf)
     end
+})
+
+-- Auto signature help while typing. Uses its own LspAttach hook, so it
+-- attaches to every server regardless of per-server on_attach overrides.
+require('lsp_signature').setup({
+    bind = true,
+    floating_window = true,
+    -- Get out of the way when the nvim-cmp completion menu is visible.
+    check_completion_visible = true,
+    hint_enable = false, -- prefer the float over inline virtual text
+    handler_opts = { border = "rounded" },
+    toggle_key = nil, -- toggling is bound to <C-k> in setup_keymaps
 })
 
 -- Mappings.
