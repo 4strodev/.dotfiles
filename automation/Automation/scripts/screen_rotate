@@ -1,0 +1,62 @@
+#!/usr/bin/env node
+
+const { spawn } = require("child_process");
+
+const NORMAL = { n: 1, name: 'normal' }
+const LEFT = { n: 1 << 1, name: 'left' }
+const INVERTED = { n: 1 << 2, name: 'inverted' }
+const RIGHT = { n: 1 << 3, name: 'right' }
+
+const rotation = [NORMAL, RIGHT, INVERTED, LEFT]
+
+function mod(n, m) {
+    return ((n % m) + m) % m;
+}
+
+function getConfig() {
+    const child = spawn('kscreen-doctor', ['-j'])
+    let out = '';
+    child.stdout.on('data', (data) => {
+        out += data.toString();
+    });
+
+    return new Promise(res => {
+        child.stdout.on('close', () => {
+            const config = JSON.parse(out);
+            res(config);
+        })
+    })
+}
+
+async function getNewOrientation(screen, direction) {
+    const config = await getConfig();
+    const orientation = config.outputs.find(o => o.name === screen)?.rotation;
+
+    if (orientation === undefined) {
+        return -1
+    }
+
+    const rotationIndex = rotation.findIndex(r => r.n === orientation);
+
+    const nextOrientation = rotation[mod(rotationIndex + direction, rotation.length)]
+    return nextOrientation;
+}
+
+function rotate(screen, orientation) {
+    spawn('kscreen-doctor', [`output.${screen}.rotation.${orientation}`]);
+}
+
+async function main() {
+    const screen = process.argv[2];
+    const direction = Number(process.argv[3]);
+
+    const orientation = await getNewOrientation(screen, direction)
+    if (orientation === -1) {
+        console.log('screen not found');
+        process.exit(1);
+    }
+
+    rotate(screen, orientation.name);
+}
+
+void main();
