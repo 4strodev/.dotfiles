@@ -4,7 +4,7 @@
         "body": [
             "test(\"${1:test description}\", () => {",
             "   ${2:test content}",
-            "})"
+            "});"
         ],
         "description": "A test function"
     },
@@ -13,7 +13,7 @@
         "body": [
             "it(\"${1:test description}\", () => {",
             "   ${2:test content}",
-            "})"
+            "});"
         ],
         "description": "A test it function"
     },
@@ -22,7 +22,7 @@
         "body": [
             "describe(\"${1:test suite description}\", () => {",
             "   ${2:test suite content}",
-            "})"
+            "});"
         ],
         "description": "A test suite function"
     }
