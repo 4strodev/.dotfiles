@@ -74,7 +74,7 @@ require('lsp_signature').setup({
     check_completion_visible = true,
     hint_enable = false, -- prefer the float over inline virtual text
     handler_opts = { border = "rounded" },
-    toggle_key = nil, -- toggling is bound to <C-k> in setup_keymaps
+    toggle_key = nil,    -- toggling is bound to <C-k> in setup_keymaps
 })
 
 -- Mappings.
@@ -84,6 +84,19 @@ vim.keymap.set('n', '<space>ee', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = true }) end, opts)
 vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
 vim.keymap.set('n', '<space>qq', vim.diagnostic.setloclist, opts)
+
+vim.lsp.config("jdtls", {
+    settings = {
+        java = {
+            format = {
+                enabled = true,
+                settings = {
+                    url = "style.xml"
+                }
+            }
+        }
+    }
+})
 
 vim.lsp.config('ts_ls', {
     on_attach = function(client, bufnr)
