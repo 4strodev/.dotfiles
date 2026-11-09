@@ -22,6 +22,4 @@ window-inherit-working-directory = false
 ## ensure no single instance is enabled. If not quickjump doesn't work
 gtk-single-instance = false
 confirm-close-surface = false
-
-# terminal behavior
-mouse-scroll-multiplier = discrete:0.9
+mouse-scroll-multiplier = "discrete: 1, precision: 1"
