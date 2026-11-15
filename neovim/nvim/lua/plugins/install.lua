@@ -182,8 +182,6 @@ require("lazy").setup({
         }, settings("emoji")),
 
         -- themes
-        { "Mofiqul/vscode.nvim" },
-        { "miikanissi/modus-themes.nvim", priority = 1000, lazy = false },
         { "f-person/auto-dark-mode.nvim", lazy = false, opts = {} },
 
         -- git
