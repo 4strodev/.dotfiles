@@ -1,15 +1,25 @@
-local keymap = vim.api.nvim_set_keymap
+local M = {}
+
+local ctx = require('config.keymaps').new()
+M.keymaps = ctx
+
 local nores = { noremap = true, silent = true }
 
 -- open explorer
-keymap("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<cr>", nores)
+ctx:map("n", "<leader>ef", "<cmd>NvimTreeFindFileToggle<cr>", nores)
 
-require("nvim-tree").setup({
-    view = {
-        width = 50,
-        side = "right"
-    },
-    renderer = {
-        group_empty = false,
-    }
-})
+function M.setup()
+    require("nvim-tree").setup({
+        view = {
+            width = 50,
+            side = "right"
+        },
+        renderer = {
+            group_empty = false,
+        }
+    })
+
+    ctx:apply()
+end
+
+return M

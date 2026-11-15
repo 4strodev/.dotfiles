@@ -1,3 +1,5 @@
+local M = {}
+
 local function start_ts_if_available(bufnr)
     local fileType = vim.bo[bufnr].filetype
     local language = vim.treesitter.language.get_lang(fileType)
@@ -7,8 +9,12 @@ local function start_ts_if_available(bufnr)
     end
 end
 
-vim.api.nvim_create_autocmd("FileType", {
-    callback = function(ev)
-        start_ts_if_available(ev.buf)
-    end,
-})
+function M.setup()
+    vim.api.nvim_create_autocmd("FileType", {
+        callback = function(ev)
+            start_ts_if_available(ev.buf)
+        end,
+    })
+end
+
+return M

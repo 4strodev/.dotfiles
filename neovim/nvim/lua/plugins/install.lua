@@ -16,53 +16,48 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+-- Builds the lazy.nvim fields (`config`, optionally `keys`) of a plugin from its
+-- settings module. Key stubs are derived from the module's recorded keymaps, so
+-- the module must not load the plugin until `setup` runs.
+local function settings(name, with_keys)
+    local spec = { config = function() require('plugins.settings.' .. name).setup() end }
+    if with_keys then
+        spec.keys = require('plugins.settings.' .. name).keymaps:triggers()
+    end
+    return spec
+end
+
 require("lazy").setup({
     spec = {
         -- lualine and bufferline
-        {
+        vim.tbl_extend("force", {
             "hoob3rt/lualine.nvim",
             event = "VeryLazy",
-            config = function()
-                require('plugins.settings.lualine')
-            end,
-        },
-        {
+        }, settings("lualine")),
+        vim.tbl_extend("force", {
             "akinsho/nvim-bufferline.lua",
             event = "VeryLazy",
-            config = function()
-                require('plugins.settings.bufferline')
-            end,
-        },
+        }, settings("bufferline")),
 
         -- autopairs
-        {
+        vim.tbl_extend("force", {
             "windwp/nvim-autopairs",
             event = "InsertEnter",
-            config = function()
-                require('plugins.settings.autopairs')
-            end,
-        },
+        }, settings("autopairs")),
 
         -- commenter
         { "preservim/nerdcommenter", event = "VeryLazy" },
 
         -- hex colorizer
-        {
+        vim.tbl_extend("force", {
             "catgoose/nvim-colorizer.lua",
             event = "BufReadPre",
-            config = function()
-                require('plugins.settings.colorizer')
-            end,
-        },
+        }, settings("colorizer")),
 
         -- telescope 🔭
-        {
+        vim.tbl_extend("force", {
             "nvim-telescope/telescope.nvim",
             cmd = "Telescope",
-            keys = {
-                "<leader>tt", "<leader>tp", "<leader>tr", "<leader>tR",
-                "<leader>tf", "<leader>tq", "<leader>ed",
-            },
             dependencies = {
                 "nvim-telescope/telescope-fzy-native.nvim",
                 "nvim-lua/popup.nvim",
@@ -74,25 +69,18 @@ require("lazy").setup({
                     version = "^1.0.0",
                 },
             },
-            config = function()
-                require('plugins.settings.telescope')
-            end,
-        },
+        }, settings("telescope", true)),
 
         -- file icons
-        {
+        vim.tbl_extend("force", {
             'nvim-tree/nvim-web-devicons',
             lazy = false,
-            config = function()
-                require('plugins.settings.nvim-web-devicons')
-            end,
-        },
+        }, settings("nvim-web-devicons")),
 
         -- file explorer
-        {
+        vim.tbl_extend("force", {
             'kyazdani42/nvim-tree.lua',
             cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFile", "NvimTreeFindFileToggle" },
-            keys = { "<leader>ef" },
             init = function()
                 -- `nvim <dir>`: load the tree so it can take over the directory buffer
                 if vim.fn.argc(-1) == 1 then
@@ -102,10 +90,7 @@ require("lazy").setup({
                     end
                 end
             end,
-            config = function()
-                require('plugins.settings.nvimtree')
-            end,
-        },
+        }, settings("nvimtree", true)),
         -- outline structure
         {
             "hedyhli/outline.nvim",
@@ -116,7 +101,7 @@ require("lazy").setup({
         { "lukas-reineke/indent-blankline.nvim", event = { "BufReadPost", "BufNewFile" } },
 
         -- language snippets
-        {
+        vim.tbl_extend("force", {
             "L3MON4D3/LuaSnip",
             event = "InsertEnter",
             version = "v2.*",
@@ -124,10 +109,7 @@ require("lazy").setup({
                 { "rafamadriz/friendly-snippets", dir = "/home/astro/Dev/friendly-snippets" },
             },
             build = "make install_jsregexp",
-            config = function()
-                require('plugins.settings.luasnip')
-            end,
-        },
+        }, settings("luasnip")),
 
         -- treesiter
         {
@@ -143,12 +125,12 @@ require("lazy").setup({
                     -- highlight = true, -- treesitter highlighting is enabled by default
                     -- languages = {}, -- override or add new parser sources
                 })
-                require('plugins.settings.treesitter')
+                require('plugins.settings.treesitter').setup()
             end
         },
 
         -- lsp and completion
-        {
+        vim.tbl_extend("force", {
             'hrsh7th/nvim-cmp',
             event = { "InsertEnter", "CmdlineEnter" },
             dependencies = {
@@ -160,11 +142,8 @@ require("lazy").setup({
                 'saadparwaiz1/cmp_luasnip',
                 'L3MON4D3/LuaSnip',
             },
-            config = function()
-                require('plugins.settings.cmp')
-            end,
-        },
-        {
+        }, settings("cmp")),
+        vim.tbl_extend("force", {
             "neovim/nvim-lspconfig",
             event = { "BufReadPre", "BufNewFile" },
             cmd = {
@@ -177,22 +156,16 @@ require("lazy").setup({
                 "ray-x/lsp_signature.nvim",
                 "iamkarasik/sonarqube.nvim",
             },
-            config = function()
-                require('plugins.settings.lspconfig')
-            end,
-        },
-        {
+        }, settings("lspconfig")),
+        vim.tbl_extend("force", {
             'nvimdev/lspsaga.nvim',
             event = "LspAttach",
             cmd = "Lspsaga",
-            config = function()
-                require('plugins.settings.lspsaga')
-            end,
             dependencies = {
                 'nvim-tree/nvim-web-devicons', -- optional
             }
-        },
-        {
+        }, settings("lspsaga")),
+        vim.tbl_extend("force", {
             "allaman/emoji.nvim",
             event = "InsertEnter",
             version = "1.0.0", -- optionally pin to a tag
@@ -206,10 +179,7 @@ require("lazy").setup({
                 -- optional for fzf-lua integration via vim.ui.select
                 "ibhagwan/fzf-lua",
             },
-            config = function()
-                require('plugins.settings.emoji')
-            end,
-        },
+        }, settings("emoji")),
 
         -- themes
         { "Mofiqul/vscode.nvim" },
@@ -217,53 +187,37 @@ require("lazy").setup({
         { "f-person/auto-dark-mode.nvim", lazy = false, opts = {} },
 
         -- git
-        {
+        vim.tbl_extend("force", {
             "lewis6991/gitsigns.nvim",
             event = { "BufReadPre", "BufNewFile" },
             dependencies = { "nvim-lua/plenary.nvim" },
-            config = function()
-                require('plugins.settings.gitsigns')
-            end,
-        },
+        }, settings("gitsigns")),
 
         -- debugging
-        {
+        vim.tbl_extend("force", {
             'mfussenegger/nvim-dap',
-            keys = {
-                "<F5>", "<F3>", "<F2>", "<F12>",
-                "<leader>b", "<leader>B", "<leader>lp", "<leader>dr", "<leader>du",
-            },
             dependencies = {
                 'theHamsta/nvim-dap-virtual-text',
                 "rcarriga/nvim-dap-ui",
                 "nvim-neotest/nvim-nio",
                 'leoluz/nvim-dap-go',
             },
-            config = function()
-                require('plugins.settings.nvim-dap')
-            end,
-        },
+        }, settings("nvim-dap", true)),
 
 
         -- marks
-        {
+        vim.tbl_extend("force", {
             "chentoast/marks.nvim",
             event = { "BufReadPost", "BufNewFile" },
-            config = function()
-                require('plugins.settings.marks')
-            end,
-        },
+        }, settings("marks")),
 
         --terminal
-        {
+        vim.tbl_extend("force", {
             "4strodev/termtracker.nvim",
             -- tracks terminals through the TermOpen autocmd, so load on that event
             event = "TermOpen",
             cmd = { "TermList", "TermOpen", "TermToggle" },
-            config = function()
-                require('plugins.settings.termtracker')
-            end,
-        },
+        }, settings("termtracker")),
         {
             'MeanderingProgrammer/render-markdown.nvim',
             ft = "markdown",

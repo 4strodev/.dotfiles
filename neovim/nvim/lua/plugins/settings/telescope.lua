@@ -1,10 +1,20 @@
 local telescope_module = {}
-local keymap = vim.api.nvim_set_keymap
 local nores = { noremap = true, silent = true }
 --local nore = {noremap = true, silent = false}
 
-local actions = require("telescope.actions")
-local lga_actions = require("telescope-live-grep-args.actions")
+local ctx = require('config.keymaps').new()
+telescope_module.keymaps = ctx
+
+-- basic keymaps
+ctx:map("n", "<leader>tt", '<cmd>Telescope<cr>', nores)
+ctx:map("n", "<leader>tp", '<cmd>Telescope find_files<cr>', nores)
+ctx:map("n", "<leader>tr", '<cmd>Telescope lsp_references<cr>', nores)
+ctx:map("n", "<leader>tR", '<cmd>Telescope resume<cr>', nores)
+ctx:map("n", "<leader>tf", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", nores)
+ctx:map("n", "<leader>tq", "<cmd>Telescope quickfix<cr>", nores)
+
+-- cutsom functions
+ctx:map("n", "<leader>ed", '<cmd>lua require("plugins.settings.telescope").search_dotfiles()<cr>', nores)
 
 local select_one_or_multi = function(prompt_bufnr)
     local picker = require('telescope.actions.state').get_current_picker(prompt_bufnr)
@@ -22,6 +32,9 @@ local select_one_or_multi = function(prompt_bufnr)
 end
 
 telescope_module.setup = function()
+    local actions = require("telescope.actions")
+    local lga_actions = require("telescope-live-grep-args.actions")
+
     require("telescope").setup {
         defaults = {
             vimgrep_arguments = {
@@ -104,7 +117,7 @@ telescope_module.setup = function()
     }
 
     telescope_module.load_extensions()
-    telescope_module.load_keymaps()
+    ctx:apply()
 end
 
 -- search neovim dotfiles
@@ -122,20 +135,5 @@ telescope_module.load_extensions = function()
     require("telescope").load_extension("fzy_native")
     require("telescope").load_extension("live_grep_args")
 end
-
-telescope_module.load_keymaps = function()
-    -- basic keymaps
-    keymap("n", "<leader>tt", '<cmd>Telescope<cr>', nores)
-    keymap("n", "<leader>tp", '<cmd>Telescope find_files<cr>', nores)
-    keymap("n", "<leader>tr", '<cmd>Telescope lsp_references<cr>', nores)
-    keymap("n", "<leader>tR", '<cmd>Telescope resume<cr>', nores)
-    keymap("n", "<leader>tf", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", nores)
-    keymap("n", "<leader>tq", "<cmd>Telescope quickfix<cr>", nores)
-
-    -- cutsom functions
-    keymap("n", "<leader>ed", '<cmd>lua require("plugins.settings.telescope").search_dotfiles()<cr>', nores)
-end
-
-telescope_module.setup()
 
 return telescope_module
