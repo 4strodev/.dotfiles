@@ -19,17 +19,39 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
     spec = {
         -- lualine and bufferline
-        { "hoob3rt/lualine.nvim" },
-        { "akinsho/nvim-bufferline.lua" },
+        {
+            "hoob3rt/lualine.nvim",
+            config = function()
+                require('plugins.settings.lualine')
+            end,
+        },
+        {
+            "akinsho/nvim-bufferline.lua",
+            config = function()
+                require('plugins.settings.bufferline')
+            end,
+        },
 
         -- autopairs
-        { "windwp/nvim-autopairs",       event = "InsertEnter" },
+        {
+            "windwp/nvim-autopairs",
+            event = "InsertEnter",
+            config = function()
+                require('plugins.settings.autopairs')
+            end,
+        },
 
         -- commenter
         { "preservim/nerdcommenter" },
 
         -- hex colorizer
-        { "catgoose/nvim-colorizer.lua", event = "BufReadPre", opts = {} },
+        {
+            "catgoose/nvim-colorizer.lua",
+            event = "BufReadPre",
+            config = function()
+                require('plugins.settings.colorizer')
+            end,
+        },
 
         -- telescope 🔭
         {
@@ -44,15 +66,26 @@ require("lazy").setup({
                     -- For major updates, this must be adjusted manually.
                     version = "^1.0.0",
                 },
-            }
+            },
+            config = function()
+                require('plugins.settings.telescope')
+            end,
         },
 
         -- file icons
-        { 'nvim-tree/nvim-web-devicons' },
+        {
+            'nvim-tree/nvim-web-devicons',
+            config = function()
+                require('plugins.settings.nvim-web-devicons')
+            end,
+        },
 
         -- file explorer
         {
             'kyazdani42/nvim-tree.lua',
+            config = function()
+                require('plugins.settings.nvimtree')
+            end,
         },
         -- outline structure
         {
@@ -67,6 +100,9 @@ require("lazy").setup({
             "L3MON4D3/LuaSnip",
             version = "v2.*",
             build = "make install_jsregexp",
+            config = function()
+                require('plugins.settings.luasnip')
+            end,
         },
         { "rafamadriz/friendly-snippets", dir = "/home/astro/Dev/friendly-snippets" },
         { 'saadparwaiz1/cmp_luasnip' },
@@ -84,6 +120,7 @@ require("lazy").setup({
                     -- highlight = true, -- treesitter highlighting is enabled by default
                     -- languages = {}, -- override or add new parser sources
                 })
+                require('plugins.settings.treesitter')
             end
         },
 
@@ -93,8 +130,33 @@ require("lazy").setup({
         { 'hrsh7th/cmp-path' },
         { 'hrsh7th/cmp-cmdline' },
         { 'max397574/cmp-greek' },
-        { 'hrsh7th/nvim-cmp' },
-        { "neovim/nvim-lspconfig" },
+        {
+            'hrsh7th/nvim-cmp',
+            dependencies = {
+                'hrsh7th/cmp-nvim-lsp',
+                'hrsh7th/cmp-buffer',
+                'hrsh7th/cmp-path',
+                'hrsh7th/cmp-cmdline',
+                'max397574/cmp-greek',
+                'saadparwaiz1/cmp_luasnip',
+                'L3MON4D3/LuaSnip',
+            },
+            config = function()
+                require('plugins.settings.cmp')
+            end,
+        },
+        {
+            "neovim/nvim-lspconfig",
+            dependencies = {
+                "williamboman/mason.nvim",
+                "williamboman/mason-lspconfig.nvim",
+                "ray-x/lsp_signature.nvim",
+                "iamkarasik/sonarqube.nvim",
+            },
+            config = function()
+                require('plugins.settings.lspconfig')
+            end,
+        },
         { "ray-x/lsp_signature.nvim",         event = "InsertEnter" },
         { "williamboman/mason.nvim" },
         { "williamboman/mason-lspconfig.nvim" },
@@ -121,6 +183,9 @@ require("lazy").setup({
                 -- optional for fzf-lua integration via vim.ui.select
                 "ibhagwan/fzf-lua",
             },
+            config = function()
+                require('plugins.settings.emoji')
+            end,
         },
 
         -- themes
@@ -131,7 +196,10 @@ require("lazy").setup({
         -- git
         {
             "lewis6991/gitsigns.nvim",
-            dependencies = { "nvim-lua/plenary.nvim" }
+            dependencies = { "nvim-lua/plenary.nvim" },
+            config = function()
+                require('plugins.settings.gitsigns')
+            end,
         },
 
         -- debugging
@@ -140,18 +208,30 @@ require("lazy").setup({
             dependencies = {
                 'theHamsta/nvim-dap-virtual-text',
                 "rcarriga/nvim-dap-ui",
-                "mfussenegger/nvim-dap",
-                "nvim-neotest/nvim-nio"
-            }
+                "nvim-neotest/nvim-nio",
+                'leoluz/nvim-dap-go',
+            },
+            config = function()
+                require('plugins.settings.nvim-dap')
+            end,
         },
-        { 'leoluz/nvim-dap-go' },
 
 
         -- marks
-        { "chentoast/marks.nvim" },
+        {
+            "chentoast/marks.nvim",
+            config = function()
+                require('plugins.settings.marks')
+            end,
+        },
 
         --terminal
-        { "4strodev/termtracker.nvim" },
+        {
+            "4strodev/termtracker.nvim",
+            config = function()
+                require('plugins.settings.termtracker')
+            end,
+        },
         {
             'MeanderingProgrammer/render-markdown.nvim',
             after = { 'nvim-treesitter' },

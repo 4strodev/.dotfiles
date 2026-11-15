@@ -5,7 +5,6 @@ local function main()
 	require("plugins.install")
 
 	editor:set_colorscheme(os.getenv("EDITOR_THEME"))
-	require("plugins.config")
 end
 
 main()
