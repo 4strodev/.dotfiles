@@ -21,12 +21,14 @@ require("lazy").setup({
         -- lualine and bufferline
         {
             "hoob3rt/lualine.nvim",
+            event = "VeryLazy",
             config = function()
                 require('plugins.settings.lualine')
             end,
         },
         {
             "akinsho/nvim-bufferline.lua",
+            event = "VeryLazy",
             config = function()
                 require('plugins.settings.bufferline')
             end,
@@ -42,7 +44,7 @@ require("lazy").setup({
         },
 
         -- commenter
-        { "preservim/nerdcommenter" },
+        { "preservim/nerdcommenter", event = "VeryLazy" },
 
         -- hex colorizer
         {
@@ -56,6 +58,11 @@ require("lazy").setup({
         -- telescope 🔭
         {
             "nvim-telescope/telescope.nvim",
+            cmd = "Telescope",
+            keys = {
+                "<leader>tt", "<leader>tp", "<leader>tr", "<leader>tR",
+                "<leader>tf", "<leader>tq", "<leader>ed",
+            },
             dependencies = {
                 "nvim-telescope/telescope-fzy-native.nvim",
                 "nvim-lua/popup.nvim",
@@ -75,6 +82,7 @@ require("lazy").setup({
         -- file icons
         {
             'nvim-tree/nvim-web-devicons',
+            lazy = false,
             config = function()
                 require('plugins.settings.nvim-web-devicons')
             end,
@@ -83,6 +91,17 @@ require("lazy").setup({
         -- file explorer
         {
             'kyazdani42/nvim-tree.lua',
+            cmd = { "NvimTreeToggle", "NvimTreeOpen", "NvimTreeFocus", "NvimTreeFindFile", "NvimTreeFindFileToggle" },
+            keys = { "<leader>ef" },
+            init = function()
+                -- `nvim <dir>`: load the tree so it can take over the directory buffer
+                if vim.fn.argc(-1) == 1 then
+                    local stat = vim.uv.fs_stat(vim.fn.argv(0))
+                    if stat and stat.type == "directory" then
+                        require("nvim-tree")
+                    end
+                end
+            end,
             config = function()
                 require('plugins.settings.nvimtree')
             end,
@@ -90,26 +109,30 @@ require("lazy").setup({
         -- outline structure
         {
             "hedyhli/outline.nvim",
+            cmd = { "Outline", "OutlineOpen" },
         },
 
         -- indent line
-        { "lukas-reineke/indent-blankline.nvim" },
+        { "lukas-reineke/indent-blankline.nvim", event = { "BufReadPost", "BufNewFile" } },
 
         -- language snippets
         {
             "L3MON4D3/LuaSnip",
+            event = "InsertEnter",
             version = "v2.*",
+            dependencies = {
+                { "rafamadriz/friendly-snippets", dir = "/home/astro/Dev/friendly-snippets" },
+            },
             build = "make install_jsregexp",
             config = function()
                 require('plugins.settings.luasnip')
             end,
         },
-        { "rafamadriz/friendly-snippets", dir = "/home/astro/Dev/friendly-snippets" },
-        { 'saadparwaiz1/cmp_luasnip' },
 
         -- treesiter
         {
             "romus204/tree-sitter-manager.nvim",
+            lazy = false,
             dependencies = {}, -- tree-sitter CLI must be installed system-wide
             config = function()
                 require("tree-sitter-manager").setup({
@@ -125,13 +148,9 @@ require("lazy").setup({
         },
 
         -- lsp and completion
-        { 'hrsh7th/cmp-nvim-lsp' },
-        { 'hrsh7th/cmp-buffer' },
-        { 'hrsh7th/cmp-path' },
-        { 'hrsh7th/cmp-cmdline' },
-        { 'max397574/cmp-greek' },
         {
             'hrsh7th/nvim-cmp',
+            event = { "InsertEnter", "CmdlineEnter" },
             dependencies = {
                 'hrsh7th/cmp-nvim-lsp',
                 'hrsh7th/cmp-buffer',
@@ -147,6 +166,11 @@ require("lazy").setup({
         },
         {
             "neovim/nvim-lspconfig",
+            event = { "BufReadPre", "BufNewFile" },
+            cmd = {
+                "Mason", "MasonInstall", "MasonUninstall", "MasonUpdate", "MasonLog",
+                "LspInfo", "LspLog", "LspRestart", "LspStart", "LspStop",
+            },
             dependencies = {
                 "williamboman/mason.nvim",
                 "williamboman/mason-lspconfig.nvim",
@@ -157,11 +181,10 @@ require("lazy").setup({
                 require('plugins.settings.lspconfig')
             end,
         },
-        { "ray-x/lsp_signature.nvim",         event = "InsertEnter" },
-        { "williamboman/mason.nvim" },
-        { "williamboman/mason-lspconfig.nvim" },
         {
             'nvimdev/lspsaga.nvim',
+            event = "LspAttach",
+            cmd = "Lspsaga",
             config = function()
                 require('plugins.settings.lspsaga')
             end,
@@ -169,9 +192,9 @@ require("lazy").setup({
                 'nvim-tree/nvim-web-devicons', -- optional
             }
         },
-        { "iamkarasik/sonarqube.nvim" },
         {
             "allaman/emoji.nvim",
+            event = "InsertEnter",
             version = "1.0.0", -- optionally pin to a tag
             dependencies = {
                 -- util for handling paths
@@ -191,11 +214,12 @@ require("lazy").setup({
         -- themes
         { "Mofiqul/vscode.nvim" },
         { "miikanissi/modus-themes.nvim", priority = 1000, lazy = false },
-        { "f-person/auto-dark-mode.nvim", opts = {} },
+        { "f-person/auto-dark-mode.nvim", lazy = false, opts = {} },
 
         -- git
         {
             "lewis6991/gitsigns.nvim",
+            event = { "BufReadPre", "BufNewFile" },
             dependencies = { "nvim-lua/plenary.nvim" },
             config = function()
                 require('plugins.settings.gitsigns')
@@ -205,6 +229,10 @@ require("lazy").setup({
         -- debugging
         {
             'mfussenegger/nvim-dap',
+            keys = {
+                "<F5>", "<F3>", "<F2>", "<F12>",
+                "<leader>b", "<leader>B", "<leader>lp", "<leader>dr", "<leader>du",
+            },
             dependencies = {
                 'theHamsta/nvim-dap-virtual-text',
                 "rcarriga/nvim-dap-ui",
@@ -220,6 +248,7 @@ require("lazy").setup({
         -- marks
         {
             "chentoast/marks.nvim",
+            event = { "BufReadPost", "BufNewFile" },
             config = function()
                 require('plugins.settings.marks')
             end,
@@ -228,12 +257,16 @@ require("lazy").setup({
         --terminal
         {
             "4strodev/termtracker.nvim",
+            -- tracks terminals through the TermOpen autocmd, so load on that event
+            event = "TermOpen",
+            cmd = { "TermList", "TermOpen", "TermToggle" },
             config = function()
                 require('plugins.settings.termtracker')
             end,
         },
         {
             'MeanderingProgrammer/render-markdown.nvim',
+            ft = "markdown",
             after = { 'nvim-treesitter' },
             requires = { 'nvim-mini/mini.nvim', opt = true }, -- if you use the mini.nvim suite
             -- requires = { 'nvim-mini/mini.icons', opt = true },        -- if you use standalone mini plugins
@@ -244,7 +277,7 @@ require("lazy").setup({
         }
     },
     defaults = {
-        lazy = false,
+        lazy = true,
         version = false,
     },
     checker = {
