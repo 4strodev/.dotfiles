@@ -49,7 +49,7 @@ function editor_module:common_configs()
 
     -- executing other configuration files
     require("config.settings")
-    require("config.keymaps")
+    require("config.global_keymaps")
     require("config.macros")
 end
 
