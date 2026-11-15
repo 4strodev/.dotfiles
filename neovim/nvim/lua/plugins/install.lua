@@ -68,7 +68,7 @@ require("lazy").setup({
             version = "v2.*",
             build = "make install_jsregexp",
         },
-        { "rafamadriz/friendly-snippets" },
+        { "rafamadriz/friendly-snippets", dir = "/home/astro/Dev/friendly-snippets" },
         { 'saadparwaiz1/cmp_luasnip' },
 
         -- treesiter

@@ -85,9 +85,80 @@ vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1, float = t
 vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1, float = true }) end, opts)
 vim.keymap.set('n', '<space>qq', vim.diagnostic.setloclist, opts)
 
+-- Build jdtls runtimes from every JDK installed with asdf.
+local function asdf_java_runtimes()
+    local runtimes, seen = {}, {}
+    local root = vim.fn.expand("~/.asdf/installs/java")
+    for _, dir in ipairs(vim.fn.glob(root .. "/*", false, true)) do
+        -- "adoptopenjdk-21.0.13+9.0.LTS" -> 21, "temurin-8.0.402" -> 8
+        local major = vim.fn.fnamemodify(dir, ":t"):match("%-(%d+)")
+        if major and not seen[major] and vim.fn.executable(dir .. "/bin/javac") == 1 then
+            seen[major] = true
+            table.insert(runtimes, {
+                name = "JavaSE-" .. (major == "8" and "1.8" or major),
+                path = dir,
+            })
+        end
+    end
+    -- the newest JDK is the default
+    table.sort(runtimes, function(a, b)
+        local function n(r) return tonumber(r.name:match("(%d+%.?%d*)$")) end
+        return n(a) > n(b)
+    end)
+    if runtimes[1] then runtimes[1].default = true end
+    return runtimes
+end
+
+-- jdtls itself needs a newer JDK (1.63 requires Java 25+) than the projects it
+-- analyses, and `java` on PATH follows .tool-versions (e.g. 21). Pick the
+-- newest JDK >= 25 to run the server; project JDKs come from `runtimes` above.
+local JDTLS_MIN_JAVA = 25
+local function jdtls_java_executable()
+    local homes = vim.fn.glob("/usr/lib/jvm/*", false, true)
+    vim.list_extend(homes, vim.fn.glob(vim.fn.expand("~/.asdf/installs/java/*"), false, true))
+    local best, best_major
+    for _, home in ipairs(homes) do
+        local java = home .. "/bin/java"
+        local f = io.open(home .. "/release")
+        local major
+        if f then
+            major = tonumber(f:read("*a"):match('JAVA_VERSION="(%d+)'))
+            f:close()
+        end
+        if major and major >= JDTLS_MIN_JAVA and vim.fn.executable(java) == 1
+            and (not best_major or major > best_major) then
+            best, best_major = java, major
+        end
+    end
+    return best
+end
+
 vim.lsp.config("jdtls", {
+    -- Same as nvim-lspconfig's default cmd, plus --java-executable.
+    cmd = function(dispatchers, config)
+        local data_dir = vim.fn.stdpath("cache") .. "/jdtls/workspace"
+        if config.root_dir then
+            data_dir = data_dir .. "/" .. vim.fn.fnamemodify(config.root_dir, ":p:h:t")
+        end
+        local cmd = { "jdtls", "-data", data_dir }
+        local java = jdtls_java_executable()
+        if java then
+            vim.list_extend(cmd, { "--java-executable", java })
+        end
+        for a in string.gmatch(os.getenv("JDTLS_JVM_ARGS") or "", "%S+") do
+            table.insert(cmd, "--jvm-arg=" .. a)
+        end
+        return vim.lsp.rpc.start(cmd, dispatchers, {
+            cwd = config.cmd_cwd,
+            env = config.cmd_env,
+            detached = config.detached,
+        })
+    end,
     settings = {
         java = {
+            configuration = {
+                runtimes = asdf_java_runtimes(),
+            },
             format = {
                 enabled = true,
                 settings = {
